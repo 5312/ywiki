@@ -1,0 +1,92 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #f8f8f8 !important;
+}
+
+.header {
+  height: 150px;
+  background-color: #fff;
+}
+
+.contain {
+  width: 70%;
+  margin: auto;
+  height: 100%;
+}
+.headerbox {
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: space-around;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  padding-top: 30px;
+  height: 80%;
+}
+.logo > img {
+  width: 154px;
+  height: 53px;
+}
+.search_input {
+  width: 500px;
+  /* padding: 5px; */
+  height: 32px;
+  line-height: 26px;
+}
+.inputs {
+  width: 80%;
+}
+.inline {
+  display: inline-block;
+  vertical-align: middle;
+}
+.icon {
+  width: 28px;
+  height: 100%;
+  padding: 5px;
+  background: #ff3a03;
+  border-radius: 0px;
+  color: #fff;
+  text-align: center;
+  line-height: 100%;
+}
+.type {
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 16px;
+}
+.type > div {
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #666666;
+}
+.person {
+  height: 15px;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 500;
+  color: #ff3a03;
+  vertical-align: middle;
+}
+.tabcard {
+  display: flex;
+  margin: auto;
+  text-align: center;
+  border-bottom: #ffa78f 2px solid;
+
+  height: 20%;
+}
+.tabcard > div {
+  margin-left: 45px;
+  padding: 5px 23px;
+  font-size: 16px;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  color: #333333;
+}

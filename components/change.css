@@ -1,0 +1,57 @@
+.round {
+  width: 46px;
+  height: 46px;
+  background: #d3d3ff;
+  border-radius: 50%;
+  margin-top: 30px;
+}
+.vip {
+  height: 100px;
+  background: linear-gradient(-45deg, #eacc98 0%, #ebd8ae 50%, #e1c693 100%);
+  border-radius: 8px;
+}
+.nowpay {
+  width: 68px;
+  height: 24px;
+  background: linear-gradient(90deg, #b49469, #936d48);
+  border-radius: 12px;
+  line-height: 24px;
+  color: #fff;
+}
+.accordion-header {
+  border: none;
+}
+.title {
+  width: 80px;
+  /* height: 20px; */
+  font-size: 20px;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  color: #333333;
+}
+.line {
+  display: block;
+  height: 2px;
+  background: #e3e4e6;
+}
+.wrap {
+  text-align: center;
+  margin: auto;
+  margin-top: 5rem;
+}
+.savebutton {
+  width: 239px;
+  height: 40px;
+  background: #ff3a03;
+  border-radius: 0px;
+  margin: auto;
+  margin-top: 30px;
+  color: #fff;
+  line-height: 40px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  height: 100px;
+}
