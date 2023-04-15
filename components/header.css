@@ -9,7 +9,16 @@ body {
   height: 150px;
   background-color: #fff;
 }
+.main {
+  width: 70%;
+}
 
+.tab-active {
+  background: #ff3a03;
+  color: #fff !important;
+  padding: 0 5px;
+  margin-left: 0 !important;
+}
 .contain {
   width: 70%;
   margin: auto;
