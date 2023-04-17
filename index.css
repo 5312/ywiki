@@ -17,9 +17,9 @@ body {
 }
 
 .title {
-  width: 416px;
-  height: 48px;
-  font-size: 48px;
+  /* width: 416px;
+  height: 48px; */
+  /* font-size: 48px; */
   font-family: Microsoft YaHei;
   font-weight: bold;
   color: #333333;
@@ -50,4 +50,20 @@ body {
 
 .grey {
   color: #666666;
+}
+
+.wraps {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.main {
+  padding-bottom: 4.5rem;
+  overflow-y: auto;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 4.5rem; /* Footer height */
 }

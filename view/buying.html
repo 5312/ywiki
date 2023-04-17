@@ -8,7 +8,9 @@
   <link rel="stylesheet" href="../tailwind.min.css">
   <link rel="stylesheet" href="../index.css">
   <link rel="stylesheet" href="../normalize.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"> -->
+  <link rel="stylesheet" href="../cdn/bootstrap-icons-1.10.4/font/bootstrap-icons.css">
+
   <link rel="stylesheet" href="../components/header.css">
   <title>Document</title>
 </head>
@@ -50,119 +52,134 @@
 </style>
 
 <body>
-  <header class=" header">
-    <div class="contain">
-      <div class="flex headerbox">
-        <div class="logo">
-          <img src="../asset/易维客@2x.png" alt="">
+  <div class="wraps">
+    <header class=" header">
+      <div class="contain">
+        <div class="flex headerbox">
+          <div class="logo">
+            <img src="../asset/易维客@2x.png" alt="">
+          </div>
+          <div class="search">
+            <div class="search_input rounded-sm border-2 border-gray-300 border-solid clear-left">
+              <select class="inline">
+                <option>发布</option>
+              </select>
+              <input type="text" class="inline outline-none inputs" placeholder="请输入关键词">
+              <div class="icon inline float-right"><i class="bi bi-search"></i></div>
+            </div>
+            <div class="type flex">
+              <div>金融</div>
+              <div>科技</div>
+              <div>电子商务</div>
+              <div>贸易</div>
+              <div>建筑</div>
+            </div>
+          </div>
+          <div class="person">
+            <i class="bi bi-person"></i>
+            <span>个人中心</span>
+          </div>
         </div>
-        <div class="search">
-          <div class="search_input rounded-sm border-2 border-gray-300 border-solid clear-left">
-            <select class="inline">
-              <option>发布</option>
+        <nav class="tabcard">
+          <div>出售公司</div>
+          <div class="tab-active">求购公司</div>
+          <div>我的私域</div>
+          <div>客户管理</div>
+        </nav>
+      </div>
+    </header>
+    <main class="main mx-auto py-9  ">
+      <article class="bg-white flex flex-row  py-3 found">
+        <div class=" flex flex-row items-center py-3 px-6 ">
+          <div class="mx-3 ">求购区域</div>
+          <div class="mx-3">
+            <select name="" id="">
+              <option value="">选择省</option>
             </select>
-            <input type="text" class="inline outline-none inputs" placeholder="请输入关键词">
-            <div class="icon inline float-right"><i class="bi bi-search"></i></div>
           </div>
-          <div class="type flex">
-            <div>金融</div>
-            <div>科技</div>
-            <div>电子商务</div>
-            <div>贸易</div>
-            <div>建筑</div>
+          <div class="mx-3">
+            <select name="" id="">
+              <option value="">选择市</option>
+            </select>
+          </div>
+          <div class="mx-3">
+            <select name="" id="">
+              <option value="">选择区</option>
+            </select>
+          </div>
+          <div class="bg-orgin px-6 py-3">搜索</div>
+        </div>
+        <div class="m-4 flex flex-row pulish  rounded-full shape">
+          <div class="bg-orgin pulish-i rounded-full h-24 w-24 flex items-center justify-center"><i
+              class="bi bi-send"></i></div>
+          <div class="p-3 ">免费发布求购</div>
+        </div>
+      </article>
+      <article class="bg-white py-4  mt-3 flex flex-row items-center justify-between">
+        <div class="ml-8">
+          <div class="text-3xl font-semibold">3年以上机械制造</div>
+          <div class="grey py-4">
+            <span>求购区域：陕西省 西安市</span>
           </div>
         </div>
-        <div class="person">
-          <i class="bi bi-person"></i>
-          <span>个人中心</span>
+        <div class="flex flex-row items-center justify-center mx-5">
+          <img class="flex-1 phone" src="../asset/组 3@2x.png" alt="">
+          <div class="ml-4">
+            <div class="py-1">李琳琳</div>
+            <div class="py-1 grey">2023-03-30</div>
+            <div class="py-1 orgin">15234647895</div>
+          </div>
         </div>
+      </article>
+      <!--  -->
+      <article class="bg-white py-4  mt-3 flex flex-row items-center justify-between">
+        <div class="ml-8">
+          <div class="text-3xl font-semibold">3年以上机械制造</div>
+          <div class="grey py-4">
+            <span>求购区域：陕西省 西安市</span>
+          </div>
+        </div>
+        <div class="flex flex-row items-center justify-center mx-5">
+          <img class="flex-1 phone" src="../asset/组 3@2x.png" alt="">
+          <div class="ml-4">
+            <div class="py-1">李琳琳</div>
+            <div class="py-1 grey">2023-03-30</div>
+            <div class="py-1 orgin">15234647895</div>
+          </div>
+        </div>
+      </article>
+      <!--  -->
+      <article class="bg-white py-4  mt-3 flex flex-row items-center justify-between">
+        <div class="ml-8">
+          <div class="text-3xl font-semibold">3年以上机械制造</div>
+          <div class="grey py-4">
+            <span>求购区域：陕西省 西安市</span>
+          </div>
+        </div>
+        <div class="flex flex-row items-center justify-center mx-5">
+          <img class="flex-1 phone" src="../asset/组 3@2x.png" alt="">
+          <div class="ml-4">
+            <div class="py-1">李琳琳</div>
+            <div class="py-1 grey">2023-03-30</div>
+            <div class="py-1 orgin">15234647895</div>
+          </div>
+        </div>
+      </article>
+    </main>
+    <footer class="footer w-screen bg-white ">
+      <div class="w-2/5  mx-auto text-xs grey text-center p-4">
+        <div class="grid grid-cols-6 divide-x divide-gray-500 ">
+          <div>首页网站</div>
+          <div>公司转让</div>
+          <div>公司收购</div>
+          <div>关于我们</div>
+          <div>联系我们</div>
+          <div>法律声明</div>
+        </div>
+        <div class="p-2">易维客信息科技有限公司 | 津ICP备18000836号-1 | © Copyright©2023 ke.com版权所有</div>
       </div>
-      <nav class="tabcard">
-        <div>出售公司</div>
-        <div class="tab-active">求购公司</div>
-        <div>我的私域</div>
-        <div>客户管理</div>
-      </nav>
-    </div>
-  </header>
-  <main class="main mx-auto py-9  ">
-    <article class="bg-white flex flex-row  py-3 found">
-      <div class=" flex flex-row items-center py-3 px-6 ">
-        <div class="mx-3 ">求购区域</div>
-        <div class="mx-3">
-          <select name="" id="">
-            <option value="">选择省</option>
-          </select>
-        </div>
-        <div class="mx-3">
-          <select name="" id="">
-            <option value="">选择市</option>
-          </select>
-        </div>
-        <div class="mx-3">
-          <select name="" id="">
-            <option value="">选择区</option>
-          </select>
-        </div>
-        <div class="bg-orgin px-6 py-3">搜索</div>
-      </div>
-      <div class="m-4 flex flex-row pulish  rounded-full shape">
-        <div class="bg-orgin pulish-i rounded-full h-24 w-24 flex items-center justify-center"><i
-            class="bi bi-send"></i></div>
-        <div class="p-3 ">免费发布求购</div>
-      </div>
-    </article>
-    <article class="bg-white py-4  mt-3 flex flex-row items-center justify-between">
-      <div class="ml-8">
-        <div class="text-3xl font-semibold">3年以上机械制造</div>
-        <div class="grey py-4">
-          <span>求购区域：陕西省 西安市</span>
-        </div>
-      </div>
-      <div class="flex flex-row items-center justify-center mx-5">
-        <img class="flex-1 phone" src="../asset/组 3@2x.png" alt="">
-        <div class="ml-4">
-          <div class="py-1">李琳琳</div>
-          <div class="py-1 grey">2023-03-30</div>
-          <div class="py-1 orgin">15234647895</div>
-        </div>
-      </div>
-    </article>
-    <!--  -->
-    <article class="bg-white py-4  mt-3 flex flex-row items-center justify-between">
-      <div class="ml-8">
-        <div class="text-3xl font-semibold">3年以上机械制造</div>
-        <div class="grey py-4">
-          <span>求购区域：陕西省 西安市</span>
-        </div>
-      </div>
-      <div class="flex flex-row items-center justify-center mx-5">
-        <img class="flex-1 phone" src="../asset/组 3@2x.png" alt="">
-        <div class="ml-4">
-          <div class="py-1">李琳琳</div>
-          <div class="py-1 grey">2023-03-30</div>
-          <div class="py-1 orgin">15234647895</div>
-        </div>
-      </div>
-    </article>
-    <!--  -->
-    <article class="bg-white py-4  mt-3 flex flex-row items-center justify-between">
-      <div class="ml-8">
-        <div class="text-3xl font-semibold">3年以上机械制造</div>
-        <div class="grey py-4">
-          <span>求购区域：陕西省 西安市</span>
-        </div>
-      </div>
-      <div class="flex flex-row items-center justify-center mx-5">
-        <img class="flex-1 phone" src="../asset/组 3@2x.png" alt="">
-        <div class="ml-4">
-          <div class="py-1">李琳琳</div>
-          <div class="py-1 grey">2023-03-30</div>
-          <div class="py-1 orgin">15234647895</div>
-        </div>
-      </div>
-    </article>
-  </main>
+    </footer>
+  </div>
 </body>
 
 </html>

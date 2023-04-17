@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../tailwind.min.css">
+  <link rel="stylesheet" href="../normalize.css">
+  <link rel="stylesheet" href="../index.css">
+  <link rel="stylesheet" href="../components/header.css">
+  <link rel="stylesheet" href="../components/change.css">
+  <!-- bootstrap -->
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"> -->
+  <link rel="stylesheet" href="../cdn/bootstrap-icons-1.10.4/font/bootstrap-icons.css">
+
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> -->
+  <link href="../cdn/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script> -->
+  <script src="../cdn/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+  <!-- 引入样式 -->
+  <!-- <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"> -->
+  <link rel="stylesheet" href="../cdn/theme-chalk-index.css">
+  <!-- import Vue before Element -->
+  <!-- <script src="https://unpkg.com/vue@2/dist/vue.js"></script> -->
+  <script src="../cdn/vue.js"></script>
+  <!-- 引入组件库 -->
+  <!-- <script src="https://unpkg.com/element-ui/lib/index.js"></script> -->
+  <script src="../cdn/elementui-lib.js"></script>
+  <title>Document</title>
+</head>
+<style>
+  .main {
+    width: 70%;
+  }
+
+  .capsule {
+    background-color: #f7a893;
+    color: #FF3A03;
+  }
+</style>
+
+<body>
+  <div class="wraps">
+    <header class=" header">
+      <div class="contain">
+        <div class="flex headerbox">
+          <div class="logo">
+            <img src="../asset/易维客@2x.png" alt="">
+          </div>
+          <div class="search">
+            <div class="search_input rounded-sm border-2 border-gray-300 border-solid clear-left">
+              <select class="inline">
+                <option>发布</option>
+              </select>
+              <input type="text" class="inline outline-none inputs" placeholder="请输入关键词">
+              <div class="icon inline float-right"><i class="bi bi-search"></i></div>
+            </div>
+            <div class="type flex">
+              <div>金融</div>
+              <div>科技</div>
+              <div>电子商务</div>
+              <div>贸易</div>
+              <div>建筑</div>
+            </div>
+          </div>
+          <div class="person">
+            <i class="bi bi-person"></i>
+            <span>个人中心</span>
+          </div>
+        </div>
+        <div class="tabcard">
+          <div>出售公司</div>
+          <div>求购公司</div>
+          <div>我的私域</div>
+          <div>客户管理</div>
+        </div>
+      </div>
+    </header>
+    <main class="main mx-auto p-4 flex flex-row" id="app">
+      <aside class=" w-1/4">
+        <section class="bg-white  h-70 mb-4 p-2">
+          <div class="round m-auto"></div>
+          <div class="font-sans text-center p-4 text-sm">ID：13553524678</div>
+          <div class="vip w-11/12 m-auto">
+            <div class="p-2 flex flex-row">
+              <div>
+                <div class="text-lg">VIP</div>
+                <div class="text-base"> 专属特权</div>
+              </div>
+              <div class="nowpay text-xs text-center">立即续费</div>
+            </div>
+            <div class="text-xs p-2">到期时间：2023-05-10</div>
+          </div>
+        </section>
+        <section class="bg-white h-80 ">
+          <div class="accordion .accordion-flush" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingOne">
+                <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                  aria-expanded="true" aria-controls="collapseOne">
+                  我的发布
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  发布的公司
+                </div>
+                <div class="accordion-body">
+                  发布的求购
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  其他管理
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  我的收藏
+                </div>
+                <div class="accordion-body">
+                  修改密码
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </section>
+      </aside>
+      <article class="bg-white w-3/4 ml-8 p-4">
+        <div class="flex flex-row items-center">
+          <div class="ml-2 py-2 text-xl font-semibold">发布的求购</div>
+        </div>
+        <el-table :data="tableData" style="width: 100%">
+          <el-table-column prop="name" label="名称" width="180">
+          </el-table-column>
+          <el-table-column prop="status" label="状态" width="180">
+          </el-table-column>
+          <el-table-column prop="top" label="刷新置顶">
+            <template slot-scope="scope">
+              <el-tag style="margin-left: 10px">{{ scope.row.top }}</el-tag>
+            </template>
+          </el-table-column>
+          <el-table-column prop="date" label="刷新时间">
+          </el-table-column>
+          <el-table-column prop="look" label="浏览量">
+            <template slot-scope="scope">
+              <div class="cursor-pointer">
+                <div @click="dialogVisible = true">{{ scope.row.look }}</div>
+              </div>
+            </template>
+          </el-table-column>
+          <el-table-column prop="address" label="操作">
+            <template slot-scope="scope">
+              <el-button @click="handleClick(scope.row)" type="text" size="small">修改</el-button>
+              <el-button type="text" size="small">删除</el-button>
+            </template>
+          </el-table-column>
+        </el-table>
+        <div class="block text-center">
+          <el-pagination layout="prev, pager, next" :total="50">
+          </el-pagination>
+        </div>
+      </article>
+    </main>
+
+    <footer class="footer w-screen bg-white ">
+      <div class="w-2/5  mx-auto text-xs grey text-center p-4">
+        <div class="grid grid-cols-6 divide-x divide-gray-500 ">
+          <div>首页网站</div>
+          <div>公司转让</div>
+          <div>公司收购</div>
+          <div>关于我们</div>
+          <div>联系我们</div>
+          <div>法律声明</div>
+        </div>
+        <div class="p-2">易维客信息科技有限公司 | 津ICP备18000836号-1 | © Copyright©2023 ke.com版权所有</div>
+      </div>
+    </footer>
+    <!-- <ElDialog title="提示" :visible.sync="dialogVisible" width="30%" :before-close="handleClose">
+    <span>这是一段信息</span>
+    <span slot="footer" class="dialog-footer">
+      <el-button @click="dialogVisible = false">取 消</el-button>
+      <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+    </span>
+  </ElDialog> -->
+  </div>
+</body>
+
+</html>
+<!-- 引入 layui.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/layui/2.8.0-rc.15/layui.js"></script>
+
+<script>
+  console.log(ELEMENT)
+  new Vue({
+    el: '#app',
+    data: function () {
+      return {
+        dialogVisible: false,
+        tableData: [{
+          date: '2016-05-02',
+          name: '西安明远信息技术有限公司',
+          address: '上海市普陀区金沙江路 1518 弄',
+          status: "待审核",
+          top: '刷新',
+          look: 2
+        }]
+      }
+    },
+    methods: {
+      handleClick () {
+      },
+      handleClose (done) {
+        this.$confirm('确认关闭？')
+          .then(_ => {
+            done()
+          })
+          .catch(_ => { })
+      },
+      handshow () {
+        console.log('1')
+        this.dialogVisible = true
+      }
+    }
+  })
+
+  layui.use(['dropdown', 'util'], function () {
+    var dropdown = layui.dropdown
+      , util = layui.util
+      , $ = layui.jquery
+
+    //菜单点击事件
+    dropdown.on('click(demo1)', function (options) {
+      var thisElem = $(this)
+      console.log(thisElem, options)
+    })
+
+
+    util.event('lay-active', {
+      normal: function () {
+        $('#demo-box').children().addClass('layui-col-md3').removeClass('layui-col-md4')
+        $('#demo-box').find('.layui-menu').removeClass('layui-menu-lg')
+      }
+      , lg: function () {
+        $('#demo-box').children().addClass('layui-col-md4').removeClass('layui-col-md3')
+        $('#demo-box').find('.layui-menu').addClass('layui-menu-lg')
+      }
+    })
+  });
+</script>
