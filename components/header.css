@@ -23,16 +23,16 @@ body {
   width: 70%;
   margin: auto;
   height: 100%;
+  margin-top: 39px;
 }
 .headerbox {
   flex-direction: row;
   flex-wrap: nowrap;
   align-content: space-around;
-  justify-content: space-between;
   align-items: center;
   padding: 20px;
   padding-top: 30px;
-  height: 80%;
+  height: 75%;
 }
 .logo > img {
   width: 154px;
@@ -41,25 +41,29 @@ body {
 .search_input {
   width: 500px;
   /* padding: 5px; */
-  height: 32px;
-  line-height: 26px;
+  height: 46px;
+  line-height: 38px;
+  padding-left: 10px;
+  position: relative;
 }
 .inputs {
-  width: 80%;
+  width: 70%;
 }
 .inline {
   display: inline-block;
   vertical-align: middle;
 }
 .icon {
-  width: 28px;
-  height: 100%;
-  padding: 5px;
+  width: 46px;
+  height: 46px;
+  padding: 5px 10px;
   background: #ff3a03;
   border-radius: 0px;
   color: #fff;
   text-align: center;
-  line-height: 100%;
+  line-height: 35px;
+  position: relative;
+  top: 0px;
 }
 .type {
   flex-direction: row;
@@ -75,27 +79,105 @@ body {
   font-weight: 400;
   color: #666666;
 }
-.person {
-  height: 15px;
-  font-size: 14px;
-  font-family: Microsoft YaHei;
-  font-weight: 500;
-  color: #ff3a03;
-  vertical-align: middle;
-}
+
 .tabcard {
   display: flex;
   margin: auto;
   text-align: center;
-  border-bottom: #ffa78f 2px solid;
-
-  height: 20%;
+  border-bottom: #ff3a03 2px solid;
+  cursor: pointer;
+  height: 25%;
 }
 .tabcard > div {
-  margin-left: 45px;
-  padding: 5px 23px;
+  padding: 10px 23px;
   font-size: 16px;
   font-family: Microsoft YaHei;
   font-weight: bold;
   color: #333333;
+}
+.xiala-1 {
+  font-size: 14px;
+  background-color: #ffffff;
+  border: 0px;
+  padding: 0 12px;
+  display: inline-block;
+  width: 80px;
+  cursor: pointer;
+  height: 100%;
+}
+.xiala {
+  z-index: 8;
+  display: none;
+  position: absolute;
+  top: 40px;
+  width: 86px;
+  left: 0px;
+  background-color: #ffffff;
+  border-top: none;
+}
+.xia {
+  vertical-align: top;
+  position: absolute;
+  top: 45%;
+  left: 13%;
+}
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+.xiala ul li {
+  background-color: #ffffff;
+  padding: 8px 12px;
+  font-size: 14px;
+  background-color: white;
+  cursor: default;
+  list-style-type: none;
+  width: 85px;
+  height: 32px;
+  line-height: 20px;
+  padding-left: 20px;
+}
+.xiala ul li:hover {
+  color: #ffffff;
+  background-color: #ff7300 !important;
+}
+.headertop {
+  background: #f4f4f4;
+  width: 100%;
+  height: 38px;
+  border-bottom: #e5e5e5 1px solid;
+  position: fixed;
+  z-index: 9;
+  left: 0;
+  top: 0;
+  line-height: 38px;
+  font-size: 12px;
+}
+.person {
+  font-size: 12px;
+  font-family: Microsoft YaHei;
+  font-weight: 500;
+  vertical-align: middle;
+  /* width: 70%;
+  margin: auto; */
+  cursor: pointer;
+}
+.header-main {
+  width: 70%;
+  margin: auto;
+}
+
+.border-left::before {
+  display: block;
+  content: "";
+  height: 18px;
+  width: 1px;
+  background-color: #777474;
+  position: absolute;
+  margin: auto;
+  /* transform: ; */
+  top: 0;
+  bottom: 0;
+  /* border-left: 1px solid #000;
+  height: 10px; */
 }

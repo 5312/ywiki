@@ -54,17 +54,44 @@
 <body>
   <div class="wraps">
     <header class=" header">
+      <div class="headertop">
+        <div class="clear-both header-main">
+          <div class="person float-left">
+            <i class="bi bi-folder-plus"></i>
+            <span>收藏本页</span>
+          </div>
+
+          <div class="person float-left ml-4">
+            <i class="bi bi-qr-code"></i>
+            <span>二维码</span>
+          </div>
+          <div class="person float-right ml-4 border-left">
+            <i class=" ml-4 bi bi-terminal-plus"></i>
+            <span>客户管理</span>
+          </div>
+          <div class="person float-right  ">
+            <i class="bi bi-person"></i>
+            <span>个人中心</span>
+          </div>
+        </div>
+      </div>
       <div class="contain">
-        <div class="flex headerbox">
+        <div class="flex headerbox flex-row justify-start">
           <div class="logo">
             <img src="../asset/易维客@2x.png" alt="">
           </div>
-          <div class="search">
-            <div class="search_input rounded-sm border-2 border-gray-300 border-solid clear-left">
-              <select class="inline">
-                <option>发布</option>
-              </select>
-              <input type="text" class="inline outline-none inputs" placeholder="请输入关键词">
+          <div class="search ml-32">
+            <div class="search_input shadow rounded-sm border-1 border-gray-300 border-solid clear-left">
+              <input type="text" id="destoon_select" class="search_m select xiala-1" value="供应" readonly=""
+                onfocus="this.blur();" onclick="$('#search_module').fadeIn('fast');">
+              <img class="xia" src="http://32.wpnq.com/skin/default/image/xia.png">
+              <div class="xiala shadow">
+                <ul>
+                  <li onclick="setModule('5','供应')" style="background-color: white; cursor: default;">供应</li>
+                  <li onclick="setModule('6','求购')" style="background-color: white;">求购</li>
+                </ul>
+              </div>
+              <input type="text" class=" inline outline-none inputs ml-2" placeholder="请输入关键词">
               <div class="icon inline float-right"><i class="bi bi-search"></i></div>
             </div>
             <div class="type flex">
@@ -75,16 +102,13 @@
               <div>建筑</div>
             </div>
           </div>
-          <div class="person">
-            <i class="bi bi-person"></i>
-            <span>个人中心</span>
-          </div>
+
         </div>
         <nav class="tabcard">
           <div>出售公司</div>
           <div class="tab-active">求购公司</div>
           <div>我的私域</div>
-          <div>客户管理</div>
+          <!-- <div>客户管理</div> -->
         </nav>
       </div>
     </header>
@@ -117,51 +141,51 @@
       </article>
       <article class="bg-white py-4  mt-3 flex flex-row items-center justify-between">
         <div class="ml-8">
-          <div class="text-3xl font-semibold">3年以上机械制造</div>
+          <div class="text-lg font-semibold">3年以上机械制造</div>
           <div class="grey py-4">
-            <span>求购区域：陕西省 西安市</span>
+            <span class="text-sm">求购区域：陕西省 西安市</span>
           </div>
         </div>
         <div class="flex flex-row items-center justify-center mx-5">
           <img class="flex-1 phone" src="../asset/组 3@2x.png" alt="">
           <div class="ml-4">
             <div class="py-1">李琳琳</div>
-            <div class="py-1 grey">2023-03-30</div>
-            <div class="py-1 orgin">15234647895</div>
+            <div class="py-1 grey text-sm">2023-03-30</div>
+            <div class="py-1 orgin font-semibold">15234647895</div>
           </div>
         </div>
       </article>
       <!--  -->
       <article class="bg-white py-4  mt-3 flex flex-row items-center justify-between">
         <div class="ml-8">
-          <div class="text-3xl font-semibold">3年以上机械制造</div>
+          <div class="text-lg font-semibold">3年以上机械制造</div>
           <div class="grey py-4">
-            <span>求购区域：陕西省 西安市</span>
+            <span class="text-sm">求购区域：陕西省 西安市</span>
           </div>
         </div>
         <div class="flex flex-row items-center justify-center mx-5">
           <img class="flex-1 phone" src="../asset/组 3@2x.png" alt="">
           <div class="ml-4">
             <div class="py-1">李琳琳</div>
-            <div class="py-1 grey">2023-03-30</div>
-            <div class="py-1 orgin">15234647895</div>
+            <div class="py-1 grey text-sm">2023-03-30</div>
+            <div class="py-1 orgin font-semibold">15234647895</div>
           </div>
         </div>
       </article>
       <!--  -->
       <article class="bg-white py-4  mt-3 flex flex-row items-center justify-between">
         <div class="ml-8">
-          <div class="text-3xl font-semibold">3年以上机械制造</div>
+          <div class="text-lg font-semibold">3年以上机械制造</div>
           <div class="grey py-4">
-            <span>求购区域：陕西省 西安市</span>
+            <span class="text-sm">求购区域：陕西省 西安市</span>
           </div>
         </div>
         <div class="flex flex-row items-center justify-center mx-5">
           <img class="flex-1 phone" src="../asset/组 3@2x.png" alt="">
           <div class="ml-4">
             <div class="py-1">李琳琳</div>
-            <div class="py-1 grey">2023-03-30</div>
-            <div class="py-1 orgin">15234647895</div>
+            <div class="py-1 grey text-sm">2023-03-30</div>
+            <div class="py-1 orgin font-semibold">15234647895</div>
           </div>
         </div>
       </article>
@@ -181,5 +205,27 @@
     </footer>
   </div>
 </body>
+<script src="../cdn/jquery-3.6.4.min.js"></script>
+
+<script>
+  function setModule (x) {
+    console.log(x)
+  }
+
+  $(".xiala-1").click(function () {
+    //点击输入框打开选项窗，若已打开则关闭
+    if ($(".xiala").css('display') == 'none') {
+      $(".xiala").show()
+      $('.xiala li:contains(' + $(this).val() + ')').css('background-color', '#ffffff')
+    } else {
+      $(".xiala").hide()
+    }
+  })
+  $(".xiala li").click(function () {
+    //点击选择时为输入框赋值。并关闭选项窗
+    $(".xiala-1").val($(this).text())
+    $(".xiala").hide()
+  })
+</script>
 
 </html>
