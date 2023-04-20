@@ -114,13 +114,14 @@
       <div class="contain">
         <div class="flex headerbox flex-row justify-start">
           <div class="logo">
-            <img src="../asset/易维客@2x.png" alt="">
+            <img src="../asset/yiweike@1x.png" alt="">
           </div>
           <div class="search ml-32">
             <div class="search_input shadow rounded-sm border-1 border-gray-300 border-solid clear-left">
               <input type="text" id="destoon_select" class="search_m select xiala-1" value="供应" readonly=""
                 onfocus="this.blur();" onclick="$('#search_module').fadeIn('fast');">
-              <img class="xia" src="http://32.wpnq.com/skin/default/image/xia.png">
+              <!-- <img class="xia" src="http://32.wpnq.com/skin/default/image/xia.png"> -->
+              <img class="xia" src="../asset/xia.png">
               <div class="xiala shadow">
                 <ul>
                   <li onclick="setModule('5','供应')" style="background-color: white; cursor: default;">供应</li>
@@ -154,22 +155,22 @@
           <div class="border-b mb-2 pb-4">
             <div class="text-base mb-2">
               <i class=" bi bi-file-earmark-text-fill"></i>
-              <span>求购信息</span>
+              <span>求购公司</span>
             </div>
             <!-- <div class="mb-2 border-b pb-2">
               <img class="inline" src="../asset/jurassic.png" alt="">
               <span class="inline ml-2 text-sm font-semibold">免费发布您的需求，大家一起帮您找公司</span>
             </div> -->
             <div>
-              <div class="m-auto  text-sm   p-2">
-                <div class="label w-44"><span class="orgin">*</span> 标题</div>
-                <div class="inline ml-2">
-                  <input class="border p-1 text-left" placeholder="请填写求购标题" type="text">
+              <div class="m-auto  text-xs   p-2">
+                <div class="label w-44 grey"><span class="orgin">*</span> 标题</div>
+                <div class="inline ml-4">
+                  <input style="width:390px;" class="border p-1 text-left" placeholder="请填写求购标题" type="text">
                 </div>
               </div>
-              <div class="m-auto  text-sm  p-2 ml-2">
-                <div class="label w-44  "><span class="orgin">*</span> 注册地区</div>
-                <div class="inline ">
+              <div class="m-auto  text-xs  p-2 ml-2">
+                <div class="label w-44 grey"><span class="orgin">*</span> 求购地区</div>
+                <div class="inline ml-2">
                   <select name="" id="" class="border p-0.5 w-32">
                     <option value="">请选择</option>
                   </select>
@@ -181,14 +182,14 @@
                   </select>
                 </div>
               </div>
-              <div class="m-auto  text-sm   p-2">
-                <div class="label w-44 vertical-top"><span class="orgin">*</span> 经营范围</div>
-                <div class="inline w-80 vertical-top ml-2">
+              <div class="m-auto  text-xs   p-2">
+                <div class="label w-44 vertical-top grey"><span class="orgin">*</span> 详细描述</div>
+                <div class="inline ml-4 w-80 vertical-top ml-2">
                   <textarea class=" border p-1 text-right w-full h-32" placeholder="请详细描述求购的公司要求，限100字以内！" type="text">
                 </textarea>
                 </div>
               </div>
-              <div class=" m-auto text-sm   p-2">
+              <!-- <div class=" m-auto text-sm   p-2">
                 <div class="label w-44"> <span class="orgin">*</span>委托易维客求购</div>
                 <div class="inline ml-2">
                   <input class="radio" type="radio" id="shi" name="q">
@@ -196,12 +197,12 @@
                   <input class="radio" type="radio" id="fou" name="q">
                   <label for="fou">否</label>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
 
           <!--  -->
-          <div class="border-b  mb-2 pb-4">
+          <div class="border-b  mb-2 pb-4" style="display:none">
             <div class="text-base mb-2">
               <i class="bi bi-telephone-fill"></i>
               <span>联系方式</span>
@@ -224,9 +225,10 @@
                 <input type="checkbox" name="" id="yue">
                 <label for="yue">我已阅读并接受<span class="orgin">《易维客服务协议》</span></label>
               </div>
-              <div class="button w-96 text-center m-auto py-2 px-4">马上发布信息</div>
             </div>
           </div>
+          <div class="button w-96 text-center m-auto py-2 px-4">马上发布信息</div>
+
           <!--  -->
         </article>
       </section>

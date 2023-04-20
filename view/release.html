@@ -13,7 +13,9 @@
   <!-- bootstrap -->
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"> -->
   <link rel="stylesheet" href="../cdn/bootstrap-icons-1.10.4/font/bootstrap-icons.css">
-
+  <script src="../cdn/jquery-3.6.4.min.js"></script>
+  <script src="../cdn/layui-v2.6.8/layui/layui.js"></script>
+  <script src="../cdn/vue.js"></script>
 
   <title>Document</title>
 </head>
@@ -52,10 +54,7 @@
     padding-top: 10px;
   }
 
-  .logo {
-    width: 100px;
-    height: 100px;
-  }
+
 
   .inline {
     vertical-align: middle;
@@ -98,6 +97,7 @@
     z-index: 11;
     background-color: #6360606c;
     border: 1px solid #eee;
+
   }
 
   .box {
@@ -144,10 +144,10 @@
   .inline-tag {
     display: inline-block;
     vertical-align: middle;
-    background-color: #f9841e;
-    border-radius: 15px;
+    background-color: #eee;
+    /* border-radius: 15px; */
     padding: 0 14px 2px;
-    color: #fff;
+    color: #000;
     margin: 0px 5px 2px 0;
     line-height: 26px;
     white-space: nowrap;
@@ -161,6 +161,27 @@
 
   .spanacitve:hover {
     background: #f9841e !important;
+  }
+
+  .vercel-top {
+    vertical-align: top;
+  }
+
+  .vercel-middle {
+    vertical-align: middle;
+  }
+
+  .textareas {
+    width: 600px;
+    height: 160px;
+    border: 1px solid #e0e0e0;
+    color: #aaa;
+    line-height: 26px;
+  }
+
+  #label_more_aptitude {
+    display: inline;
+    border: 1px dashed #423c3c;
   }
 </style>
 
@@ -191,13 +212,14 @@
       <div class="contain">
         <div class="flex headerbox flex-row justify-start">
           <div class="logo">
-            <img src="../asset/易维客@2x.png" alt="">
+            <img src="../asset/yiweike@1x.png" alt="">
           </div>
           <div class="search ml-32">
             <div class="search_input shadow rounded-sm border-1 border-gray-300 border-solid clear-left">
               <input type="text" id="destoon_select" class="search_m select xiala-1" value="供应" readonly=""
                 onfocus="this.blur();" onclick="$('#search_module').fadeIn('fast');">
-              <img class="xia" src="http://32.wpnq.com/skin/default/image/xia.png">
+              <!-- <img class="xia" src="http://32.wpnq.com/skin/default/image/xia.png"> -->
+              <img class="xia" src="../asset/xia.png">
               <div class="xiala shadow">
                 <ul>
                   <li onclick="setModule('5','供应')" style="background-color: white; cursor: default;">供应</li>
@@ -229,32 +251,32 @@
       <section class="flex-2">
         <article class="p-4 bg-white " style="border:1px solid #eee;">
           <div class="border-b mb-2 pb-4">
-            <div class="text-xl mb-2">
+            <div class="text-base mb-2">
               <i class=" bi bi-file-earmark-text-fill"></i>
               <span>基本信息</span>
             </div>
 
             <div>
-              <div class=" m-auto text-sm   p-2">
-                <div class="label w-44"> <span class="orgin">*</span>公司类型</div>
+              <div class=" m-auto text-xs    p-2">
+                <div class="label w-44 grey"> <span class="orgin">*</span>公司类型</div>
                 <div class="inline ml-2">
-                  <input class="radio" type="radio" name="radio">
-                  <label>空壳公司</label>
-                  <input class="radio" type="radio" name="radio">
-                  <label>实体公司</label>
+                  <input class="radio" id="kk" type="radio" name="tt">
+                  <label for="kk">空壳公司</label>
+                  <input id="shit" class="radio ml-4" type="radio" name="tt">
+                  <label for="shit">实体公司</label>
                 </div>
               </div>
-              <div class="m-auto  text-sm  p-2">
-                <div class="label w-44"> <span class="orgin">*</span>公司名称</div>
+              <div class="m-auto  text-xs  p-2">
+                <div class="label w-44 grey"> <span class="orgin">*</span>公司名称</div>
                 <input class="border w-80 ml-2 p-1" placeholder="请填写完整公司名称" type="text">
               </div>
-              <div class="m-auto  text-sm   p-2">
-                <div class="label w-44"><span class="orgin">*</span>注册号/统一社会信用代码</div>
+              <div class="m-auto  text-xs   p-2">
+                <div class="label w-44 grey"><span class="orgin">*</span>注册号/统一社会信用代码</div>
                 <input class="border w-80 ml-2 p-1" placeholder="请填写正确的社会信用代码" type="text">
               </div>
-              <div class="m-auto  text-sm   p-2">
-                <div class="label w-44"><span class="orgin">*</span> 注册资本 </div>
-                <div class="inline">
+              <div class="m-auto  text-xs   p-2">
+                <div class="label w-44 grey"><span class="orgin">*</span> 注册资本 </div>
+                <div class="inline ml-2">
                   <input class="border p-1 text-right" placeholder="万" type="text">
                   <!-- <div class="border">人民币</div> -->
                   <!-- <select name="" id="" class="border p-0.5">
@@ -262,32 +284,31 @@
                   </select> -->
                 </div>
               </div>
-              <div class="m-auto  text-sm   p-2">
-                <div class="label w-44">实缴资本 </div>
-                <div class="inline">
+              <div class="m-auto  text-xs   p-2">
+                <div class="label w-44 grey">实缴资本 </div>
+                <div class="inline ml-2">
                   <input class="border p-1 text-right" placeholder="万" type="text">
                   <!-- <select name="" id="" class="border p-0.5">
                     <option value="">人民币</option>
                   </select> -->
                 </div>
               </div>
-              <div class="m-auto  text-sm   p-2">
-                <div class="label w-44"><span class="orgin">*</span> 成立日期</div>
-                <div class="inline">
-                  <input class="border p-1 text-right" placeholder="以执照上的成立日期为准" type="text">
+              <div class="m-auto  text-xs   p-2">
+                <div class="label w-44 grey"><span class="orgin">*</span> 成立日期</div>
+                <div class="inline ml-2">
+                  <input class="border p-1 text-left" placeholder="以执照上的成立日期为准" type="text">
                 </div>
               </div>
-              <div class="m-auto  text-sm   p-2">
-                <div class="label w-44 vertical-top"><span class="orgin">*</span> 经营范围</div>
-                <div class="inline w-80 vertical-top">
-                  <textarea class=" border p-1 text-right w-full h-32" placeholder=" 完整的经营范围更利于快速卖出，请与执照上的经营范围保持统一"
-                    type="text">
+              <div class="m-auto  text-xs   p-2">
+                <div class="label w-44 grey vertical-top"><span class="orgin">*</span> 经营范围</div>
+                <div class="inline ml-2 w-80 vertical-top">
+                  <textarea class=" border p-1 text-left w-full h-32" placeholder="请与执照上的经营范围保持统一" type="text">
               </textarea>
                 </div>
               </div>
-              <div class="m-auto  text-sm  p-2">
-                <div class="label w-44  "><span class="orgin">*</span> 注册地区</div>
-                <div class="inline ">
+              <div class="m-auto  text-xs  p-2">
+                <div class="label w-44 grey "><span class="orgin">*</span> 注册地区</div>
+                <div class="inline ml-2 ">
                   <select name="" id="" class="border p-0.5 w-32">
                     <option value="">请选择</option>
                   </select>
@@ -302,37 +323,37 @@
             </div>
           </div>
           <div class="border-b  mb-2 pb-4">
-            <div class="text-xl mb-2">
-              <i class=" bi bi-file-earmark-text-fill"></i>
+            <div class="text-base mb-2">
+              <i class="bi bi-currency-yen"></i>
               <span>资产信息</span>
             </div>
             <article>
-              <div class=" m-auto text-sm  p-2">
-                <div class="label w-44"> 热门标签</div>
+              <div class=" m-auto text-xs  p-2">
+                <div class="label w-44 grey"> 热门标签</div>
                 <div class="inline ml-2">
                   <input class="checkout" type="checkbox" id="k" name="k">
                   <label for="k">空壳公司</label>
-                  <input class="checkout" type="checkbox" id="g" name="g">
+                  <input class="checkout ml-2" type="checkbox" id="g" name="g">
                   <label for="g">接受挂靠</label>
-                  <input class="checkout" type="checkbox" name="radio">
+                  <input class="checkout ml-2" type="checkbox" name="radio">
                   <label>央企/国企背景</label>
-                  <input class="checkout" type="checkbox" name="radio">
+                  <input class="checkout ml-2" type="checkbox" name="radio">
                   <label>外资背景</label>
-                  <input class="checkout" type="checkbox" name="radio">
+                  <input class="checkout ml-2" type="checkbox" name="radio">
                   <label>国家局名称</label>
                 </div>
               </div>
-              <div class=" m-auto text-sm   p-2">
-                <div class="label w-44"> <span class="orgin">*</span>是否开通社保</div>
+              <div class=" m-auto text-xs   p-2">
+                <div class="label w-44 grey"> <span class="orgin">*</span>是否开通社保</div>
                 <div class="inline ml-2">
-                  <input class="radio" type="radio" name="shebao">
-                  <label class="mr-4">是</label>
-                  <input class="radio" type="radio" name="shebao">
-                  <label>否</label>
+                  <input class="radio" id="shebaos" type="radio" name="shebao">
+                  <label for="shebaos" class="mr-4">是</label>
+                  <input class="radio" id="foushebao" type="radio" name="shebao">
+                  <label for="foushebao">否</label>
                 </div>
               </div>
-              <div class=" m-auto text-sm   p-2">
-                <div class="label w-44"> <span class="orgin">*</span>是否开通公积金</div>
+              <div class=" m-auto text-xs   p-2">
+                <div class="label w-44 grey"> <span class="orgin">*</span>是否开通公积金</div>
                 <div class="inline ml-2">
                   <input class="radio" type="radio" id="gj" name="gj">
                   <label for="gj" class="mr-4">是</label>
@@ -340,9 +361,9 @@
                   <label for="fou">否</label>
                 </div>
               </div>
-              <div class=" m-auto text-sm   p-2 cursor-pointer">
-                <div class="label w-44"> <span class="orgin">*</span>是否有资质</div>
-                <div class="inline ml-2">
+              <div class=" m-auto text-xs    p-2 cursor-pointer">
+                <div class="label w-44 grey vercel-top"> <span class="orgin">*</span>是否有资质</div>
+                <div class="inline ml-2 vercel-top">
                   <input class="radio" v-model="radioZiZhi" value="0" type="radio" @click="handleChangeClick" id="zshi"
                     name="zizhi">
                   <label for="zshi" class="mr-4">是</label>
@@ -356,107 +377,255 @@
                     <div class="inline-tag" v-for="x,y in qualification" :key="y">{{ x.name }}
                       <i class=" bi bi-x-lg" @click="handleZiZhiremove(y)"></i>
                     </div>
+                    <i v-if="radioZiZhi == '0'" id="label_more_aptitude" class="aptitude ml-4 border-dashed px-2 py-1"
+                      @click="handleChangeClick">
+                      <button data-class="aptitude" data-id="58" type="button">+
+                        添加</button></i>
+                  </div>
+                  <div>
+                    <textarea v-if="radioZiZhi == '0'" placeholder="完整的呈现资质信息对公司的价值很重要，由于资质分类不全导致你选择其它资质时，务必在此做详细描述"
+                      class="border textareas" name="" id="" cols="30" rows="10"></textarea>
                   </div>
                 </div>
               </div>
               <!--  -->
-              <div class=" m-auto text-sm   p-2">
-                <div class="label w-44"> <span class="orgin">*</span>是否有商标</div>
+              <div class=" m-auto text-xs   p-2">
+                <div class="label w-44 grey vercel-top"> <span class="orgin">*</span>是否有商标</div>
                 <div class="inline ml-2">
-                  <input class="radio" type="radio" name="radio">
-                  <label class="mr-4">是</label>
-                  <input class="radio" type="radio" name="radio">
-                  <label>否</label>
+                  <input class="radio" id="youshangbiao" v-model="shangbiao" value="0" type="radio" name="shangbiao"
+                    @click="handleChangeClickshang">
+                  <label for="youshangbiao" class="mr-4">是</label>
+
+                  <input class="radio" id="wushangbiao" v-model="shangbiao" value="1" type="radio" @click="handleFalse"
+                    name="shangbiao">
+                  <label for="wushangbiao">否</label>
+                  <!--  -->
+                  <div class="inline">
+                    <!-- 商标 -->
+                    <div class="inline-tag" v-for="x,y in brand" :key="y">{{ x.name }}
+                      <i class=" bi bi-x-lg" @click="handleZiZhiremove(y)"></i>
+                    </div>
+                    <i v-if="shangbiao == '0'" id="label_more_aptitude" class="aptitude ml-4 border-dashed px-2 py-1"
+                      @click="handleChangeClickshang">
+                      <button data-class="aptitude" data-id="58" type="button">+
+                        添加</button></i>
+                  </div>
+                  <div>
+                    <textarea v-if="shangbiao == '0'" placeholder="请具体描述公司商标详情" class="border textareas" name="" id=""
+                      cols="30" rows="10"></textarea>
+                  </div>
+                  <!--  -->
                 </div>
               </div>
               <!--  -->
-              <div class=" m-auto text-sm   p-2">
-                <div class="label w-44"> <span class="orgin">*</span>是否有网络资产</div>
+              <div class=" m-auto text-xs   p-2">
+                <div class="label w-44 grey vercel-top"> <span class="orgin">*</span>是否有网络资产</div>
                 <div class="inline ml-2">
-                  <input class="radio" type="radio" name="radio">
-                  <label class="mr-4">是</label>
-                  <input class="radio" type="radio" name="radio">
-                  <label>否</label>
+                  <input class="radio" type="radio" @click="handleChangeClicknet" v-model="net" value="0" id="netshi"
+                    name="net">
+                  <label for="netshi" class="mr-4">是</label>
+                  <input class="radio" type="radio" v-model="net" value="1" id="netfou" name="net" @click="handleFalse">
+                  <label for="netfou">否</label>
+
+                  <!--  -->
+                  <div class="inline">
+                    <!-- 商标 -->
+                    <div class="inline-tag" v-for="x,y in netArray" :key="y">{{ x.name }}
+                      <i class=" bi bi-x-lg" @click="handleZiZhiremove(y)"></i>
+                    </div>
+                    <i v-if="net == '0'" id="label_more_aptitude" class="aptitude ml-4 border-dashed px-2 py-1"
+                      @click="handleChangeClicknet">
+                      <button data-class="aptitude" data-id="58" type="button">+
+                        添加</button></i>
+                  </div>
+                  <div>
+                    <textarea v-if="net == '0'" placeholder="请具体描述公司商标详情" class="border textareas" name="" id=""
+                      cols="30" rows="10"></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <!--  -->
+              <div class=" m-auto text-xs   p-2">
+                <div class="label w-44 grey"> <span class="orgin">*</span>是否有车牌指标</div>
+                <div class="inline ml-2">
+                  <input class="radio" v-model="chepai" value="0" type="radio" id="cheshi" name="che">
+                  <label for="cheshi" class="mr-4">是</label>
+                  <input class="radio" v-model="chepai" value="1" type="radio" id="chefou" name="che">
+                  <label for="chefou">否</label>
+                </div>
+              </div>
+              <div v-if="chepai == 0">
+                <div class="my-4">
+                  <div class="label w-44 vercel-top"> <span class="orgin"></span></div>
+                  <div class="inline ml-4">
+                    <textarea class="border" name="" id="" cols="30" rows="10" placeholder="请具体描述公司车牌指标详情"></textarea>
+
+                  </div>
                 </div>
               </div>
               <!--  -->
-              <div class=" m-auto text-sm   p-2">
-                <div class="label w-44"> <span class="orgin">*</span>是否有车牌指标</div>
+              <div class=" m-auto text-xs    p-2">
+                <div class="label w-44 grey"> <span class="orgin">*</span>是否有专利/著作权</div>
                 <div class="inline ml-2">
-                  <input class="radio" type="radio" name="radio">
-                  <label class="mr-4">是</label>
-                  <input class="radio" type="radio" name="radio">
-                  <label>否</label>
+                  <input class="radio" v-model="zhuanli" value="0" type="radio" id="zhuanli" name="zhuanli">
+                  <label for="zhuanli" class="mr-4">是</label>
+                  <input class="radio" v-model="zhuanli" value="1" type="radio" id="fouzhuanli" name="zhuanli">
+                  <label for="fouzhuanli">否</label>
                 </div>
               </div>
-              <!--  -->
-              <div class=" m-auto text-sm   p-2">
-                <div class="label w-44"> <span class="orgin">*</span>是否有专利/著作权</div>
-                <div class="inline ml-2">
-                  <input class="radio" type="radio" name="radio">
-                  <label class="mr-4">是</label>
-                  <input class="radio" type="radio" name="radio">
-                  <label>否</label>
+              <div v-if="zhuanli == 0">
+                <div class="my-4">
+                  <div class="label w-44 vercel-top"> <span class="orgin"></span></div>
+                  <div class="inline ml-2">
+                    <textarea class="border" name="" id="" cols="30" rows="10" placeholder="请具体描述公司专利／著作权"></textarea>
+
+                  </div>
                 </div>
               </div>
             </article>
           </div>
           <!--  -->
           <div class="border-b  mb-2 pb-4">
-            <div class="text-xl mb-2">
-              <i class=" bi bi-file-earmark-text-fill"></i>
+            <div class="text-base mb-2">
+              <i class="bi bi-building-check"></i>
               <span>税务信息</span>
             </div>
             <!--  -->
-            <div class=" m-auto text-sm   p-2">
-              <div class="label w-44"> <span class="orgin">*</span>是否到报/开业</div>
-              <div class="inline ml-2">
-                <input class="radio" type="radio" name="radio">
-                <label class="mr-4">是</label>
-                <input class="radio" type="radio" name="radio">
-                <label>否</label>
+            <div class=" m-auto text-xs   p-2">
+              <div class="label w-44 grey vercel-middle"> <span class="orgin">*</span>是否到报/开业</div>
+              <div class="inline ml-2 vercel-middle">
+                <input class="radio vercel-middle" type="radio" v-model="shui" id="shuishi" value="0" name="radio">
+                <label for="shuishi" class=" vercel-middle">是</label>
+                <input class="radio vercel-middle ml-8" type="radio" v-model="shui" id="shuifou" value="1" name="radio">
+                <label for="shuifou" class="vercel-middle">否</label>
+              </div>
+            </div>
+            <div v-if="shui == 0">
+              <div class="text-xs mt-2">
+                <div class="label w-44  grey"> <span class="orgin">*</span>纳税类型</div>
+                <div class="inline ml-4">
+                  <input class="radio" id="shui1" value="0" type="radio" name="shuileixing">
+                  <label for="shui1">小规模</label>
+
+                  <input class="radio ml-2" id="shui2" value="0" type="radio" name="shuileixing">
+                  <label for="shui2">一般纳税人</label>
+                </div>
+              </div>
+              <div class="my-4 text-xs">
+                <div class="label w-44 grey"> <span class="orgin">*</span>纳税等级</div>
+                <div class="inline ml-4">
+                  <input class="radio" id="shui5" value="0" type="radio" name="shuilevel">
+                  <label for="shui5">A级</label>
+
+                  <input class="radio ml-6" id="shui6" value="1" type="radio" name="shuilevel">
+                  <label for="shui6">B级</label>
+
+                  <input class="radio ml-3" id="shui7" value="2" type="radio" name="shuilevel">
+                  <label for="shui7">M级</label>
+                  <input class="radio ml-3" id="shui8" value="3" type="radio" name="shuilevel">
+                  <label for="shui8">C级</label>
+                  <input class="radio ml-3" id="shui9" value="4" type="radio" name="shuilevel">
+                  <label for="shui9">D级</label>
+                </div>
+              </div>
+              <div class="my-4 text-xs">
+                <div class="label w-44 grey vercel-top"> <span class="orgin">*</span>报税情况</div>
+                <div class="inline ml-4">
+                  <input class="radio " id="baoshui1" value="0" type="radio" name="baoshuiqingkuang">
+                  <label for="baoshui1">正常</label>
+
+                  <input class="radio ml-5" id="baoshui2" value="0" type="radio" name="baoshuiqingkuang">
+                  <label for="baoshui2">非正常</label>
+                </div>
+              </div>
+              <div class="my-4 text-xs">
+                <div class="label w-44 grey vercel-top"> <span class="orgin">*</span>是否申领过发票</div>
+                <div class="inline  ml-4">
+                  <input class="radio  " id="fapiao1" value="0" type="radio" name="fapiao">
+                  <label for="fapiao1">是</label>
+
+                  <input class="radio ml-8" id="fapiao2" value="1" type="radio" name="fapiao">
+                  <label for="fapiao2">否</label>
+                </div>
               </div>
             </div>
           </div>
           <!--  -->
           <div class="border-b  mb-2 pb-4">
-            <div class="text-xl mb-2">
-              <i class=" bi bi-file-earmark-text-fill"></i>
+            <div class="text-base mb-2">
+              <i class="bi bi-bank"></i>
               <span>银行信息</span>
             </div>
             <!--  -->
-            <div class=" m-auto text-sm   p-2">
-              <div class="label w-44"> <span class="orgin">*</span>银行账户</div>
+            <div class=" m-auto text-xs   p-2">
+              <div class="label w-44 grey"> <span class="orgin">*</span>银行账户</div>
               <div class="inline ml-2">
-                <input class="radio" type="radio" name="radio">
-                <label>已开基本账户</label>
-                <input class="radio" type="radio" name="radio">
-                <label>未开基本账户</label>
+                <input class="radio" v-model="bank" id="bank1" value="0" type="radio" name="bank">
+                <label for="bank1">已开基本账户</label>
+                <input class="radio ml-2" v-model="bank" id="bank2" value="1" type="radio" name="bank">
+                <label for="bank2">未开基本账户</label>
+              </div>
+              <div v-if="bank == 0" class="my-3">
+                <div class="text-xs">
+                  <div class="label w-44 grey"> <span class="orgin">*</span>银行账户是否正常</div>
+                  <div class="inline ml-2">
+                    <input class="radio" id="bank3" value="0" type="radio" name="bankzc">
+                    <label for="bank3" class="mr-6">正常</label>
+
+                    <input class="radio" id="bank4" value="0" type="radio" name="bankzc">
+                    <label for="bank4">不正常</label>
+                  </div>
+                </div>
+                <div class="my-4 text-xs">
+                  <div class="label w-44 grey"> <span class="orgin">*</span>是否有网银</div>
+                  <div class="inline ml-2">
+                    <input class="radio" id="bank5" value="0" type="radio" name="bankwy">
+                    <label for="bank5" class="mr-4">有网银</label>
+
+                    <input class="radio" id="bank6" value="0" type="radio" name="bankwy">
+                    <label for="bank6">无网银</label>
+                  </div>
+                </div>
+                <div class="my-4 text-xs">
+                  <div class="label w-44 grey vercel-top"> <span class="orgin">*</span>银行流水情况</div>
+                  <div class="inline ml-2">
+                    <textarea class="border" name="" id="" cols="30" rows="10"
+                      placeholder="如果你的银行流水频次多，流水额大请做简单描述，利于你的成交价。"></textarea>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           <!--  -->
           <div class="border-b  mb-2 pb-4">
-            <div class="text-xl mb-2">
-              <i class=" bi bi-file-earmark-text-fill"></i>
+            <div class="text-base mb-2">
+              <i class="bi bi-arrow-left-right"></i>
               <span>转让信息</span>
             </div>
             <!--  -->
-            <div class=" m-auto text-sm   p-2">
-              <div class="label w-44"> 转让价格</div>
+            <div class=" m-auto text-xs   p-2">
+              <div class="label w-44 grey vercel-top"> 转让价格</div>
               <div class="inline ml-2">
-                <input class="radio" type="radio" name="radio">
-                <label>免费转</label>
-                <input class="radio" type="radio" name="radio">
-                <label>面议</label>
-                <input class="radio" type="radio" name="radio">
-                <label>一口价</label>
+                <!-- <input class="radio" v-model="transfer" value="0" id="mianfie" type="radio" name="zhuan">
+                <label for="mianfie">免费转</label> -->
+                <input class="radio" v-model="transfer" value="1" id="mian" type="radio" name="zhuan">
+                <label for="mian">面议</label>
+                <input class="radio ml-2" v-model="transfer" value="2" id="zhuanrang" type="radio" name="zhuan">
+                <label for="zhuanrang">价格</label>
+                <div v-if="transfer==2" class="py-4">
+                  <input type="text" class="border px-2" style="width:100px;height:34px;">
+                  <span>~</span>
+                  <input type="text" class="border px-2" style="width:100px;height:34px;">
+                  <span>元</span>
+                </div>
               </div>
+
             </div>
-            <div class="m-auto  text-sm   p-2">
-              <div class="label w-44 vertical-top"><span class="orgin">*</span> 其他信息</div>
-              <div class="inline w-80 vertical-top">
-                <textarea class=" border p-1 text-right w-full h-32" placeholder="未尽信息或公司资产，可在此做详细描述" type="text">
+            <div class="m-auto  text-xs   p-2">
+              <div class="label w-44 grey vertical-top"><span class="orgin">*</span> 其他信息</div>
+              <div class="inline w-80 vertical-top ml-2">
+                <textarea class=" border p-1 text-left w-full h-32" placeholder="未尽信息或公司资产，可在此做详细描述" type="text">
             </textarea>
               </div>
             </div>
@@ -467,7 +636,7 @@
       </section>
 
     </main>
-    <div class="diaolog" v-if="dialogVisible">
+    <div id="diaolog" class="diaolog" v-if="dialogVisible">
       <div class="box">
         <i class="close bi bi-x-lg" @click="handleClose"></i>
 
@@ -482,7 +651,7 @@
         </div>
         <div class="layui-tab px-4">
           <ul class="layui-tab-title">
-            <li v-for="x,y in tablist" :key="y" :class="{
+            <li v-for="x,y in data" :key="y" :class="{
               'layui-this':x.this
             }" @click="tabclick(y)">{{x.name}}</li>
           </ul>
@@ -490,9 +659,9 @@
             <div class="layui-tab-item   list" v-for="x,y in data" :key="y" :class="{
               'layui-show':x.this
             }">
-              <span v-for="x,y in centerList[x.select]" :key="y" :class="{
-                'spanacitve':selectClassstatus(x)
-              }" @click="handleOneclick(x)">{{x.name}}</span>
+              <span v-for="item,i in x.children" :key="i" :class="{
+                'spanacitve':selectClassstatus(item)
+              }" @click="handleOneclick(item)">{{item.name}}</span>
 
             </div>
           </div>
@@ -524,9 +693,7 @@
     </a>
   </div>
 </body>
-<script src="../cdn/jquery-3.6.4.min.js"></script>
-<script src="../cdn/layui-v2.6.8/layui/layui.js"></script>
-<script src="../cdn/vue.js"></script>
+
 <script>
 
   /*  */
@@ -566,53 +733,84 @@
   }
 </script>
 <script>
-  new Vue({
-    el: '#app',
-    data: function () {
-      return {
-        // 资质
-        radioZiZhi: null,
-        dialogVisible: false,
-        selectOne: [],
-        data: [
-          {
-            name: '公司资质', this: true, select: 0, children: [
-              {
-                name: '荣誉证书', id: 1, pid: 0, children: [
-                  { name: "AAA信用企业", id: 101, pid: 1 },
-                  { name: "双软认证企业", id: 102, pid: 1 },
-                  { name: "高新技术认证企业", id: 103, pid: 1 },
-                ]
-              },
-              { name: '工程行业', id: 2, pid: 0 },
-              { name: '加工、环保、安监', id: 3, pid: 0 },
-              { name: '特种设备安装改造维修资质', id: 4, pid: 0 },
-              { name: '劳务、人力行业', id: 5, pid: 0 },
-              { name: '房地产、拆迁业', id: 6, pid: 0 },
-              { name: '物业、保洁', id: 7, pid: 0 },
-              { name: '政府采购或供应商资格', id: 8, pid: 0 },
-            ]
-          }
-        ],
-        tablist: [{ name: '公司资质', this: true, select: 0 }],
-        centerList: [
-          [
-            { name: '荣誉证书', id: 1, pid: 0 },
-            { name: '工程行业', id: 2, pid: 0 },
-            { name: '加工、环保、安监', id: 3, pid: 0 },
-            { name: '特种设备安装改造维修资质', id: 4, pid: 0 },
-            { name: '劳务、人力行业', id: 5, pid: 0 },
-            { name: '房地产、拆迁业', id: 6, pid: 0 },
-            { name: '物业、保洁', id: 7, pid: 0 },
-            { name: '政府采购或供应商资格', id: 8, pid: 0 },
-          ],
-          [
+  // 资质数据
+  const data = [
+    {
+      name: '公司资质', this: true, select: 0, children: [
+        {
+          name: '荣誉证书', id: 1, pid: 0, children: [
             { name: "AAA信用企业", id: 101, pid: 1 },
             { name: "双软认证企业", id: 102, pid: 1 },
             { name: "高新技术认证企业", id: 103, pid: 1 },
           ]
-        ],
-        qualification: []
+        },
+        {
+          name: '工程行业', id: 2, pid: 0, children: [
+            { name: "工程总承包", id: 104, pid: 1 },
+          ]
+        },
+        {
+          name: '加工、环保、安监', id: 3, pid: 0, children: [
+            { name: "生产许可证", id: 105, pid: 1 },
+          ]
+        },
+        {
+          name: '特种设备安装改造维修资质', id: 4, pid: 0, children: [
+            { name: "锅炉", id: 106, pid: 1 }
+          ]
+        },
+        { name: '劳务、人力行业', id: 5, pid: 0 },
+        { name: '房地产、拆迁业', id: 6, pid: 0 },
+        { name: '物业、保洁', id: 7, pid: 0 },
+        { name: '政府采购或供应商资格', id: 8, pid: 0 },
+      ]
+    }
+  ]
+  // 商标
+  const trademark = [
+    {
+      name: '公司资质', this: true, select: 0, children: [
+        { name: '1类 化学制剂', id: 206, pid: 1 }
+      ]
+    },
+  ]
+  // 网络
+  const network = [
+    {
+      name: '网络资产', this: true, select: 0, children: [
+        { name: '阿里诚信通', id: 206, pid: 1 },
+        { name: '天猫店铺', id: 207, pid: 1 }
+      ]
+    }
+  ]
+
+  new Vue({
+    el: '#app',
+    data: function () {
+      return {
+        type: 1,
+        // 资质
+        radioZiZhi: null,
+        dialogVisible: false,
+        selectOne: [],
+        data: [],
+        qualification: [],
+        netArray: [],
+        //商标
+        brand: [],
+        shangbiao: null,
+        // 网络
+        net: null,
+        // 车牌
+        chepai: null,
+        // 专利
+        zhuanli: null,
+        // 税
+        shui: null,
+        // 银行
+        bank: null,
+        // 转让
+        transfer: null
       }
     },
     computed: {
@@ -626,11 +824,8 @@
       }
     },
     methods: {
+      /* ----------------资质----------------------------- */
 
-      // 打开弹窗
-      handleChangeClick () {
-        this.dialogVisible = true
-      },
       // 关闭弹窗
       handleClose (done) {
         this.dialogVisible = false
@@ -645,6 +840,7 @@
         const found = this.selectOne.find(item => {
           return item.id == e.id
         })
+
         if (found) {
           this.selectOne.forEach((item, i) => {
             if (item.id == e.id) {
@@ -658,16 +854,17 @@
           }
           // 选中标签
           // console.log(this.tablist)
-          if (this.tablist.length == 1) {
-            // 当前切换卡片
-            this.tablist.forEach(element => {
-              element.this = false
-            })
-            // 添加tab 选项
-            this.tablist = [{ name: '公司资质', this: false, select: 0 }, { ...e, name: e.name + '子项目', this: true, select: 1 }]
+          if (this.data.length == 1) {
+
+            if (this.type == 1) {
+              // 当前切换卡片
+              this.data.forEach(element => {
+                element.this = false
+              })
+              // 添加tab 选项
+              this.data = [{ name: '公司资质', this: false, select: 0 }, { ...e, name: e.name + '子项目', this: true, select: 1 }]
+            }
           }
-
-
         }
       },
       // 删除选中
@@ -675,31 +872,117 @@
         this.selectOne.splice(i, 1)
       },
       tabclick (y) {
+        if (this.type == 2) {
+          if (y == 0) {
+            this.data = trademark
+          }
+          return
+        }
+        if (this.type == 3) {
+          if (y == 0) {
+            this.data = network
+          }
+          return
+        }
         if (y == 0) {
-          this.tablist = [{ name: '公司资质', this: true, select: 0 }]
+          this.data = data
         }
       },
+      // 取消
       cancel () {
         this.dialogVisible = false
+        this.selectOne = []
+        if (this.type == 2) {
+          if (this.brand.length == 0) {
+            this.shangbiao = '1'
+          }
+          return
+        }
+        if (this.type == 3) {
+          if (this.netArray.length == 0) {
+            this.net = '1'
+          }
+          return
+        }
         if (this.qualification.length == 0) {
           this.radioZiZhi = '1'
         }
       },
       submitSure () {
-        // 确定
-        this.qualification = this.selectOne
-        if (this.qualification.length == 0) {
-          this.radioZiZhi = '1'
-        }
         this.dialogVisible = false
+        if (this.type == 2) {
+          this.brand = this.selectOne
+          if (this.brand.length == 0) {
+            this.shangbiao = '1'
+          }
+        } else if (this.type == 3) {
+          this.netArray = this.selectOne
+          if (this.netArray.length == 0) {
+            this.net = '1'
+          }
+          // this.netArray.splice(i, 1)
+        } else {
+          // const array = []
+          // array.push(...this.selectOne)
+          // 确定
+          // const res = new Map()
+          // console.log(array)
+          // this.qualification = array.filter((item) => !res.has(item[item.id]) && res.set(item[item.id], 1))
+          this.qualification.push(...this.selectOne)
+          if (this.qualification.length == 0) {
+            this.radioZiZhi = '1'
+          }
+        }
+        this.selectOne = []
 
       },
       // 删除确认选出的资质
       handleZiZhiremove (i) {
-        this.qualification.splice(i, 1)
+        if (this.type == 2) {
+          this.brand.splice(i, 1)
+        } else if (this.type == 3) {
+
+          this.netArray.splice(i, 1)
+        } else {
+          this.qualification.splice(i, 1)
+        }
       },
       handleFalse () {
-        this.qualification = []
+        if (this.type == 2) {
+          this.brand = []
+        } else if (this.type == 3) {
+          this.netArray = []
+        } else {
+          this.qualification = []
+        }
+      },
+      // 打开弹窗
+      handleChangeClick () {
+
+        // 资质
+        const json = JSON.stringify(data)
+        this.data = JSON.parse(json)
+        console.dir(this.data)
+        this.dialogVisible = true
+        this.type = 1
+      },
+      /* ----------------资质----------------------------- */
+      /* ----------------商标----------------------------- */
+      handleChangeClickshang () {
+
+
+        // 打开弹窗
+        // 商标
+        this.data = trademark
+        this.type = 2
+        this.dialogVisible = true
+      },
+      handleChangeClicknet () {
+
+
+        this.data = network
+        this.type = 3
+        this.dialogVisible = true
       }
     }
   })

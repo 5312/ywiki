@@ -35,8 +35,8 @@ body {
   height: 75%;
 }
 .logo > img {
-  width: 154px;
-  height: 53px;
+  width: 200px;
+  height: 70px;
 }
 .search {
   position: relative;
@@ -54,6 +54,7 @@ body {
 }
 .inputs {
   width: 70%;
+  font-size: 14px;
 }
 .inline {
   display: inline-block;
@@ -86,7 +87,7 @@ body {
   font-size: 14px;
   font-family: Microsoft YaHei;
   font-weight: 400;
-  color: #666666;
+  color: grey;
 }
 
 .tabcard {

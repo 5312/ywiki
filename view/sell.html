@@ -36,9 +36,14 @@
     background: #F5F5F5;
   }
 
+  .dashed {
+    border: 1px dashed #F5F5F5 !important;
+  }
+
   .city-text {
     font-size: 0;
     flex: 1;
+    overflow: hidden
   }
 
   .city-text>div {
@@ -108,8 +113,8 @@
   }
 
   .active {
-    border: 1px solid #f78015;
-    color: #f78015;
+    border: 1px solid #ff3a03;
+    color: #ff3a03;
     padding: 0px 10px;
     border-radius: 3px;
 
@@ -117,6 +122,19 @@
 
   .layui-laypage .layui-laypage-curr .layui-laypage-em {
     background-color: #FF3A03;
+  }
+
+  #shenfenshowhide {
+    color: #2668a5b7;
+  }
+
+  .vercel-middle {
+    vertical-align: middle;
+  }
+
+  .rmb {
+    position: relative;
+    right: -9px;
   }
 </style>
 
@@ -147,13 +165,14 @@
       <div class="contain">
         <div class="flex headerbox flex-row justify-start">
           <div class="logo">
-            <img src="../asset/易维客@2x.png" alt="">
+            <img src="../asset/yiweike@1x.png" alt="">
           </div>
           <div class="search ml-32">
             <div class="search_input shadow rounded-sm border-1 border-gray-300 border-solid clear-left">
               <input type="text" id="destoon_select" class="search_m select xiala-1" value="供应" readonly=""
                 onfocus="this.blur();" onclick="$('#search_module').fadeIn('fast');">
-              <img class="xia" src="http://32.wpnq.com/skin/default/image/xia.png">
+              <img class="xia" src="../asset/xia.png">
+              <!-- <img class="xia" src="http://32.wpnq.com/skin/default/image/xia.png"> -->
               <div class="xiala shadow">
                 <ul>
                   <li onclick="setModule('5','供应')" style="background-color: white; cursor: default;">供应</li>
@@ -174,8 +193,8 @@
 
         </div>
         <nav class="tabcard">
-          <div>出售公司</div>
-          <div class="tab-active">求购公司</div>
+          <div class="tab-active">出售公司</div>
+          <div>求购公司</div>
           <div>我的私域</div>
           <!-- <div>客户管理</div> -->
         </nav>
@@ -188,7 +207,7 @@
           <i class=" bi bi-chevron-right"></i>
         </div>
         <div class="float-right filterbtn" onclick="showNone()">
-          收起筛选
+          <span id="filtertext"> 收起筛选</span>
           <i id="updown" class="ml-1 float-right bi bi-chevron-up"></i>
         </div>
         <div class="clear-both"></div>
@@ -203,13 +222,13 @@
               <div class="text-base m-1 grey">实体公司</div>
             </div>
           </div>
-          <div class="line m-1"></div>
+          <div class=" dashed m-1"></div>
         </div>
         <!--  -->
         <div class="compaytype p-2">
           <div class="label flex flex-row">
             <div class="text-base m-1 wtitle">省份</div>
-            <div class="city-text">
+            <div id="province" class="city-text">
               <div class="text-base m-1 grey active">不限</div>
               <div class="text-base m-1 grey">北京</div>
               <div class="text-base m-1 grey">天津</div>
@@ -246,8 +265,9 @@
               <div class="text-base m-1 grey">澳门</div>
               <div class="text-base m-1 grey">国外</div>
             </div>
+            <!-- <div id="shenfenshowhide" class="cursor-pointer">收起</div> -->
           </div>
-          <div class="line m-1"></div>
+          <div class="dashed m-1"></div>
           <!--  -->
           <div class="label flex flex-row">
             <div class="text-base m-1 wtitle">城市</div>
@@ -273,7 +293,7 @@
               <div class="text-base m-1 grey">其他</div>
             </div>
           </div>
-          <div class="line m-1"></div>
+          <div class="dashed m-1"></div>
           <!--  -->
           <div class="label flex flex-row">
             <div class="text-base m-1 wtitle">热门标签</div>
@@ -287,7 +307,7 @@
               <div class="text-base m-1 grey">国家居名称</div>
             </div>
           </div>
-          <div class="line m-1"></div>
+          <div class="dashed m-1"></div>
           <!--  -->
           <div class="label flex flex-row">
             <div class="text-base m-1 wtitle">热门公司</div>
@@ -302,7 +322,7 @@
               <div class="text-base m-1 grey">香港公司</div>
             </div>
           </div>
-          <div class="line m-1"></div>
+          <div class="dashed m-1"></div>
           <!--  -->
           <div class="label flex flex-row">
             <div class="text-base m-1 wtitle">注册年限</div>
@@ -316,7 +336,7 @@
               <div class="text-base m-1 grey">10年及以上</div>
             </div>
           </div>
-          <div class="line m-1"></div>
+          <div class="dashed m-1"></div>
           <!--  -->
           <div class="label flex flex-row">
             <div class="text-base m-1 wtitle">注册资本</div>
@@ -329,7 +349,7 @@
               <div class="text-base m-1 grey">1000万及以上</div>
             </div>
           </div>
-          <div class="line m-1"></div>
+          <div class="dashed m-1"></div>
           <!--  -->
           <div class="label flex flex-row">
             <div class="text-base m-1 wtitle">纳税性质</div>
@@ -339,7 +359,6 @@
               <div class="text-base m-1 grey">一般纳税人</div>
             </div>
           </div>
-          <div class="line m-1"></div>
         </div>
       </article>
       <!--  -->
@@ -352,8 +371,8 @@
             <div class="py-2">
               <span>价格：</span>
               <span class="text-2xl price">
-                <span>14589</span>
-                <span class="unit">元</span>
+                <span>面议</span>
+                <!-- <span class="unit">元</span> -->
               </span>
             </div>
             <div class="flex flex-row py-1 grey text-sm">
@@ -368,7 +387,7 @@
             </div>
             <div class="flex flex-row py-1 grey text-sm">
               <div class="flex flex-row  w-52">
-                <i class="bi bi-currency-dollar"></i>
+                <i class="bi bi-currency-yen"></i>
                 <div class="mx-2">实缴资本：0万人民币</div>
               </div>
               <div class="flex flex-row ml-4  w-52">
@@ -388,16 +407,16 @@
             </div>
           </article>
           <article class="flex flex-row rights">
-            <img class="flex-1 phone" src="../asset/组 3@2x.png" alt="">
+            <img class="flex-1 phone" src="../asset/groupphone.png" alt="">
             <div class="ml-2">
               <div>
                 <span class="">李琳琳</span>
-                <span class="grey text-sm">交易顾问</span>
+                <span class="grey  text-xs">2小时前活跃</span>
                 <div class="text-lg orgin py-2 font-semibold">15234647895</div>
               </div>
               <div>
                 <span class="">张艾</span>
-                <span class="grey text-s">交易顾问</span>
+                <span class="grey text-xs">2小时前活跃</span>
                 <div class="text-lg orgin py-2 font-semibold">15234647895</div>
               </div>
             </div>
@@ -414,8 +433,11 @@
             <div class="py-2">
               <span>价格：</span>
               <span class="text-2xl price">
-                <span>14589</span>
-                <span class="unit">元</span>
+                <sub class="unit rmb">￥</sub>
+                <strong class="vercel-middle">1000</strong>
+                <span class="text-xl  vercel-middle">~</span>
+                <strong class="vercel-middle">2000</strong>
+
               </span>
             </div>
             <div class="flex flex-row py-1 grey text-sm">
@@ -430,7 +452,7 @@
             </div>
             <div class="flex flex-row py-1 grey text-sm">
               <div class="flex flex-row  w-52">
-                <i class="bi bi-currency-dollar"></i>
+                <i class="bi bi-currency-yen"></i>
                 <div class="mx-2">实缴资本：0万人民币</div>
               </div>
               <div class="flex flex-row ml-4  w-52">
@@ -450,23 +472,23 @@
             </div>
           </article>
           <article class="flex flex-row rights">
-            <img class="flex-1 phone" src="../asset/组 3@2x.png" alt="">
+            <img class="flex-1 phone" src="../asset/groupphone.png" alt="">
             <div class="ml-2">
               <div>
                 <span class="">李琳琳</span>
-                <span class="grey text-sm">交易顾问</span>
+                <span class="grey  text-xs">2小时前活跃</span>
                 <div class="text-lg orgin py-2 font-semibold">15234647895</div>
               </div>
               <div>
                 <span class="">张艾</span>
-                <span class="grey text-s">交易顾问</span>
+                <span class="grey  text-xs">2小时前活跃</span>
                 <div class="text-lg orgin py-2 font-semibold">15234647895</div>
               </div>
             </div>
           </article>
         </div>
       </article>
-      <div id="test1"></div>
+      <div id="test1" class="m-auto text-center"></div>
 
     </main>
     <footer class="footer w-screen bg-white ">
@@ -519,10 +541,13 @@
       $("#filterbox").show()
       $('#updown').removeClass('bi-chevron-down')
       $('#updown').addClass('bi-chevron-up')
+      $('#filtertext').text('收起筛选')
     } else {
       $("#filterbox").hide()
       $('#updown').removeClass('bi-chevron-up')
       $('#updown').addClass('bi-chevron-down')
+      $('#filtertext').text('展开筛选')
+
     }
   }
   $(".xiala-1").click(function () {
@@ -539,6 +564,19 @@
     $(".xiala-1").val($(this).text())
     $(".xiala").hide()
   })
+  //
+  // $('#shenfenshowhide').click(function () {
+  //   console.log()
+  //   if ($('#province').height() == 66) {
+  //     $('#province').height('30px') // 66 //26
+  //     $('#shenfenshowhide').text('展开')
+  //   } else {
+  //     $('#province').height('66px') // 66 //26
+  //     $('#shenfenshowhide').text('收起')
+
+  //   }
+
+  // })
 </script>
 
 </html>
