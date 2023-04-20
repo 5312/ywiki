@@ -13,6 +13,9 @@ tabtitle {
   font-weight: bold;
   color: #333333;
 }
+.tab:hover {
+  color: #ff3a03;
+}
 
 .active {
   font-family: Microsoft YaHei;
@@ -116,4 +119,7 @@ tabtitle {
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+}
+.current {
+  border-bottom: 2px #ff3a03 solid;
 }

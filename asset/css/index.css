@@ -5,11 +5,15 @@ body {
 }
 
 .body {
-  background: url(./asset/bg@2x.png);
+  background: url(../images/bg@2x.png);
   background-size: cover;
   background-repeat: no-repeat;
 }
-
+.imglogo {
+  position: relative;
+  top: 59px;
+  left: 59px;
+}
 .left {
   position: absolute;
   top: 227px;
