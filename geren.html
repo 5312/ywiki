@@ -1,0 +1,303 @@
+<!-- 企业入驻 -->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" " ">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>会员注册-我的网站</title>
+  <link rel="stylesheet" href="./asset/global.css" />
+  <link rel="stylesheet" href="./asset/style.css" />
+  <link rel="stylesheet" href="./asset/login.css" />
+  <link rel="stylesheet" href="../cdn/bootstrap-icons-1.10.4/font/bootstrap-icons.css">
+
+</head>
+<style>
+  .step1>.cur {
+    /* background-color: #eb753b; */
+    color: #fff;
+
+  }
+
+  .body .registerpart .step2 {
+    background: url(./asset/step.gif) 0 -30px no-repeat
+  }
+
+
+
+  .mhead {
+    overflow: hidden;
+  }
+
+  .pw_check {
+    width: 150px;
+    background: url(./asset/pw_check.gif) no-repeat;
+    height: 22px;
+    font-size: 12px;
+  }
+
+  input.go_reg {
+    border: none;
+    width: 181px;
+    height: 34px;
+    /* background: url(./asset/orange_submit.gif) 0 0 no-repeat; */
+    background-color: #FF3A03;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 700;
+  }
+
+  .abtn {
+    color: #7990b2;
+    margin: 2px 5px;
+    width: 50px;
+    cursor: pointer;
+  }
+
+  .porwer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    width: 500px;
+    height: 500px;
+    margin: auto;
+  }
+
+  #porw {
+    width: 500px;
+    height: 500px;
+  }
+
+  .close {
+    font-size: 14px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    right: 0px;
+  }
+
+  .close>i {
+    font-size: 20px;
+  }
+</style>
+
+<body class="orange">
+  <div class="mheader">
+    <div class="mhead">
+      <div class="logo"><a href="" target="_blank"><img style="width:200px;" src="./asset/易维客@2x.png"
+            title="我的网站" /></a></div>
+      <div class="tit">
+        <span style="font-size:18px">一站式企业服务平台 </span>
+      </div>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+  <div class="inner">
+    <div class="body">
+      <div class="registerpart">
+        <div class="step2">
+          <span>1. 选择注册类型</span>
+          <span class="cur">2. 填写注册信息</span>
+          <span>3. 付费</span>
+        </div>
+        <div class="regdetail">
+          <div class="partname">
+            <div class="li1"><a class="current">帐号注册</a></div>
+          </div>
+          <form method="post" action="" name="registerform" id="registerform">
+            <div class="partinput">
+
+              <input name="mod" value="register" type="hidden" />
+              <input name="reg_corp" value="0" type="hidden" />
+              <input name="mixcode" value="95c8ef94f3851149b4b1e5bd3a5570bd" type="hidden">
+              <table class="formlogin" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td class="tdright">
+                    <font color=red>*</font>用户名：
+                  </td>
+                  <td>
+                    <input name="userid" id="reg_username" type="text" class="input input-large" require="true"
+                      datatype="userName|limit|ajax" url="h" min="4" max="20" msg="可输入字母、数字、下划线，不得少于4个字符">&nbsp;
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tdright">
+                    <font color=red>*</font>电子邮箱：
+                  </td>
+                  <td><input name="email" type="text" class="input input-large" require="true"
+                      datatype="email|limit|ajax" url="http://yyww.ydeshui.com/javascript.php?part=chk_remail"
+                      id="email" msg="用于找回密码，邮箱格式不正确">
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tdright">
+                    <font color=red>*</font>登录密码：
+                  </td>
+                  <td>
+                    <input id="reg_password" name="userpwd" type="password" class="input input-large" require="true"
+                      datatype="limitB" min="6" max="16" msg="密码不得少于6个字符或超过16个字符！" maxlength="16">
+                  </td>
+                </tr>
+                <tr>
+                  <td scope="row" class="tdright">&nbsp;</td>
+                  <td>
+                    <div id="pw_check_1" class="pw_check">
+                      <span><strong class="c_orange">弱</strong></span>
+                      <span>中</span>
+                      <span>强</span>
+                    </div>
+                    <div id="pw_check_2" class="pw_check" style="display:none;">
+                      <span>弱</span>
+                      <span><strong class="c_orange">中</strong></span>
+                      <span>强</span>
+                    </div>
+                    <div id="pw_check_3" class="pw_check" style="display:none;">
+                      <span>弱</span>
+                      <span>中</span>
+                      <span><strong class="c_orange">强</strong></span>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="tdright">
+                    <font color=red>*</font>确认密码：
+                  </td>
+                  <td><input name="reuserpwd" type="password" to="userpwd" class="input input-large" msg="两次输入的密码不一致"
+                      id="pwdconfirm" require="true" datatype="repeat">
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tdright">
+                    <font color=red>*</font>姓名：
+                  </td>
+                  <td><input type="text" name="cname" class="input input-5" require="true" datatype="limit" min="1"
+                      msg="请输入您的姓名" />
+                  </td>
+                </tr>
+                <div class="porwer" id="pbox" style="display:none;">
+                  <img id="porw" src="" alt="">
+                  <div class="close" onclick="closeprew()">
+                    <i class="bi bi-x-lg"></i>
+                  </div>
+                </div>
+                <tr>
+                  <td class="tdright">
+                    <font color=red>*</font>身份证正面：
+                  </td>
+                  <td>
+                    <input type="text" id="img-text1" class="input input-large" />
+                    <input type="file" id="img-upload1" style="display:none" class="input input-large" />
+                  </td>
+                  <td class="abtn" id="my-img1">
+                    [上传]
+                  </td>
+                  <td class="abtn" id="yulan1">
+                    [预览]
+                  </td>
+                  <td class="abtn" id="dele1">
+                    [删除]
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tdright">
+                    <font color=red>*</font>身份证反面：
+                  </td>
+                  <td>
+                    <input type="text" id="img-text2" class="input input-large" />
+                    <input type="file" id="img-upload2" style="display:none" name="qq" class="input input-large" />
+                  </td>
+                  <td class="abtn" id="my-img2">
+                    [上传]
+                  </td>
+                  <td class="abtn" id="yulan2">
+                    [预览]
+                  </td>
+                  <td class="abtn" id="dele2">
+                    [删除]
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tdright" style="height: 44px"></td>
+                  <td style="height: 44px"><input type="submit" name="log_submit" value="同意协议，完成注册" id="agreereg"
+                      class="go_reg" />
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="clear"></div>
+      <center>已有账号？去<a href="" class="godl">登录</a></center>
+      <div class="clear"></div>
+
+    </div>
+
+</body>
+<script src="./asset/global.js"></script>
+<script src="./asset/jquery.min.js"></script>
+<script src="./asset/validator.common.js"></script>
+<script src="./asset/validator2.js"></script>
+<script src="./asset/sendsms2.js"></script>
+<script>
+
+  function closeprew () {
+    $('#pbox').hide()
+  }
+
+  $('#my-img1').click(function () {
+    $('#img-upload1').click()
+  })
+  const fileInput1 = document.getElementById('img-upload1')
+  fileInput1.addEventListener('change', (event) => {
+    const selectedFile = event.target.files[0]
+    $('#img-text1').val(selectedFile.name)
+  })
+  $('#dele1').click(function () {
+    $('#img-text1').val('')
+    $('#img-upload1').val('')
+  })
+  $('#yulan1').click(function () {
+    console.log('1')
+
+    const src = $('#img-upload1').val()
+    $('#pbox').show()
+    var reader = new FileReader()
+    var resultFile = document.getElementById("img-upload1").files
+    reader.readAsDataURL(resultFile[0])
+    reader.onload = function (e) {
+      var urlData = this.result
+      $('#porw').attr('src', urlData)
+    }
+  })
+  // 
+  $('#my-img2').click(function () {
+    $('#img-upload2').click()
+  })
+  const fileInput2 = document.getElementById('img-upload2')
+  fileInput2.addEventListener('change', (event) => {
+    const selectedFile = event.target.files[0]
+    $('#img-text2').val(selectedFile.name)
+  })
+
+  $('#dele2').click(function () {
+    $('#img-text2').val('')
+    $('#img-upload2').val('')
+  })
+  $('#yulan2').click(function () {
+    const src = $('#img-upload2').val()
+    $('#pbox').show()
+    var reader = new FileReader()
+    var resultFile = document.getElementById("img-upload2").files
+    reader.readAsDataURL(resultFile[0])
+    reader.onload = function (e) {
+      var urlData = this.result
+      $('#porw').attr('src', urlData)
+    }
+  })
+</script>
+
+</html>

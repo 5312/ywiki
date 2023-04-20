@@ -12,16 +12,18 @@
   <!-- bootstrap -->
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"> -->
   <link rel="stylesheet" href="../cdn/bootstrap-icons-1.10.4/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../cdn/layui-v2.6.8/layui/css/layui.css">
 
 
   <title>Document</title>
 </head>
 <style>
   .wtitle {
-    font-weight: 700;
-    margin-right: 33px;
+    /* font-weight: 700; */
+    margin-right: 10px;
     width: 4rem;
     text-align: right;
+    font-size: 14px;
   }
 
   .grey {
@@ -54,12 +56,12 @@
 
   .vercel {
     vertical-align: middle;
-    line-height: 33px;
+    /* line-height: 33px; */
   }
 
   .phone {
-    width: 80px;
-    height: 80px;
+    width: 40px;
+    height: 40px;
   }
 
   .lefts {
@@ -76,6 +78,45 @@
   .orgin {
     color: #FF3A03;
 
+  }
+
+  .city-text>div:hover {
+    color: #FF3A03;
+    cursor: pointer;
+  }
+
+  .more-filter {
+    font-size: 12px;
+    color: #666;
+  }
+
+  .filterbtn {
+    margin: 0 0 0 4px;
+    height: 24px;
+    line-height: 24px;
+    border: solid 1px #e8e8e8;
+    padding: 0 9px;
+    background: #f6f6f6;
+    color: #6b6b6b;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .more-cate {
+    height: 24px;
+    line-height: 24px;
+  }
+
+  .active {
+    border: 1px solid #f78015;
+    color: #f78015;
+    padding: 0px 10px;
+    border-radius: 3px;
+
+  }
+
+  .layui-laypage .layui-laypage-curr .layui-laypage-em {
+    background-color: #FF3A03;
   }
 </style>
 
@@ -140,13 +181,24 @@
         </nav>
       </div>
     </header>
-    <main class="main mx-auto py-9  ">
-      <article class="bg-white w-full">
+    <main class="main mx-auto py-7 pt-0  ">
+      <div class="p-2 more-filter">
+        <div class="float-left mr-2 more-cate">
+          所有分类
+          <i class=" bi bi-chevron-right"></i>
+        </div>
+        <div class="float-right filterbtn" onclick="showNone()">
+          收起筛选
+          <i id="updown" class="ml-1 float-right bi bi-chevron-up"></i>
+        </div>
+        <div class="clear-both"></div>
+      </div>
+      <article id="filterbox" class="bg-white w-full mb-5" style="border: 1px solid #eee;">
         <div class="compaytype p-2">
           <div class="label flex flex-row">
             <div class="text-base m-1 wtitle">公司类别</div>
             <div class="city-text">
-              <div class="text-base m-1 grey">不限</div>
+              <div class="text-base m-1 grey active">不限</div>
               <div class="text-base m-1 grey">空壳公司</div>
               <div class="text-base m-1 grey">实体公司</div>
             </div>
@@ -158,7 +210,7 @@
           <div class="label flex flex-row">
             <div class="text-base m-1 wtitle">省份</div>
             <div class="city-text">
-              <div class="text-base m-1 grey">不限</div>
+              <div class="text-base m-1 grey active">不限</div>
               <div class="text-base m-1 grey">北京</div>
               <div class="text-base m-1 grey">天津</div>
               <div class="text-base m-1 grey">河北</div>
@@ -198,9 +250,9 @@
           <div class="line m-1"></div>
           <!--  -->
           <div class="label flex flex-row">
-            <div class="text-base m-1 wtitle">省份</div>
+            <div class="text-base m-1 wtitle">城市</div>
             <div class="city-text">
-              <div class="text-base m-1 grey">不限</div>
+              <div class="text-base m-1 grey active">不限</div>
               <div class="text-base m-1 grey">合肥市</div>
               <div class="text-base m-1 grey">重阳市</div>
               <div class="text-base m-1 grey">安庆市</div>
@@ -226,7 +278,7 @@
           <div class="label flex flex-row">
             <div class="text-base m-1 wtitle">热门标签</div>
             <div class="city-text">
-              <div class="text-base m-1 grey">不限</div>
+              <div class="text-base m-1 grey active">不限</div>
               <div class="text-base m-1 grey">免费转</div>
               <div class="text-base m-1 grey">银行流水大</div>
               <div class="text-base m-1 grey">接受挂靠</div>
@@ -240,7 +292,7 @@
           <div class="label flex flex-row">
             <div class="text-base m-1 wtitle">热门公司</div>
             <div class="city-text">
-              <div class="text-base m-1 grey">不限</div>
+              <div class="text-base m-1 grey active">不限</div>
               <div class="text-base m-1 grey">资质类公司</div>
               <div class="text-base m-1 grey">商标类公司</div>
               <div class="text-base m-1 grey">网络资产</div>
@@ -255,7 +307,7 @@
           <div class="label flex flex-row">
             <div class="text-base m-1 wtitle">注册年限</div>
             <div class="city-text">
-              <div class="text-base m-1 grey">不限</div>
+              <div class="text-base m-1 grey active">不限</div>
               <div class="text-base m-1 grey">1年以下</div>
               <div class="text-base m-1 grey">1年及以上</div>
               <div class="text-base m-1 grey">2年以下</div>
@@ -269,7 +321,7 @@
           <div class="label flex flex-row">
             <div class="text-base m-1 wtitle">注册资本</div>
             <div class="city-text">
-              <div class="text-base m-1 grey">不限</div>
+              <div class="text-base m-1 grey active">不限</div>
               <div class="text-base m-1 grey">10万以下</div>
               <div class="text-base m-1 grey">10万及以上</div>
               <div class="text-base m-1 grey">50万及以上</div>
@@ -282,7 +334,7 @@
           <div class="label flex flex-row">
             <div class="text-base m-1 wtitle">纳税性质</div>
             <div class="city-text">
-              <div class="text-base m-1 grey">不限</div>
+              <div class="text-base m-1 grey active">不限</div>
               <div class="text-base m-1 grey">小规模</div>
               <div class="text-base m-1 grey">一般纳税人</div>
             </div>
@@ -291,8 +343,8 @@
         </div>
       </article>
       <!--  -->
-      <article class="bg-white w-full p-6 mt-5">
-        <div class="title text-3xl font-semibold">
+      <article class="bg-white w-full p-6 arthover" style="border: 1px solid #eee;">
+        <div class="title text-lg font-semibold">
           [编号: 7328890] 南京***文化传媒有限公司
         </div>
         <div class="flex flex-row">
@@ -304,57 +356,57 @@
                 <span class="unit">元</span>
               </span>
             </div>
-            <div class="flex flex-row py-2 grey">
+            <div class="flex flex-row py-1 grey text-sm">
               <div class="flex flex-row w-52">
-                <i class="bi bi-person"></i>
+                <i class="bi bi-bank"></i>
                 <div class="mx-2">成立时间： 2013-11</div>
               </div>
               <div class="flex flex-row ml-4  w-52">
-                <i class="bi bi-person"></i>
+                <i class="bi bi-award-fill"></i>
                 <div class="mx-2">注册资本：100万人民币</div>
               </div>
             </div>
-            <div class="flex flex-row py-2 grey">
+            <div class="flex flex-row py-1 grey text-sm">
               <div class="flex flex-row  w-52">
-                <i class="bi bi-person"></i>
+                <i class="bi bi-currency-dollar"></i>
                 <div class="mx-2">实缴资本：0万人民币</div>
               </div>
               <div class="flex flex-row ml-4  w-52">
-                <i class="bi bi-person"></i>
+                <i class="bi bi-clipboard-plus-fill"></i>
                 <div class="mx-2">纳税类型：小规模</div>
               </div>
             </div>
-            <div class="flex flex-row py-2 grey ">
+            <div class=" py-1  grey text-sm">
               <div class="flex flex-row  w-52 vercel">
-                <i class="bi bi-person"></i>
+                <i class="bi bi-clock"></i>
                 <div class="mx-2">更新时间：2023-04-06</div>
               </div>
-              <div class="flex fle-row ">
-                <div class="bg-gray-300 p-2">买过社保</div>
-                <div class="bg-gray-300 p-2 mx-2">有商标</div>
-              </div>
+            </div>
+            <div class="flex fle-row mt-2">
+              <div class="bg-gray-300 p-2">买过社保</div>
+              <div class="bg-gray-300 p-2 mx-2">有商标</div>
             </div>
           </article>
           <article class="flex flex-row rights">
             <img class="flex-1 phone" src="../asset/组 3@2x.png" alt="">
-            <div>
+            <div class="ml-2">
               <div>
-                <span class="text-xl">李琳琳</span>
-                <span class="grey">交易顾问</span>
-                <div class="text-lg orgin py-2">15234647895</div>
+                <span class="">李琳琳</span>
+                <span class="grey text-sm">交易顾问</span>
+                <div class="text-lg orgin py-2 font-semibold">15234647895</div>
               </div>
               <div>
-                <span class="text-xl">张艾</span>
-                <span class="grey">交易顾问</span>
-                <div class="text-lg orgin py-2">15234647895</div>
+                <span class="">张艾</span>
+                <span class="grey text-s">交易顾问</span>
+                <div class="text-lg orgin py-2 font-semibold">15234647895</div>
               </div>
             </div>
           </article>
         </div>
       </article>
       <!--  -->
-      <article class="bg-white w-full p-6 mt-5">
-        <div class="title text-3xl font-semibold">
+      <article class="bg-white w-full p-6 mt-5 arthover" style="border: 1px solid #eee;">
+        <div class="title text-lg font-semibold">
           [编号: 7328890] 南京***文化传媒有限公司
         </div>
         <div class="flex flex-row">
@@ -366,54 +418,56 @@
                 <span class="unit">元</span>
               </span>
             </div>
-            <div class="flex flex-row py-2 grey">
+            <div class="flex flex-row py-1 grey text-sm">
               <div class="flex flex-row w-52">
-                <i class="bi bi-person"></i>
+                <i class="bi bi-bank"></i>
                 <div class="mx-2">成立时间： 2013-11</div>
               </div>
               <div class="flex flex-row ml-4  w-52">
-                <i class="bi bi-person"></i>
+                <i class="bi bi-award-fill"></i>
                 <div class="mx-2">注册资本：100万人民币</div>
               </div>
             </div>
-            <div class="flex flex-row py-2 grey">
+            <div class="flex flex-row py-1 grey text-sm">
               <div class="flex flex-row  w-52">
-                <i class="bi bi-person"></i>
+                <i class="bi bi-currency-dollar"></i>
                 <div class="mx-2">实缴资本：0万人民币</div>
               </div>
               <div class="flex flex-row ml-4  w-52">
-                <i class="bi bi-person"></i>
+                <i class="bi bi-clipboard-plus-fill"></i>
                 <div class="mx-2">纳税类型：小规模</div>
               </div>
             </div>
-            <div class="flex flex-row py-2 grey ">
+            <div class=" py-1 grey text-sm ">
               <div class="flex flex-row  w-52 vercel">
-                <i class="bi bi-person"></i>
+                <i class="bi bi-clock"></i>
                 <div class="mx-2">更新时间：2023-04-06</div>
               </div>
-              <div class="flex fle-row ">
-                <div class="bg-gray-300 p-2">买过社保</div>
-                <div class="bg-gray-300 p-2 mx-2">有商标</div>
-              </div>
+            </div>
+            <div class="flex fle-row mt-2">
+              <div class="bg-gray-300 p-2">买过社保</div>
+              <div class="bg-gray-300 p-2 mx-2">有商标</div>
             </div>
           </article>
           <article class="flex flex-row rights">
             <img class="flex-1 phone" src="../asset/组 3@2x.png" alt="">
-            <div>
+            <div class="ml-2">
               <div>
-                <span class="text-xl">李琳琳</span>
-                <span class="grey">交易顾问</span>
-                <div class="text-lg orgin py-2">15234647895</div>
+                <span class="">李琳琳</span>
+                <span class="grey text-sm">交易顾问</span>
+                <div class="text-lg orgin py-2 font-semibold">15234647895</div>
               </div>
               <div>
-                <span class="text-xl">张艾</span>
-                <span class="grey">交易顾问</span>
-                <div class="text-lg orgin py-2">15234647895</div>
+                <span class="">张艾</span>
+                <span class="grey text-s">交易顾问</span>
+                <div class="text-lg orgin py-2 font-semibold">15234647895</div>
               </div>
             </div>
           </article>
         </div>
       </article>
+      <div id="test1"></div>
+
     </main>
     <footer class="footer w-screen bg-white ">
       <div class="w-2/5  mx-auto text-xs grey text-center p-4">
@@ -428,15 +482,49 @@
         <div class="p-2">易维客信息科技有限公司 | 津ICP备18000836号-1 | © Copyright©2023 ke.com版权所有</div>
       </div>
     </footer>
+    <a id="scrollto" class="gotop btn btn-default" href="#" role="button">
+      回到顶部
+    </a>
   </div>
 
 </body>
 <script src="../cdn/jquery-3.6.4.min.js"></script>
+<script src="../cdn/layui-v2.6.8/layui/layui.js"></script>
+
 <script>
+  layui.use('laypage', function () {
+    var laypage = layui.laypage
+
+    //执行一个laypage实例
+    laypage.render({
+      elem: 'test1' //注意，这里的 test1 是 ID，不用加 # 号
+      , count: 50 //数据总数，从服务端得到
+    })
+  })
   function setModule (x) {
     console.log(x)
   }
+  window.onscroll = function () {
 
+    if (document.documentElement.scrollTop + $('.wraps').scrollTop() > 100) {
+      $('#scrollto').show()
+    }
+    else {
+      $('#scrollto').hide()
+    }
+  }
+  function showNone () {
+    // $('#filterbox').hide()
+    if ($("#filterbox").css('display') == 'none') {
+      $("#filterbox").show()
+      $('#updown').removeClass('bi-chevron-down')
+      $('#updown').addClass('bi-chevron-up')
+    } else {
+      $("#filterbox").hide()
+      $('#updown').removeClass('bi-chevron-up')
+      $('#updown').addClass('bi-chevron-down')
+    }
+  }
   $(".xiala-1").click(function () {
     //点击输入框打开选项窗，若已打开则关闭
     if ($(".xiala").css('display') == 'none') {

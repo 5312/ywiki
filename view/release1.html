@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../tailwind.min.css">
+  <link rel="stylesheet" href="../normalize.css">
+  <link rel="stylesheet" href="../index.css">
+  <link rel="stylesheet" href="../components/header.css">
+  <link rel="stylesheet" href="../cdn/layui-v2.6.8/layui/css/layui.css">
+  <!-- bootstrap -->
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"> -->
+  <link rel="stylesheet" href="../cdn/bootstrap-icons-1.10.4/font/bootstrap-icons.css">
+  <script src="../cdn/jquery-3.6.4.min.js"></script>
+  <script src="../cdn/layui-v2.6.8/layui/layui.js"></script>
+  <script src="../cdn/vue.js"></script>
+
+  <title>Document</title>
+</head>
+<style>
+  .main>section {
+    flex: 2;
+  }
+
+  .orgin {
+    color: #FF3A03;
+  }
+
+  .price {
+    font-size: 31px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+  }
+
+  .inline {
+    display: inline-block;
+  }
+
+  .border-b {
+    border-bottom: 1px solid #F1F1F1;
+  }
+
+  .acti {
+    width: 40px;
+    height: 40px;
+    background-color: #FFE7E5;
+  }
+
+  .phone {
+    color: #FF4E03;
+    font-size: 18px;
+    padding-top: 10px;
+  }
+
+
+
+  .inline {
+    vertical-align: middle;
+  }
+
+  .text-orgin {
+    color: #FE0000;
+  }
+
+  span,
+  label,
+  input,
+  .inline {
+    vertical-align: middle;
+  }
+
+  .vertical-top {
+    vertical-align: top;
+  }
+
+  .label {
+    /* width: 200px; */
+    text-align: right;
+    display: inline-block;
+  }
+
+  .button {
+    background-color: #FF3A03;
+    color: #fff;
+  }
+
+  .diaolog {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 11;
+    background-color: #6360606c;
+    border: 1px solid #eee;
+
+  }
+
+  .box {
+    width: 500px;
+    /* height: 500px; */
+    background-color: #fff;
+    margin: auto;
+    position: relative;
+    top: 15em;
+  }
+
+  .layui-tab-item {
+    border: 1px solid #eee;
+  }
+
+  .aptitude-box .list {
+    background-color: #fcfcfc;
+    border: 1px solid #e5e5e5;
+    padding: 14px 10px;
+    border-radius: 2px;
+  }
+
+  .aptitude-box .list span {
+    display: inline-block;
+    line-height: 30px;
+    padding: 0 10px;
+    white-space: nowrap;
+    cursor: pointer;
+    margin: 0 0 1px 1px;
+    color: #f9841e;
+    position: relative;
+  }
+
+  .aptitude-box .list span:hover {
+    background: #d5e9f2;
+  }
+
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  .inline-tag {
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #eee;
+    /* border-radius: 15px; */
+    padding: 0 14px 2px;
+    color: #000;
+    margin: 0px 5px 2px 0;
+    line-height: 26px;
+    white-space: nowrap;
+  }
+
+  .spanacitve {
+    background-color: #f9841e;
+    color: #fff !important;
+
+  }
+
+  .spanacitve:hover {
+    background: #f9841e !important;
+  }
+
+  .vercel-top {
+    vertical-align: top;
+  }
+
+  .vercel-middle {
+    vertical-align: middle;
+  }
+
+  .textareas {
+    width: 600px;
+    height: 160px;
+    border: 1px solid #e0e0e0;
+    color: #aaa;
+    line-height: 26px;
+  }
+
+  #label_more_aptitude {
+    display: inline;
+    border: 1px dashed #423c3c;
+  }
+</style>
+
+<body>
+  <div class="wraps" id="app">
+    <header class=" header">
+      <div class="headertop">
+        <div class="clear-both header-main">
+          <div class="person float-left">
+            <i class="bi bi-folder-plus"></i>
+            <span>收藏本页</span>
+          </div>
+
+          <div class="person float-left ml-4">
+            <i class="bi bi-qr-code"></i>
+            <span>二维码</span>
+          </div>
+          <div class="person float-right ml-4 border-left">
+            <i class=" ml-4 bi bi-terminal-plus"></i>
+            <span>客户管理</span>
+          </div>
+          <div class="person float-right  ">
+            <i class="bi bi-person"></i>
+            <span>个人中心</span>
+          </div>
+        </div>
+      </div>
+      <div class="contain">
+        <div class="flex headerbox flex-row justify-start">
+          <div class="logo">
+            <img src="../asset/易维客@2x.png" alt="">
+          </div>
+          <div class="search ml-32">
+            <div class="search_input shadow rounded-sm border-1 border-gray-300 border-solid clear-left">
+              <input type="text" id="destoon_select" class="search_m select xiala-1" value="供应" readonly=""
+                onfocus="this.blur();" onclick="$('#search_module').fadeIn('fast');">
+              <img class="xia" src="http://32.wpnq.com/skin/default/image/xia.png">
+              <div class="xiala shadow">
+                <ul>
+                  <li onclick="setModule('5','供应')" style="background-color: white; cursor: default;">供应</li>
+                  <li onclick="setModule('6','求购')" style="background-color: white;">求购</li>
+                </ul>
+              </div>
+              <input type="text" class=" inline outline-none inputs ml-2" placeholder="请输入关键词">
+              <div class="icon inline float-right"><i class="bi bi-search"></i></div>
+            </div>
+            <div class="type flex">
+              <div>金融</div>
+              <div>科技</div>
+              <div>电子商务</div>
+              <div>贸易</div>
+              <div>建筑</div>
+            </div>
+          </div>
+
+        </div>
+        <nav class="tabcard">
+          <div>出售公司</div>
+          <div class="tab-active">求购公司</div>
+          <div>我的私域</div>
+          <!-- <div>客户管理</div> -->
+        </nav>
+      </div>
+    </header>
+    <main class="main mx-auto py-4 ">
+      <section class="flex-2">
+        <article class="p-4 bg-white " style="border:1px solid #eee;">
+          <div class="border-b mb-2 pb-4">
+            <div class="text-base mb-2">
+              <i class=" bi bi-file-earmark-text-fill"></i>
+              <span>基本信息</span>
+            </div>
+
+            <div>
+              <div class=" m-auto text-xs    p-2">
+                <div class="label w-44 grey"> <span class="orgin">*</span>公司类型</div>
+                <div class="inline ml-2">
+                  <input class="radio" id="kk" type="radio" name="tt">
+                  <label for="kk">空壳公司</label>
+                  <input id="shit" class="radio ml-4" type="radio" name="tt">
+                  <label for="shit">实体公司</label>
+                </div>
+              </div>
+              <div class="m-auto  text-xs  p-2">
+                <div class="label w-44 grey"> <span class="orgin">*</span>公司名称</div>
+                <input class="border w-80 ml-2 p-1" placeholder="请填写完整公司名称" type="text">
+              </div>
+              <div class="m-auto  text-xs   p-2">
+                <div class="label w-44 grey"><span class="orgin">*</span>注册号/统一社会信用代码</div>
+                <input class="border w-80 ml-2 p-1" placeholder="请填写正确的社会信用代码" type="text">
+              </div>
+              <div class="m-auto  text-xs   p-2">
+                <div class="label w-44 grey"><span class="orgin">*</span> 注册资本 </div>
+                <div class="inline ml-2">
+                  <input class="border p-1 text-right" placeholder="万" type="text">
+                  <!-- <div class="border">人民币</div> -->
+                  <!-- <select name="" id="" class="border p-0.5">
+                    <option value="">人民币</option>
+                  </select> -->
+                </div>
+              </div>
+              <div class="m-auto  text-xs   p-2">
+                <div class="label w-44 grey">实缴资本 </div>
+                <div class="inline ml-2">
+                  <input class="border p-1 text-right" placeholder="万" type="text">
+                  <!-- <select name="" id="" class="border p-0.5">
+                    <option value="">人民币</option>
+                  </select> -->
+                </div>
+              </div>
+              <div class="m-auto  text-xs   p-2">
+                <div class="label w-44 grey"><span class="orgin">*</span> 成立日期</div>
+                <div class="inline ml-2">
+                  <input class="border p-1 text-left" placeholder="以执照上的成立日期为准" type="text">
+                </div>
+              </div>
+              <div class="m-auto  text-xs   p-2">
+                <div class="label w-44 grey vertical-top"><span class="orgin">*</span> 经营范围</div>
+                <div class="inline ml-2 w-80 vertical-top">
+                  <textarea class=" border p-1 text-left w-full h-32" placeholder="请与执照上的经营范围保持统一" type="text">
+              </textarea>
+                </div>
+              </div>
+              <div class="m-auto  text-xs  p-2">
+                <div class="label w-44 grey "><span class="orgin">*</span> 注册地区</div>
+                <div class="inline ml-2 ">
+                  <select name="" id="" class="border p-0.5 w-32">
+                    <option value="">请选择</option>
+                  </select>
+                  <select name="" id="" class="border p-0.5  w-32">
+                    <option value="">请选择</option>
+                  </select>
+                  <select name="" id="" class="border p-0.5  w-32">
+                    <option value="">请选择</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="border-b  mb-2 pb-4">
+            <div class="text-base mb-2">
+              <i class="bi bi-currency-yen"></i>
+              <span>资产信息</span>
+            </div>
+            <article>
+              <div class=" m-auto text-xs  p-2">
+                <div class="label w-44 grey"> 热门标签</div>
+                <div class="inline ml-2">
+                  <input class="checkout" type="checkbox" id="k" name="k">
+                  <label for="k">空壳公司</label>
+                  <input class="checkout ml-2" type="checkbox" id="g" name="g">
+                  <label for="g">接受挂靠</label>
+                  <input class="checkout ml-2" type="checkbox" name="radio">
+                  <label>央企/国企背景</label>
+                  <input class="checkout ml-2" type="checkbox" name="radio">
+                  <label>外资背景</label>
+                  <input class="checkout ml-2" type="checkbox" name="radio">
+                  <label>国家局名称</label>
+                </div>
+              </div>
+              <div class=" m-auto text-xs   p-2">
+                <div class="label w-44 grey"> <span class="orgin">*</span>是否开通社保</div>
+                <div class="inline ml-2">
+                  <input class="radio" id="shebaos" type="radio" name="shebao">
+                  <label for="shebaos" class="mr-4">是</label>
+                  <input class="radio" id="foushebao" type="radio" name="shebao">
+                  <label for="foushebao">否</label>
+                </div>
+              </div>
+              <div class=" m-auto text-xs   p-2">
+                <div class="label w-44 grey"> <span class="orgin">*</span>是否开通公积金</div>
+                <div class="inline ml-2">
+                  <input class="radio" type="radio" id="gj" name="gj">
+                  <label for="gj" class="mr-4">是</label>
+                  <input class="radio" type="radio" id="fou" name="gj">
+                  <label for="fou">否</label>
+                </div>
+              </div>
+              <div class=" m-auto text-xs    p-2 cursor-pointer">
+                <div class="label w-44 grey vercel-top"> <span class="orgin">*</span>是否有资质</div>
+                <div class="inline ml-2 vercel-top">
+                  <input class="radio" v-model="radioZiZhi" value="0" type="radio" @click="handleChangeClick" id="zshi"
+                    name="zizhi">
+                  <label for="zshi" class="mr-4">是</label>
+
+                  <input class="radio" v-model="radioZiZhi" value="1" type="radio" @click="handleFalse" id="zfou"
+                    name="zizhi">
+                  <label for="zfou">否</label>
+
+                  <div class="inline">
+                    <!-- 资质 -->
+                    <div class="inline-tag" v-for="x,y in qualification" :key="y">{{ x.name }}
+                      <i class=" bi bi-x-lg" @click="handleZiZhiremove(y)"></i>
+                    </div>
+                    <i v-if="radioZiZhi == '0'" id="label_more_aptitude" class="aptitude ml-4 border-dashed px-2 py-1"
+                      @click="handleChangeClick">
+                      <button data-class="aptitude" data-id="58" type="button">+
+                        添加</button></i>
+                  </div>
+                  <div>
+                    <textarea v-if="radioZiZhi == '0'" placeholder="完整的呈现资质信息对公司的价值很重要，由于资质分类不全导致你选择其它资质时，务必在此做详细描述"
+                      class="border textareas" name="" id="" cols="30" rows="10"></textarea>
+                  </div>
+                </div>
+              </div>
+              <!--  -->
+              <div class=" m-auto text-xs   p-2">
+                <div class="label w-44 grey vercel-top"> <span class="orgin">*</span>是否有商标</div>
+                <div class="inline ml-2">
+                  <input class="radio" id="youshangbiao" v-model="shangbiao" value="0" type="radio" name="shangbiao"
+                    @click="handleChangeClickshang">
+                  <label for="youshangbiao" class="mr-4">是</label>
+
+                  <input class="radio" id="wushangbiao" v-model="shangbiao" value="1" type="radio" @click="handleFalse"
+                    name="shangbiao">
+                  <label for="wushangbiao">否</label>
+                  <!--  -->
+                  <div class="inline">
+                    <!-- 商标 -->
+                    <div class="inline-tag" v-for="x,y in brand" :key="y">{{ x.name }}
+                      <i class=" bi bi-x-lg" @click="handleZiZhiremove(y)"></i>
+                    </div>
+                    <i v-if="shangbiao == '0'" id="label_more_aptitude" class="aptitude ml-4 border-dashed px-2 py-1"
+                      @click="handleChangeClickshang">
+                      <button data-class="aptitude" data-id="58" type="button">+
+                        添加</button></i>
+                  </div>
+                  <div>
+                    <textarea v-if="shangbiao == '0'" placeholder="请具体描述公司商标详情" class="border textareas" name="" id=""
+                      cols="30" rows="10"></textarea>
+                  </div>
+                  <!--  -->
+                </div>
+              </div>
+              <!--  -->
+              <div class=" m-auto text-xs   p-2">
+                <div class="label w-44 grey vercel-top"> <span class="orgin">*</span>是否有网络资产</div>
+                <div class="inline ml-2">
+                  <input class="radio" type="radio" @click="handleChangeClicknet" v-model="net" value="0" id="netshi"
+                    name="net">
+                  <label for="netshi" class="mr-4">是</label>
+                  <input class="radio" type="radio" v-model="net" value="1" id="netfou" name="net" @click="handleFalse">
+                  <label for="netfou">否</label>
+
+                  <!--  -->
+                  <div class="inline">
+                    <!-- 商标 -->
+                    <div class="inline-tag" v-for="x,y in netArray" :key="y">{{ x.name }}
+                      <i class=" bi bi-x-lg" @click="handleZiZhiremove(y)"></i>
+                    </div>
+                    <i v-if="net == '0'" id="label_more_aptitude" class="aptitude ml-4 border-dashed px-2 py-1"
+                      @click="handleChangeClicknet">
+                      <button data-class="aptitude" data-id="58" type="button">+
+                        添加</button></i>
+                  </div>
+                  <div>
+                    <textarea v-if="net == '0'" placeholder="请具体描述公司商标详情" class="border textareas" name="" id=""
+                      cols="30" rows="10"></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <!--  -->
+              <div class=" m-auto text-xs   p-2">
+                <div class="label w-44 grey"> <span class="orgin">*</span>是否有车牌指标</div>
+                <div class="inline ml-2">
+                  <input class="radio" v-model="chepai" value="0" type="radio" id="cheshi" name="che">
+                  <label for="cheshi" class="mr-4">是</label>
+                  <input class="radio" v-model="chepai" value="1" type="radio" id="chefou" name="che">
+                  <label for="chefou">否</label>
+                </div>
+              </div>
+              <div v-if="chepai == 0">
+                <div class="my-4">
+                  <div class="label w-44 vercel-top"> <span class="orgin"></span></div>
+                  <div class="inline ml-4">
+                    <textarea class="border" name="" id="" cols="30" rows="10" placeholder="请具体描述公司车牌指标详情"></textarea>
+
+                  </div>
+                </div>
+              </div>
+              <!--  -->
+              <div class=" m-auto text-xs    p-2">
+                <div class="label w-44 grey"> <span class="orgin">*</span>是否有专利/著作权</div>
+                <div class="inline ml-2">
+                  <input class="radio" v-model="zhuanli" value="0" type="radio" id="zhuanli" name="zhuanli">
+                  <label for="zhuanli" class="mr-4">是</label>
+                  <input class="radio" v-model="zhuanli" value="1" type="radio" id="fouzhuanli" name="zhuanli">
+                  <label for="fouzhuanli">否</label>
+                </div>
+              </div>
+              <div v-if="zhuanli == 0">
+                <div class="my-4">
+                  <div class="label w-44 vercel-top"> <span class="orgin"></span></div>
+                  <div class="inline ml-2">
+                    <textarea class="border" name="" id="" cols="30" rows="10" placeholder="请具体描述公司专利／著作权"></textarea>
+
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+          <!--  -->
+          <div class="border-b  mb-2 pb-4">
+            <div class="text-base mb-2">
+              <i class="bi bi-building-check"></i>
+              <span>税务信息</span>
+            </div>
+            <!--  -->
+            <div class=" m-auto text-xs   p-2">
+              <div class="label w-44 grey vercel-middle"> <span class="orgin">*</span>是否到报/开业</div>
+              <div class="inline ml-2 vercel-middle">
+                <input class="radio vercel-middle" type="radio" v-model="shui" id="shuishi" value="0" name="radio">
+                <label for="shuishi" class=" vercel-middle">是</label>
+                <input class="radio vercel-middle ml-8" type="radio" v-model="shui" id="shuifou" value="1" name="radio">
+                <label for="shuifou" class="vercel-middle">否</label>
+              </div>
+            </div>
+            <div v-if="shui == 0">
+              <div class="text-xs mt-2">
+                <div class="label w-44  grey"> <span class="orgin">*</span>纳税类型</div>
+                <div class="inline ml-4">
+                  <input class="radio" id="shui1" value="0" type="radio" name="shuileixing">
+                  <label for="shui1">小规模</label>
+
+                  <input class="radio ml-2" id="shui2" value="0" type="radio" name="shuileixing">
+                  <label for="shui2">一般纳税人</label>
+                </div>
+              </div>
+              <div class="my-4 text-xs">
+                <div class="label w-44 grey"> <span class="orgin">*</span>纳税等级</div>
+                <div class="inline ml-4">
+                  <input class="radio" id="shui5" value="0" type="radio" name="shuilevel">
+                  <label for="shui5">A级</label>
+
+                  <input class="radio ml-6" id="shui6" value="1" type="radio" name="shuilevel">
+                  <label for="shui6">B级</label>
+
+                  <input class="radio ml-3" id="shui7" value="2" type="radio" name="shuilevel">
+                  <label for="shui7">M级</label>
+                  <input class="radio ml-3" id="shui8" value="3" type="radio" name="shuilevel">
+                  <label for="shui8">C级</label>
+                  <input class="radio ml-3" id="shui9" value="4" type="radio" name="shuilevel">
+                  <label for="shui9">D级</label>
+                </div>
+              </div>
+              <div class="my-4 text-xs">
+                <div class="label w-44 grey vercel-top"> <span class="orgin">*</span>报税情况</div>
+                <div class="inline ml-4">
+                  <input class="radio " id="baoshui1" value="0" type="radio" name="baoshuiqingkuang">
+                  <label for="baoshui1">正常</label>
+
+                  <input class="radio ml-5" id="baoshui2" value="0" type="radio" name="baoshuiqingkuang">
+                  <label for="baoshui2">非正常</label>
+                </div>
+              </div>
+              <div class="my-4 text-xs">
+                <div class="label w-44 grey vercel-top"> <span class="orgin">*</span>是否申领过发票</div>
+                <div class="inline  ml-4">
+                  <input class="radio  " id="fapiao1" value="0" type="radio" name="fapiao">
+                  <label for="fapiao1">是</label>
+
+                  <input class="radio ml-8" id="fapiao2" value="1" type="radio" name="fapiao">
+                  <label for="fapiao2">否</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--  -->
+          <div class="border-b  mb-2 pb-4">
+            <div class="text-base mb-2">
+              <i class="bi bi-bank"></i>
+              <span>银行信息</span>
+            </div>
+            <!--  -->
+            <div class=" m-auto text-xs   p-2">
+              <div class="label w-44 grey"> <span class="orgin">*</span>银行账户</div>
+              <div class="inline ml-2">
+                <input class="radio" v-model="bank" id="bank1" value="0" type="radio" name="bank">
+                <label for="bank1">已开基本账户</label>
+                <input class="radio ml-2" v-model="bank" id="bank2" value="1" type="radio" name="bank">
+                <label for="bank2">未开基本账户</label>
+              </div>
+              <div v-if="bank == 0" class="my-3">
+                <div class="text-xs">
+                  <div class="label w-44 grey"> <span class="orgin">*</span>银行账户是否正常</div>
+                  <div class="inline ml-2">
+                    <input class="radio" id="bank3" value="0" type="radio" name="bankzc">
+                    <label for="bank3" class="mr-6">正常</label>
+
+                    <input class="radio" id="bank4" value="0" type="radio" name="bankzc">
+                    <label for="bank4">不正常</label>
+                  </div>
+                </div>
+                <div class="my-4 text-xs">
+                  <div class="label w-44 grey"> <span class="orgin">*</span>是否有网银</div>
+                  <div class="inline ml-2">
+                    <input class="radio" id="bank5" value="0" type="radio" name="bankwy">
+                    <label for="bank5" class="mr-4">有网银</label>
+
+                    <input class="radio" id="bank6" value="0" type="radio" name="bankwy">
+                    <label for="bank6">无网银</label>
+                  </div>
+                </div>
+                <div class="my-4 text-xs">
+                  <div class="label w-44 grey vercel-top"> <span class="orgin">*</span>银行流水情况</div>
+                  <div class="inline ml-2">
+                    <textarea class="border" name="" id="" cols="30" rows="10"
+                      placeholder="如果你的银行流水频次多，流水额大请做简单描述，利于你的成交价。"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--  -->
+          <div class="border-b  mb-2 pb-4">
+            <div class="text-base mb-2">
+              <i class="bi bi-arrow-left-right"></i>
+              <span>转让信息</span>
+            </div>
+            <!--  -->
+            <div class=" m-auto text-xs   p-2">
+              <div class="label w-44 grey vercel-top"> 转让价格</div>
+              <div class="inline ml-2">
+                <!-- <input class="radio" v-model="transfer" value="0" id="mianfie" type="radio" name="zhuan">
+                <label for="mianfie">免费转</label> -->
+                <input class="radio" v-model="transfer" value="1" id="mian" type="radio" name="zhuan">
+                <label for="mian">面议</label>
+                <input class="radio ml-2" v-model="transfer" value="2" id="zhuanrang" type="radio" name="zhuan">
+                <label for="zhuanrang">价格</label>
+                <div v-if="transfer==2" class="py-4">
+                  <input type="text" class="border px-2" style="width:100px;height:34px;">
+                  <span>~</span>
+                  <input type="text" class="border px-2" style="width:100px;height:34px;">
+                  <span>元</span>
+                </div>
+              </div>
+
+            </div>
+            <div class="m-auto  text-xs   p-2">
+              <div class="label w-44 grey vertical-top"><span class="orgin">*</span> 其他信息</div>
+              <div class="inline w-80 vertical-top ml-2">
+                <textarea class=" border p-1 text-left w-full h-32" placeholder="未尽信息或公司资产，可在此做详细描述" type="text">
+            </textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="button w-96 text-center m-auto py-2 px-4">马上发布信息</div>
+        </article>
+      </section>
+
+    </main>
+    <div id="diaolog" class="diaolog" v-if="dialogVisible">
+      <div class="box">
+        <i class="close bi bi-x-lg" @click="handleClose"></i>
+
+        <div class="diaolog-title py-6 px-4 text-lg border-b">选择标签</div>
+        <div class="gery text-sm px-4 py-2">
+          <span>可选择多项</span>
+          <div class="inline-tag" v-for="x,y in selectOne" :key="y">
+            {{x.name}}
+            <i class=" bi bi-x-lg" @click="handleremove(y)"></i>
+
+          </div>
+        </div>
+        <div class="layui-tab px-4">
+          <ul class="layui-tab-title">
+            <li v-for="x,y in data" :key="y" :class="{
+              'layui-this':x.this
+            }" @click="tabclick(y)">{{x.name}}</li>
+          </ul>
+          <div class="layui-tab-content aptitude-box">
+            <div class="layui-tab-item   list" v-for="x,y in data" :key="y" :class="{
+              'layui-show':x.this
+            }">
+              <span v-for="item,i in x.children" :key="i" :class="{
+                'spanacitve':selectClassstatus(item)
+              }" @click="handleOneclick(item)">{{item.name}}</span>
+
+            </div>
+          </div>
+        </div>
+        <footer class="text-center p-4">
+          <button type="button" class="layui-btn layui-btn-primary layui-border-orange inline"
+            @click="cancel">取消</button>
+
+          <button type="button" class="layui-btn layui-btn-danger inline" @click="submitSure">确定</button>
+        </footer>
+      </div>
+    </div>
+
+    <footer class="footer w-screen bg-white ">
+      <div class="w-2/5  mx-auto text-xs grey text-center p-4">
+        <div class="grid grid-cols-6 divide-x divide-gray-500 ">
+          <div>首页网站</div>
+          <div>公司转让</div>
+          <div>公司收购</div>
+          <div>关于我们</div>
+          <div>联系我们</div>
+          <div>法律声明</div>
+        </div>
+        <div class="p-2">易维客信息科技有限公司 | 津ICP备18000836号-1 | © Copyright©2023 ke.com版权所有</div>
+      </div>
+    </footer>
+    <a id="scrollto" class="gotop btn btn-default" href="#" role="button">
+      回到顶部
+    </a>
+  </div>
+</body>
+
+<script>
+
+  /*  */
+  $('#zshi').change(function () {
+    var checked = $('#zshi:checked')[0]
+    console.log(checked)
+  })
+
+
+  /*  */
+  function setModule (x) {
+    console.log(x)
+  }
+
+  $(".xiala-1").click(function () {
+    //点击输入框打开选项窗，若已打开则关闭
+    if ($(".xiala").css('display') == 'none') {
+      $(".xiala").show()
+      $('.xiala li:contains(' + $(this).val() + ')').css('background-color', '#ffffff')
+    } else {
+      $(".xiala").hide()
+    }
+  })
+  $(".xiala li").click(function () {
+    //点击选择时为输入框赋值。并关闭选项窗
+    $(".xiala-1").val($(this).text())
+    $(".xiala").hide()
+  })
+  window.onscroll = function () {
+
+    if (document.documentElement.scrollTop + $('.wraps').scrollTop() > 100) {
+      $('#scrollto').show()
+    }
+    else {
+      $('#scrollto').hide()
+    }
+  }
+</script>
+<script>
+  // 资质数据
+  const data = [
+    {
+      name: '公司资质', this: true, select: 0, children: [
+        {
+          name: '荣誉证书', id: 1, pid: 0, children: [
+            { name: "AAA信用企业", id: 101, pid: 1 },
+            { name: "双软认证企业", id: 102, pid: 1 },
+            { name: "高新技术认证企业", id: 103, pid: 1 },
+          ]
+        },
+        {
+          name: '工程行业', id: 2, pid: 0, children: [
+            { name: "工程总承包", id: 104, pid: 1 },
+          ]
+        },
+        {
+          name: '加工、环保、安监', id: 3, pid: 0, children: [
+            { name: "生产许可证", id: 105, pid: 1 },
+          ]
+        },
+        {
+          name: '特种设备安装改造维修资质', id: 4, pid: 0, children: [
+            { name: "锅炉", id: 106, pid: 1 }
+          ]
+        },
+        { name: '劳务、人力行业', id: 5, pid: 0 },
+        { name: '房地产、拆迁业', id: 6, pid: 0 },
+        { name: '物业、保洁', id: 7, pid: 0 },
+        { name: '政府采购或供应商资格', id: 8, pid: 0 },
+      ]
+    }
+  ]
+  // 商标
+  const trademark = [
+    {
+      name: '公司资质', this: true, select: 0, children: [
+        { name: '1类 化学制剂', id: 206, pid: 1 }
+      ]
+    },
+  ]
+  // 网络
+  const network = [
+    {
+      name: '网络资产', this: true, select: 0, children: [
+        { name: '阿里诚信通', id: 206, pid: 1 },
+        { name: '天猫店铺', id: 207, pid: 1 }
+      ]
+    }
+  ]
+
+  new Vue({
+    el: '#app',
+    data: function () {
+      return {
+        type: 1,
+        // 资质
+        radioZiZhi: null,
+        dialogVisible: false,
+        selectOne: [],
+        data: [],
+        qualification: [],
+        netArray: [],
+        //商标
+        brand: [],
+        shangbiao: null,
+        // 网络
+        net: null,
+        // 车牌
+        chepai: null,
+        // 专利
+        zhuanli: null,
+        // 税
+        shui: null,
+        // 银行
+        bank: null,
+        // 转让
+        transfer: null
+      }
+    },
+    computed: {
+      selectClassstatus () {
+        return function (e) {
+          var found = this.selectOne.find(item => {
+            return item.id == e.id
+          })
+          return found ? true : false
+        }
+      }
+    },
+    methods: {
+      /* ----------------资质----------------------------- */
+
+      // 关闭弹窗
+      handleClose (done) {
+        this.dialogVisible = false
+        this.selectOne = []
+        if (this.qualification.length == 0) {
+          this.radioZiZhi = '1'
+        }
+      },
+      // 一级
+      handleOneclick (e) {
+        // 添加过就取消
+        const found = this.selectOne.find(item => {
+          return item.id == e.id
+        })
+
+        if (found) {
+          this.selectOne.forEach((item, i) => {
+            if (item.id == e.id) {
+              this.selectOne.splice(i, 1)
+            }
+          })
+        } else {
+          if (e.pid != 0) {
+            // 不添加
+            this.selectOne.push({ ...e, this: true })
+          }
+          // 选中标签
+          // console.log(this.tablist)
+          if (this.data.length == 1) {
+
+            if (this.type == 1) {
+              // 当前切换卡片
+              this.data.forEach(element => {
+                element.this = false
+              })
+              // 添加tab 选项
+              this.data = [{ name: '公司资质', this: false, select: 0 }, { ...e, name: e.name + '子项目', this: true, select: 1 }]
+            }
+          }
+        }
+      },
+      // 删除选中
+      handleremove (i) {
+        this.selectOne.splice(i, 1)
+      },
+      tabclick (y) {
+        if (this.type == 2) {
+          if (y == 0) {
+            this.data = trademark
+          }
+          return
+        }
+        if (this.type == 3) {
+          if (y == 0) {
+            this.data = network
+          }
+          return
+        }
+        if (y == 0) {
+          this.data = data
+        }
+      },
+      // 取消
+      cancel () {
+        this.dialogVisible = false
+        this.selectOne = []
+        if (this.type == 2) {
+          if (this.brand.length == 0) {
+            this.shangbiao = '1'
+          }
+          return
+        }
+        if (this.type == 3) {
+          if (this.netArray.length == 0) {
+            this.net = '1'
+          }
+          return
+        }
+        if (this.qualification.length == 0) {
+          this.radioZiZhi = '1'
+        }
+      },
+      submitSure () {
+        this.dialogVisible = false
+        if (this.type == 2) {
+          this.brand = this.selectOne
+          if (this.brand.length == 0) {
+            this.shangbiao = '1'
+          }
+        } else if (this.type == 3) {
+          this.netArray = this.selectOne
+          if (this.netArray.length == 0) {
+            this.net = '1'
+          }
+          // this.netArray.splice(i, 1)
+        } else {
+          // 确定
+          this.qualification = this.selectOne
+          if (this.qualification.length == 0) {
+            this.radioZiZhi = '1'
+          }
+        }
+        this.selectOne = []
+
+      },
+      // 删除确认选出的资质
+      handleZiZhiremove (i) {
+        if (this.type == 2) {
+          this.brand.splice(i, 1)
+        } else if (this.type == 3) {
+
+          this.netArray.splice(i, 1)
+        } else {
+          this.qualification.splice(i, 1)
+        }
+      },
+      handleFalse () {
+        if (this.type == 2) {
+          this.brand = []
+        } else if (this.type == 3) {
+          this.netArray = []
+        } else {
+          this.qualification = []
+        }
+      },
+      // 打开弹窗
+      handleChangeClick () {
+
+        // 资质
+        const json = JSON.stringify(data)
+        this.data = JSON.parse(json)
+        console.dir(this.data)
+        this.dialogVisible = true
+        this.type = 1
+      },
+      /* ----------------资质----------------------------- */
+      /* ----------------商标----------------------------- */
+      handleChangeClickshang () {
+
+
+        // 打开弹窗
+        // 商标
+        this.data = trademark
+        this.type = 2
+        this.dialogVisible = true
+      },
+      handleChangeClicknet () {
+
+
+        this.data = network
+        this.type = 3
+        this.dialogVisible = true
+      }
+    }
+  })
+</script>
+
+</html>

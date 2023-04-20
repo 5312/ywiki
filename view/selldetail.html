@@ -43,6 +43,7 @@
     width: 40px;
     height: 40px;
     background-color: #FFE7E5;
+    overflow: hidden;
   }
 
   .phone {
@@ -52,8 +53,12 @@
   }
 
   .logo {
-    width: 100px;
-    height: 100px;
+    /* width: 100px;
+    height: 100px; */
+  }
+
+  .vm {
+    vertical-align: middle;
   }
 </style>
 
@@ -86,7 +91,7 @@
           <div class="logo">
             <img src="../asset/易维客@2x.png" alt="">
           </div>
-          <div class="search ml-32">
+          <div class="search ">
             <div class="search_input shadow rounded-sm border-1 border-gray-300 border-solid clear-left">
               <input type="text" id="destoon_select" class="search_m select xiala-1" value="供应" readonly=""
                 onfocus="this.blur();" onclick="$('#search_module').fadeIn('fast');">
@@ -127,20 +132,24 @@
           </div>
           <div class="w-4/5 flex flex-row items-center justify-between p-2">
             <div>
-              <img class="inline" src="../asset/收藏.png" alt="">
-              <span class="grey">收藏</span>
+              <!-- <img class="vm inline" src="../asset/收藏.png" alt=""> -->
+              <i class="inline bi bi-star"></i>
+              <span class="vm grey">收藏</span>
             </div>
             <div>
-              <img class="inline" src="../asset/收藏.png" alt="">
+              <!-- <img class="inline" src="../asset/收藏.png" alt=""> -->
+              <i class=" inline bi bi-flag"></i>
               <span class="grey">举报（0）</span>
             </div>
             <div>
-              <img class="inline" src="../asset/收藏.png" alt="">
+              <!-- <img class="inline" src="../asset/收藏.png" alt=""> -->
+              <i class="inline bi bi-eye"></i>
               <span class="grey">浏览次数：</span>
+              <div class="inline grey">
+                128次
+              </div>
             </div>
-            <div class="grey">
-              128次
-            </div>
+
           </div>
           <div class="border-b py-4">
             <div class="grey inline bg-gray-300 mx-2 px-2 py-1">银行流水</div>
@@ -148,14 +157,19 @@
           </div>
           <div class="w-4/5 flex flex-row items-center">
             <div class="flex flex-row p-4">
-              <div class="acti rounded-full h-24 w-24 flex items-center justify-center"></div>
+              <div class="acti rounded-full h-24 w-24 flex items-center justify-center">
+                <img src="../asset/circle.jpg" alt="">
+              </div>
               <div class="mx-2">
                 <div><span>李琳琳</span><span class="text-sm grey ml-3">交易顾问</span></div>
                 <div class="phone">15346458987</div>
               </div>
             </div>
             <div class="flex flex-row p-4">
-              <div class="acti rounded-full h-24 w-24 flex items-center justify-center"></div>
+              <div class="acti rounded-full h-24 w-24 flex items-center justify-center">
+                <img src="../asset/circle.jpg" alt="">
+
+              </div>
               <div class="mx-2">
                 <div><span>李琳琳</span><span class="text-sm grey ml-3">交易顾问</span></div>
                 <div class="phone">15346458987</div>
@@ -163,116 +177,133 @@
             </div>
           </div>
         </article>
-        <article class="p-4 bg-white mt-4">
+        <article class="p-4 bg-white mt-4 " style="border: 1px solid #eee;">
           <div class="border-b mb-2 pb-4">
-            <div class="text-2xl mb-2">
-              <i class="orgin bi bi-file-earmark-text-fill"></i>
+            <div class="text-xl mb-2">
+              <i class=" bi bi-file-earmark-text-fill"></i>
               <span>基本信息</span>
             </div>
             <div class="ml-8 flex flex-row py-1">
-              <div class="font-semibold">公司名称:</div>
-              <div class="  text-sm  ml-1"> 四川**建设工程有限公司</div>
+              <div class="text-sm font-semibold">公司名称:</div>
+              <div class="text-sm  ml-1"> 四川**建设工程有限公司</div>
             </div>
             <div class="ml-8 flex flex-row py-1">
-              <div class="font-semibold">注册资本:</div>
+              <div class="text-sm font-semibold">注册资本:</div>
               <div class="  text-sm  ml-1"> 1000万人民币</div>
             </div>
             <div class="ml-8 flex flex-row py-1">
-              <div class="font-semibold">实缴资本:</div>
+              <div class="text-sm font-semibold">实缴资本:</div>
               <div class="  text-sm  ml-1"> 0万人民币</div>
             </div>
 
             <div class="ml-8 flex flex-row py-1">
-              <div class="font-semibold">成立时间:</div>
+              <div class="text-sm font-semibold">成立时间:</div>
               <div class="  text-sm  ml-1"> 2017-09</div>
             </div>
             <div class="ml-8 flex flex-row py-1">
-              <div class="font-semibold">注册地址:</div>
+              <div class="text-sm font-semibold">注册地址:</div>
               <div class="  text-sm  ml-1"> 四宜宾市 ***** </div>
             </div>
             <div class="ml-8  py-1 clear-both">
-              <div class="font-semibold flex-2 float-left mr-1">经营范围: </div>
+              <div class="text-sm font-semibold flex-2 float-left mr-1">经营范围: </div>
               <div class=" text-sm tracking-wider"> 房屋建筑工程，机电工程，电力工程，水利水电工程，公路工程，市政公用
                 工程，建筑装修装饰工程，土石方工程，送变电工程，河湖整治工程，堤防工程，建筑防水工程，钢结构工程，环保工程机电设备安装工程，建筑智能化工程，化工石油设备管道安装工程，体育场地设施工程，城市及道路照明工程，园林绿化工程、建筑幕墙工程，地基基础工程、公路路面工程、公路路基工程，建筑劳务分包;建材销售。
                 (依法须经批准的项目，经相关部门批准后方可开展经营活动) </div>
             </div>
           </div>
           <div class="border-b  mb-2 pb-4">
-            <div class="text-2xl mb-2">
-              <i class="orgin bi bi-file-earmark-text-fill"></i>
+            <div class="text-xl mb-2">
+              <i class="bi bi-currency-yen"></i>
               <span>资产信息</span>
             </div>
             <div class="ml-8 flex flex-row py-1">
-              <div class="font-semibold">社保账户: </div>
+              <div class="text-sm font-semibold">社保账户: </div>
               <div class="  text-sm  ml-1">已开通 </div>
             </div>
             <div class="ml-8 flex flex-row py-1">
-              <div class="font-semibold">资质类别:</div>
+              <div class="text-sm font-semibold">资质类别:</div>
               <div class="  text-sm  ml-1"> 工程总承包 + 工程专业承包</div>
             </div>
 
             <div class="ml-8  py-1 clear-both">
-              <div class="font-semibold flex-2 float-left mr-1">资质描述: </div>
+              <div class="text-sm font-semibold flex-2 float-left mr-1">资质描述: </div>
               <div class="  text-sm ">出: 1.川内，铁路电务3级 2.宜宾，房市公3级带多专 3.造价暂乙，正乙 一手办理: 1.承装修试 2.招标代理登记，招标从业人员 3.造价备案
                 4.咨询备案(预评价)
                 5.全川劳务备案 6.监理新办</div>
             </div>
           </div>
           <div class="border-b  mb-2 pb-4">
-            <div class="text-2xl mb-2">
-              <i class="orgin bi bi-file-earmark-text-fill"></i>
+            <div class="text-xl mb-2">
+              <i class="bi bi-building-check"></i>
+              <!-- <i class="bi bi-bank2"></i> -->
               <span>税务信息</span>
             </div>
             <div class="ml-8 flex flex-row py-1">
-              <div class="font-semibold">纳税类型: </div>
+              <div class="text-sm font-semibold">纳税类型: </div>
               <div class="  text-sm  ml-1">小规模</div>
             </div>
             <div class="ml-8 flex flex-row py-1">
-              <div class="font-semibold">纳税等级:</div>
+              <div class="text-sm font-semibold">纳税等级:</div>
               <div class="  text-sm  ml-1"> A 级</div>
             </div>
             <div class="ml-8 flex flex-row py-1">
-              <div class="font-semibold">报税情况:</div>
+              <div class="text-sm font-semibold">报税情况:</div>
               <div class="  text-sm  ml-1"> 正常</div>
             </div>
             <div class="ml-8 flex flex-row py-1">
-              <div class="font-semibold">申领发票:</div>
+              <div class="text-sm font-semibold">申领发票:</div>
               <div class="  text-sm  ml-1"> 未申领</div>
             </div>
           </div>
           <div class="border-b  mb-2 pb-4">
-            <div class="text-2xl mb-2">
-              <i class="orgin bi bi-file-earmark-text-fill"></i>
+            <div class="text-xl mb-2">
+              <i class="bi bi-calendar2-check"></i>
               <span>其他信息</span>
             </div>
             <div class="ml-8  py-1 clear-both">
-              <div class="font-semibold flex-2 float-left mr-1">其他信息: </div>
+              <div class="text-sm font-semibold flex-2 float-left mr-1">其他信息: </div>
               <div class=" text-sm">总纳税10万多21年纳税1万多，22年5800，每年营业额100多万 </div>
             </div>
           </div>
         </article>
       </section>
       <aside class=" flex-1  ml-4">
-        <article class="bg-white p-4 ">
+        <article class="bg-white p-4 " style="border: 1px solid #eee;">
           <div class="flex flex-row items-center mb-2">
             <img class="logo" src="../asset/logo.png" alt="">
-            <div>
+            <div class="ml-4">
               <div class="text-lg font-semibold">明远信息科技有限公司</div>
-              <div class="grey"> 代账公司</div>
+              <i class="text-xs bi bi-geo-alt"></i>
+              <span class="text-xs">陕西</span>
+              <!-- <div class="grey"> 代账公司</div> -->
             </div>
           </div>
-          <div class="grey py-4">
-            公司地址：陕西省西安市高新区丈八北路
-            数字大厦5楼301
+          <div class="grey flex flex-row">
+            <span class="mr-2">
+              <div class="text-xs" style="color:#000;">代办项目:</div>
+            </span>
+            <div class="text-xs grid grid-cols-5 divide-x divide-green-500">
+              <div class="px-2">股权变更</div>
+              <div class="px-2">代理记账</div>
+              <div class="px-2">公司买卖</div>
+              <div class="px-2">疑难核名</div>
+              <div class="px-2">发票增量</div>
+
+            </div>
           </div>
+
+          <!-- <div>
+            <div class="grey"> 代账公司</div>
+            <div class="grey py-4">
+              公司地址：陕西省西安市高新区丈八北路
+              数字大厦5楼301
+            </div>
+          </div> -->
         </article>
-        <article class="bg-white p-4">
-          <div class="flex flex-row items-center justify-between border-b pb-4">
-            <div>更多公司转账>></div>
-            <div class="grey">
-              <i class="bi bi-bounding-box"></i>
-              <span>刷新</span>
-            </div>
+
+        <article class="bg-white p-4 mb-4 mt-4" style="border: 1px solid #eee;">
+          <div class="border-b p-2">
+            <div>本企业出售 >></div>
           </div>
           <div class="line text-sm  py-2 border-b">
             <span class="orgin">【编号：68781429】 </span>
@@ -295,53 +326,60 @@
             <span>西安**科技有限公司</span>
           </div>
         </article>
-        <article class="bg-white bg-white p-4">
+        <article class="bg-white bg-white p-4" style="border: 1px solid #eee;">
           <div class="text-lg border-b pb-4">员工信息</div>
           <div class="flex flex-row p-4 items-center border-b">
-            <div class="acti rounded-full h-24 w-24 flex items-center justify-center"></div>
+            <div class="acti rounded-full h-24 w-24 flex items-center justify-center"> <img src="../asset/circle.jpg"
+                alt=""></div>
             <div class="mx-2">
               <div class="text-sm"><span>李琳琳</span><span class="grey ml-3">交易顾问</span></div>
               <div class="phone">15346458987</div>
             </div>
           </div>
           <div class="flex flex-row p-4 items-center border-b">
-            <div class="acti rounded-full h-24 w-24 flex items-center justify-center"></div>
+            <div class="acti rounded-full h-24 w-24 flex items-center justify-center"> <img src="../asset/circle.jpg"
+                alt=""></div>
             <div class="mx-2">
               <div class="text-sm"><span>李琳琳</span><span class="grey ml-3">交易顾问</span></div>
               <div class="phone">15346458987</div>
             </div>
           </div>
           <div class="flex flex-row p-4 items-center border-b">
-            <div class="acti rounded-full h-24 w-24 flex items-center justify-center"></div>
+            <div class="acti rounded-full h-24 w-24 flex items-center justify-center"> <img src="../asset/circle.jpg"
+                alt=""></div>
             <div class="mx-2">
               <div class="text-sm"><span>李琳琳</span><span class="grey ml-3">交易顾问</span></div>
               <div class="phone">15346458987</div>
             </div>
           </div>
           <div class="flex flex-row p-4 items-center border-b">
-            <div class="acti rounded-full h-24 w-24 flex items-center justify-center"></div>
+            <div class="acti rounded-full h-24 w-24 flex items-center justify-center">
+              <img src="../asset/circle.jpg" alt="">
+            </div>
             <div class="mx-2">
               <div class="text-sm"><span>李琳琳</span><span class="grey ml-3">交易顾问</span></div>
               <div class="phone">15346458987</div>
             </div>
           </div>
           <div class="flex flex-row p-4 items-center border-b">
-            <div class="acti rounded-full h-24 w-24 flex items-center justify-center"></div>
+            <div class="acti rounded-full h-24 w-24 flex items-center justify-center"> <img src="../asset/circle.jpg"
+                alt=""></div>
             <div class="mx-2">
               <div class="text-sm"><span>李琳琳</span><span class="grey ml-3">交易顾问</span></div>
               <div class="phone">15346458987</div>
             </div>
           </div>
           <div class="flex flex-row p-4 items-center border-b">
-            <div class="acti rounded-full h-24 w-24 flex items-center justify-center"></div>
+            <div class="acti rounded-full h-24 w-24 flex items-center justify-center"> <img src="../asset/circle.jpg"
+                alt=""></div>
             <div class="mx-2">
               <div class="text-sm"><span>李琳琳</span><span class="grey ml-3">交易顾问</span></div>
               <div class="phone">15346458987</div>
             </div>
           </div>
-          <div class="p-4 text-center">
+          <!-- <div class="p-4 text-center">
             更多员工信息>>
-          </div>
+          </div> -->
         </article>
       </aside>
     </main>
@@ -358,6 +396,9 @@
         <div class="p-2">易维客信息科技有限公司 | 津ICP备18000836号-1 | © Copyright©2023 ke.com版权所有</div>
       </div>
     </footer>
+    <a id="scrollto" class="gotop btn btn-default" href="#" role="button">
+      回到顶部
+    </a>
   </div>
 
 </body>
@@ -381,6 +422,16 @@
     $(".xiala-1").val($(this).text())
     $(".xiala").hide()
   })
+  window.onscroll = function () {
+
+    if (document.documentElement.scrollTop + $('.wraps').scrollTop() > 100) {
+      $('#scrollto').show()
+    }
+    else {
+      $('#scrollto').hide()
+    }
+  }
+
 </script>
 
 </html>

@@ -52,8 +52,8 @@
   }
 
   .logo {
-    width: 100px;
-    height: 100px;
+    /* width: 100px;
+    height: 100px; */
   }
 
   .inline {
@@ -152,22 +152,22 @@
       <section class="flex-2">
         <article class="p-4 bg-white ">
           <div class="border-b mb-2 pb-4">
-            <div class="text-2xl mb-2">
-              <i class="orgin bi bi-file-earmark-text-fill"></i>
+            <div class="text-base mb-2">
+              <i class=" bi bi-file-earmark-text-fill"></i>
               <span>求购信息</span>
             </div>
-            <div class="mb-2 border-b pb-2">
+            <!-- <div class="mb-2 border-b pb-2">
               <img class="inline" src="../asset/jurassic.png" alt="">
               <span class="inline ml-2 text-sm font-semibold">免费发布您的需求，大家一起帮您找公司</span>
-            </div>
+            </div> -->
             <div>
               <div class="m-auto  text-sm   p-2">
                 <div class="label w-44"><span class="orgin">*</span> 标题</div>
-                <div class="inline">
-                  <input class="border p-1 text-right" placeholder="请填写求购标题" type="text">
+                <div class="inline ml-2">
+                  <input class="border p-1 text-left" placeholder="请填写求购标题" type="text">
                 </div>
               </div>
-              <div class="m-auto  text-sm  p-2">
+              <div class="m-auto  text-sm  p-2 ml-2">
                 <div class="label w-44  "><span class="orgin">*</span> 注册地区</div>
                 <div class="inline ">
                   <select name="" id="" class="border p-0.5 w-32">
@@ -183,7 +183,7 @@
               </div>
               <div class="m-auto  text-sm   p-2">
                 <div class="label w-44 vertical-top"><span class="orgin">*</span> 经营范围</div>
-                <div class="inline w-80 vertical-top">
+                <div class="inline w-80 vertical-top ml-2">
                   <textarea class=" border p-1 text-right w-full h-32" placeholder="请详细描述求购的公司要求，限100字以内！" type="text">
                 </textarea>
                 </div>
@@ -191,10 +191,10 @@
               <div class=" m-auto text-sm   p-2">
                 <div class="label w-44"> <span class="orgin">*</span>委托易维客求购</div>
                 <div class="inline ml-2">
-                  <input class="radio" type="radio" name="radio">
-                  <label>是</label>
-                  <input class="radio" type="radio" name="radio">
-                  <label>否</label>
+                  <input class="radio" type="radio" id="shi" name="q">
+                  <label for="shi">是</label>
+                  <input class="radio" type="radio" id="fou" name="q">
+                  <label for="fou">否</label>
                 </div>
               </div>
             </div>
@@ -202,8 +202,8 @@
 
           <!--  -->
           <div class="border-b  mb-2 pb-4">
-            <div class="text-2xl mb-2">
-              <i class="orgin bi bi-file-earmark-text-fill"></i>
+            <div class="text-base mb-2">
+              <i class="bi bi-telephone-fill"></i>
               <span>联系方式</span>
             </div>
             <!--  -->
@@ -245,6 +245,9 @@
         <div class="p-2">易维客信息科技有限公司 | 津ICP备18000836号-1 | © Copyright©2023 ke.com版权所有</div>
       </div>
     </footer>
+    <a id="scrollto" class="gotop btn btn-default" href="#" role="button">
+      回到顶部
+    </a>
   </div>
 </body>
 <script src="../cdn/jquery-3.6.4.min.js"></script>
@@ -252,7 +255,15 @@
   function setModule (x) {
     console.log(x)
   }
+  window.onscroll = function () {
 
+    if (document.documentElement.scrollTop + $('.wraps').scrollTop() > 100) {
+      $('#scrollto').show()
+    }
+    else {
+      $('#scrollto').hide()
+    }
+  }
   $(".xiala-1").click(function () {
     //点击输入框打开选项窗，若已打开则关闭
     if ($(".xiala").css('display') == 'none') {

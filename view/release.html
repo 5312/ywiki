@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="../normalize.css">
   <link rel="stylesheet" href="../index.css">
   <link rel="stylesheet" href="../components/header.css">
+  <link rel="stylesheet" href="../cdn/layui-v2.6.8/layui/css/layui.css">
   <!-- bootstrap -->
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"> -->
   <link rel="stylesheet" href="../cdn/bootstrap-icons-1.10.4/font/bootstrap-icons.css">
@@ -85,10 +86,86 @@
     background-color: #FF3A03;
     color: #fff;
   }
+
+  .diaolog {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 11;
+    background-color: #6360606c;
+    border: 1px solid #eee;
+  }
+
+  .box {
+    width: 500px;
+    /* height: 500px; */
+    background-color: #fff;
+    margin: auto;
+    position: relative;
+    top: 15em;
+  }
+
+  .layui-tab-item {
+    border: 1px solid #eee;
+  }
+
+  .aptitude-box .list {
+    background-color: #fcfcfc;
+    border: 1px solid #e5e5e5;
+    padding: 14px 10px;
+    border-radius: 2px;
+  }
+
+  .aptitude-box .list span {
+    display: inline-block;
+    line-height: 30px;
+    padding: 0 10px;
+    white-space: nowrap;
+    cursor: pointer;
+    margin: 0 0 1px 1px;
+    color: #f9841e;
+    position: relative;
+  }
+
+  .aptitude-box .list span:hover {
+    background: #d5e9f2;
+  }
+
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  .inline-tag {
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #f9841e;
+    border-radius: 15px;
+    padding: 0 14px 2px;
+    color: #fff;
+    margin: 0px 5px 2px 0;
+    line-height: 26px;
+    white-space: nowrap;
+  }
+
+  .spanacitve {
+    background-color: #f9841e;
+    color: #fff !important;
+
+  }
+
+  .spanacitve:hover {
+    background: #f9841e !important;
+  }
 </style>
 
 <body>
-  <div class="wraps">
+  <div class="wraps" id="app">
     <header class=" header">
       <div class="headertop">
         <div class="clear-both header-main">
@@ -150,20 +227,13 @@
     </header>
     <main class="main mx-auto py-4 ">
       <section class="flex-2">
-        <article class="p-4 bg-white ">
+        <article class="p-4 bg-white " style="border:1px solid #eee;">
           <div class="border-b mb-2 pb-4">
-            <div class="text-2xl mb-2">
-              <i class="orgin bi bi-file-earmark-text-fill"></i>
+            <div class="text-xl mb-2">
+              <i class=" bi bi-file-earmark-text-fill"></i>
               <span>基本信息</span>
             </div>
-            <div class="mb-2 ">
-              <img class="inline" src="../asset/jurassic.png" alt="">
-              <span class="inline ml-2 text-sm font-semibold">每个账号每天可免费发布2条转让信息，2条以上每条需支付5枚快转币。</span>
-            </div>
-            <div class="mb-2 border-b pb-2">
-              <img class="inline" src="../asset/jurassic.png" alt="">
-              <span class="inline ml-2 text-sm font-semibold">一个【联系电话】最多关联10条公司转让信息。</span>
-            </div>
+
             <div>
               <div class=" m-auto text-sm   p-2">
                 <div class="label w-44"> <span class="orgin">*</span>公司类型</div>
@@ -183,21 +253,22 @@
                 <input class="border w-80 ml-2 p-1" placeholder="请填写正确的社会信用代码" type="text">
               </div>
               <div class="m-auto  text-sm   p-2">
-                <div class="label w-44"><span class="orgin">*</span> 注册资本</div>
+                <div class="label w-44"><span class="orgin">*</span> 注册资本 </div>
                 <div class="inline">
                   <input class="border p-1 text-right" placeholder="万" type="text">
-                  <select name="" id="" class="border p-0.5">
+                  <!-- <div class="border">人民币</div> -->
+                  <!-- <select name="" id="" class="border p-0.5">
                     <option value="">人民币</option>
-                  </select>
+                  </select> -->
                 </div>
               </div>
               <div class="m-auto  text-sm   p-2">
-                <div class="label w-44">实缴资本</div>
+                <div class="label w-44">实缴资本 </div>
                 <div class="inline">
                   <input class="border p-1 text-right" placeholder="万" type="text">
-                  <select name="" id="" class="border p-0.5">
+                  <!-- <select name="" id="" class="border p-0.5">
                     <option value="">人民币</option>
-                  </select>
+                  </select> -->
                 </div>
               </div>
               <div class="m-auto  text-sm   p-2">
@@ -231,17 +302,17 @@
             </div>
           </div>
           <div class="border-b  mb-2 pb-4">
-            <div class="text-2xl mb-2">
-              <i class="orgin bi bi-file-earmark-text-fill"></i>
+            <div class="text-xl mb-2">
+              <i class=" bi bi-file-earmark-text-fill"></i>
               <span>资产信息</span>
             </div>
             <article>
               <div class=" m-auto text-sm  p-2">
                 <div class="label w-44"> 热门标签</div>
                 <div class="inline ml-2">
-                  <input class="checkout" type="checkbox" id="k" name="checkbox">
+                  <input class="checkout" type="checkbox" id="k" name="k">
                   <label for="k">空壳公司</label>
-                  <input class="checkout" type="checkbox" id="g" name="radio">
+                  <input class="checkout" type="checkbox" id="g" name="g">
                   <label for="g">接受挂靠</label>
                   <input class="checkout" type="checkbox" name="radio">
                   <label>央企/国企背景</label>
@@ -254,28 +325,38 @@
               <div class=" m-auto text-sm   p-2">
                 <div class="label w-44"> <span class="orgin">*</span>是否开通社保</div>
                 <div class="inline ml-2">
-                  <input class="radio" type="radio" name="radio">
-                  <label>是</label>
-                  <input class="radio" type="radio" name="radio">
+                  <input class="radio" type="radio" name="shebao">
+                  <label class="mr-4">是</label>
+                  <input class="radio" type="radio" name="shebao">
                   <label>否</label>
                 </div>
               </div>
               <div class=" m-auto text-sm   p-2">
                 <div class="label w-44"> <span class="orgin">*</span>是否开通公积金</div>
                 <div class="inline ml-2">
-                  <input class="radio" type="radio" name="radio">
-                  <label>是</label>
-                  <input class="radio" type="radio" name="radio">
-                  <label>否</label>
+                  <input class="radio" type="radio" id="gj" name="gj">
+                  <label for="gj" class="mr-4">是</label>
+                  <input class="radio" type="radio" id="fou" name="gj">
+                  <label for="fou">否</label>
                 </div>
               </div>
-              <div class=" m-auto text-sm   p-2">
+              <div class=" m-auto text-sm   p-2 cursor-pointer">
                 <div class="label w-44"> <span class="orgin">*</span>是否有资质</div>
                 <div class="inline ml-2">
-                  <input class="radio" type="radio" name="radio">
-                  <label>是</label>
-                  <input class="radio" type="radio" name="radio">
-                  <label>否</label>
+                  <input class="radio" v-model="radioZiZhi" value="0" type="radio" @click="handleChangeClick" id="zshi"
+                    name="zizhi">
+                  <label for="zshi" class="mr-4">是</label>
+
+                  <input class="radio" v-model="radioZiZhi" value="1" type="radio" @click="handleFalse" id="zfou"
+                    name="zizhi">
+                  <label for="zfou">否</label>
+
+                  <div class="inline">
+                    <!-- 资质 -->
+                    <div class="inline-tag" v-for="x,y in qualification" :key="y">{{ x.name }}
+                      <i class=" bi bi-x-lg" @click="handleZiZhiremove(y)"></i>
+                    </div>
+                  </div>
                 </div>
               </div>
               <!--  -->
@@ -283,7 +364,7 @@
                 <div class="label w-44"> <span class="orgin">*</span>是否有商标</div>
                 <div class="inline ml-2">
                   <input class="radio" type="radio" name="radio">
-                  <label>是</label>
+                  <label class="mr-4">是</label>
                   <input class="radio" type="radio" name="radio">
                   <label>否</label>
                 </div>
@@ -293,7 +374,7 @@
                 <div class="label w-44"> <span class="orgin">*</span>是否有网络资产</div>
                 <div class="inline ml-2">
                   <input class="radio" type="radio" name="radio">
-                  <label>是</label>
+                  <label class="mr-4">是</label>
                   <input class="radio" type="radio" name="radio">
                   <label>否</label>
                 </div>
@@ -303,7 +384,7 @@
                 <div class="label w-44"> <span class="orgin">*</span>是否有车牌指标</div>
                 <div class="inline ml-2">
                   <input class="radio" type="radio" name="radio">
-                  <label>是</label>
+                  <label class="mr-4">是</label>
                   <input class="radio" type="radio" name="radio">
                   <label>否</label>
                 </div>
@@ -313,7 +394,7 @@
                 <div class="label w-44"> <span class="orgin">*</span>是否有专利/著作权</div>
                 <div class="inline ml-2">
                   <input class="radio" type="radio" name="radio">
-                  <label>是</label>
+                  <label class="mr-4">是</label>
                   <input class="radio" type="radio" name="radio">
                   <label>否</label>
                 </div>
@@ -322,8 +403,8 @@
           </div>
           <!--  -->
           <div class="border-b  mb-2 pb-4">
-            <div class="text-2xl mb-2">
-              <i class="orgin bi bi-file-earmark-text-fill"></i>
+            <div class="text-xl mb-2">
+              <i class=" bi bi-file-earmark-text-fill"></i>
               <span>税务信息</span>
             </div>
             <!--  -->
@@ -331,7 +412,7 @@
               <div class="label w-44"> <span class="orgin">*</span>是否到报/开业</div>
               <div class="inline ml-2">
                 <input class="radio" type="radio" name="radio">
-                <label>是</label>
+                <label class="mr-4">是</label>
                 <input class="radio" type="radio" name="radio">
                 <label>否</label>
               </div>
@@ -339,8 +420,8 @@
           </div>
           <!--  -->
           <div class="border-b  mb-2 pb-4">
-            <div class="text-2xl mb-2">
-              <i class="orgin bi bi-file-earmark-text-fill"></i>
+            <div class="text-xl mb-2">
+              <i class=" bi bi-file-earmark-text-fill"></i>
               <span>银行信息</span>
             </div>
             <!--  -->
@@ -356,8 +437,8 @@
           </div>
           <!--  -->
           <div class="border-b  mb-2 pb-4">
-            <div class="text-2xl mb-2">
-              <i class="orgin bi bi-file-earmark-text-fill"></i>
+            <div class="text-xl mb-2">
+              <i class=" bi bi-file-earmark-text-fill"></i>
               <span>转让信息</span>
             </div>
             <!--  -->
@@ -380,35 +461,50 @@
               </div>
             </div>
           </div>
-          <!--  -->
-          <div class="border-b  mb-2 pb-4">
-            <div class="text-2xl mb-2">
-              <i class="orgin bi bi-file-earmark-text-fill"></i>
-              <span>联系方式</span>
-            </div>
-            <!--  -->
-            <div class="m-auto  text-sm   p-2">
-              <div class="m-auto  text-sm  p-2">
-                <div class="label w-44"> <span class="orgin">*</span>联系电话</div>
-                <input class="border w-80 ml-2 p-1" placeholder="请填写联系电话" type="text">
-              </div>
-              <div class="m-auto  text-sm  p-2">
-                <div class="label w-44"> <span class="orgin">*</span>联系人</div>
-                <input class="border w-80 ml-2 p-1" placeholder="请填写联系人姓名" type="text">
-              </div>
-              <div class="text-center p-2">
-                <input type="checkbox" name="" id="yue">
-                <label for="yue">我已阅读并接受<span class="orgin">《易维客服务协议》</span></label>
-              </div>
-              <div class="button w-96 text-center m-auto py-2 px-4">马上发布信息</div>
-            </div>
-          </div>
-          <!--  -->
+
+          <div class="button w-96 text-center m-auto py-2 px-4">马上发布信息</div>
         </article>
       </section>
 
     </main>
+    <div class="diaolog" v-if="dialogVisible">
+      <div class="box">
+        <i class="close bi bi-x-lg" @click="handleClose"></i>
 
+        <div class="diaolog-title py-6 px-4 text-lg border-b">选择标签</div>
+        <div class="gery text-sm px-4 py-2">
+          <span>可选择多项</span>
+          <div class="inline-tag" v-for="x,y in selectOne" :key="y">
+            {{x.name}}
+            <i class=" bi bi-x-lg" @click="handleremove(y)"></i>
+
+          </div>
+        </div>
+        <div class="layui-tab px-4">
+          <ul class="layui-tab-title">
+            <li v-for="x,y in tablist" :key="y" :class="{
+              'layui-this':x.this
+            }" @click="tabclick(y)">{{x.name}}</li>
+          </ul>
+          <div class="layui-tab-content aptitude-box">
+            <div class="layui-tab-item   list" v-for="x,y in data" :key="y" :class="{
+              'layui-show':x.this
+            }">
+              <span v-for="x,y in centerList[x.select]" :key="y" :class="{
+                'spanacitve':selectClassstatus(x)
+              }" @click="handleOneclick(x)">{{x.name}}</span>
+
+            </div>
+          </div>
+        </div>
+        <footer class="text-center p-4">
+          <button type="button" class="layui-btn layui-btn-primary layui-border-orange inline"
+            @click="cancel">取消</button>
+
+          <button type="button" class="layui-btn layui-btn-danger inline" @click="submitSure">确定</button>
+        </footer>
+      </div>
+    </div>
 
     <footer class="footer w-screen bg-white ">
       <div class="w-2/5  mx-auto text-xs grey text-center p-4">
@@ -423,10 +519,24 @@
         <div class="p-2">易维客信息科技有限公司 | 津ICP备18000836号-1 | © Copyright©2023 ke.com版权所有</div>
       </div>
     </footer>
+    <a id="scrollto" class="gotop btn btn-default" href="#" role="button">
+      回到顶部
+    </a>
   </div>
 </body>
 <script src="../cdn/jquery-3.6.4.min.js"></script>
+<script src="../cdn/layui-v2.6.8/layui/layui.js"></script>
+<script src="../cdn/vue.js"></script>
 <script>
+
+  /*  */
+  $('#zshi').change(function () {
+    var checked = $('#zshi:checked')[0]
+    console.log(checked)
+  })
+
+
+  /*  */
   function setModule (x) {
     console.log(x)
   }
@@ -444,6 +554,154 @@
     //点击选择时为输入框赋值。并关闭选项窗
     $(".xiala-1").val($(this).text())
     $(".xiala").hide()
+  })
+  window.onscroll = function () {
+
+    if (document.documentElement.scrollTop + $('.wraps').scrollTop() > 100) {
+      $('#scrollto').show()
+    }
+    else {
+      $('#scrollto').hide()
+    }
+  }
+</script>
+<script>
+  new Vue({
+    el: '#app',
+    data: function () {
+      return {
+        // 资质
+        radioZiZhi: null,
+        dialogVisible: false,
+        selectOne: [],
+        data: [
+          {
+            name: '公司资质', this: true, select: 0, children: [
+              {
+                name: '荣誉证书', id: 1, pid: 0, children: [
+                  { name: "AAA信用企业", id: 101, pid: 1 },
+                  { name: "双软认证企业", id: 102, pid: 1 },
+                  { name: "高新技术认证企业", id: 103, pid: 1 },
+                ]
+              },
+              { name: '工程行业', id: 2, pid: 0 },
+              { name: '加工、环保、安监', id: 3, pid: 0 },
+              { name: '特种设备安装改造维修资质', id: 4, pid: 0 },
+              { name: '劳务、人力行业', id: 5, pid: 0 },
+              { name: '房地产、拆迁业', id: 6, pid: 0 },
+              { name: '物业、保洁', id: 7, pid: 0 },
+              { name: '政府采购或供应商资格', id: 8, pid: 0 },
+            ]
+          }
+        ],
+        tablist: [{ name: '公司资质', this: true, select: 0 }],
+        centerList: [
+          [
+            { name: '荣誉证书', id: 1, pid: 0 },
+            { name: '工程行业', id: 2, pid: 0 },
+            { name: '加工、环保、安监', id: 3, pid: 0 },
+            { name: '特种设备安装改造维修资质', id: 4, pid: 0 },
+            { name: '劳务、人力行业', id: 5, pid: 0 },
+            { name: '房地产、拆迁业', id: 6, pid: 0 },
+            { name: '物业、保洁', id: 7, pid: 0 },
+            { name: '政府采购或供应商资格', id: 8, pid: 0 },
+          ],
+          [
+            { name: "AAA信用企业", id: 101, pid: 1 },
+            { name: "双软认证企业", id: 102, pid: 1 },
+            { name: "高新技术认证企业", id: 103, pid: 1 },
+          ]
+        ],
+        qualification: []
+      }
+    },
+    computed: {
+      selectClassstatus () {
+        return function (e) {
+          var found = this.selectOne.find(item => {
+            return item.id == e.id
+          })
+          return found ? true : false
+        }
+      }
+    },
+    methods: {
+
+      // 打开弹窗
+      handleChangeClick () {
+        this.dialogVisible = true
+      },
+      // 关闭弹窗
+      handleClose (done) {
+        this.dialogVisible = false
+        this.selectOne = []
+        if (this.qualification.length == 0) {
+          this.radioZiZhi = '1'
+        }
+      },
+      // 一级
+      handleOneclick (e) {
+        // 添加过就取消
+        const found = this.selectOne.find(item => {
+          return item.id == e.id
+        })
+        if (found) {
+          this.selectOne.forEach((item, i) => {
+            if (item.id == e.id) {
+              this.selectOne.splice(i, 1)
+            }
+          })
+        } else {
+          if (e.pid != 0) {
+            // 不添加
+            this.selectOne.push({ ...e, this: true })
+          }
+          // 选中标签
+          // console.log(this.tablist)
+          if (this.tablist.length == 1) {
+            // 当前切换卡片
+            this.tablist.forEach(element => {
+              element.this = false
+            })
+            // 添加tab 选项
+            this.tablist = [{ name: '公司资质', this: false, select: 0 }, { ...e, name: e.name + '子项目', this: true, select: 1 }]
+          }
+
+
+        }
+      },
+      // 删除选中
+      handleremove (i) {
+        this.selectOne.splice(i, 1)
+      },
+      tabclick (y) {
+        if (y == 0) {
+          this.tablist = [{ name: '公司资质', this: true, select: 0 }]
+        }
+      },
+      cancel () {
+        this.dialogVisible = false
+        if (this.qualification.length == 0) {
+          this.radioZiZhi = '1'
+        }
+      },
+      submitSure () {
+        // 确定
+        this.qualification = this.selectOne
+        if (this.qualification.length == 0) {
+          this.radioZiZhi = '1'
+        }
+        this.dialogVisible = false
+
+      },
+      // 删除确认选出的资质
+      handleZiZhiremove (i) {
+        this.qualification.splice(i, 1)
+      },
+      handleFalse () {
+        this.qualification = []
+      }
+    }
   })
 </script>
 

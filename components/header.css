@@ -2,7 +2,7 @@ html,
 body {
   width: 100%;
   height: 100%;
-  background-color: #f8f8f8 !important;
+  /* background-color: #f8f8f8 !important; */
 }
 
 .header {
@@ -38,8 +38,14 @@ body {
   width: 154px;
   height: 53px;
 }
+.search {
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
 .search_input {
-  width: 500px;
+  width: 700px;
   /* padding: 5px; */
   height: 46px;
   line-height: 38px;
@@ -72,6 +78,9 @@ body {
   justify-content: space-around;
   align-items: center;
   margin-top: 16px;
+  margin-left: 6rem;
+  width: 300px;
+  color: grey;
 }
 .type > div {
   font-size: 14px;
@@ -119,7 +128,7 @@ body {
   vertical-align: top;
   position: absolute;
   top: 45%;
-  left: 13%;
+  left: 10%;
 }
 ul {
   margin: 0px;
@@ -138,8 +147,8 @@ ul {
   padding-left: 20px;
 }
 .xiala ul li:hover {
-  color: #ffffff;
-  background-color: #ff7300 !important;
+  color: #000;
+  background-color: #eee !important;
 }
 .headertop {
   background: #f4f4f4;

@@ -59,11 +59,34 @@ body {
 }
 .main {
   padding-bottom: 6rem;
-  overflow-y: auto;
+  /* overflow-y: auto; */
 }
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 4.5rem; /* Footer height */
+  border-top: 1px solid #eee;
+}
+.arthover {
+  border: 1px solid #eee;
+}
+.arthover:hover {
+  box-shadow: 1px 1px 15px #ff5a00;
+  border: 1px solid #ff5a00 !important;
+}
+
+.gotop {
+  position: fixed;
+  bottom: 20px;
+  display: none;
+  width: 48px;
+  height: 48px;
+  right: 3px;
+  outline: 0;
+  overflow: hidden;
+  background-color: #ff5a00;
+  text-align: center;
+  padding: 5px;
+  color: #fff;
 }
