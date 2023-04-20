@@ -90,3 +90,22 @@ body {
   padding: 5px;
   color: #fff;
 }
+a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.qrcodebox {
+  position: fixed;
+  z-index: 99999;
+  left: 50%;
+  top: 0px;
+  margin-left: -130px;
+  width: 260px;
+  background: rgb(255, 255, 255);
+  text-align: center;
+  display: none;
+}
+.qrcodebox > img {
+  margin: auto;
+}

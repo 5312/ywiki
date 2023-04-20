@@ -66,61 +66,27 @@
     white-space: nowrap;
     /* min-width: 64px; */
   }
-
-  .outbox {
-    display: none;
-    position: absolute;
-    left: 0;
-    top: 27px;
-    width: 80px;
-  }
-
-  .out {
-    margin-top: 10px;
-    min-width: 100%;
-    line-height: 36px;
-    /* padding: 5px 0; */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, .12);
-    border: 1px solid #eee;
-    background-color: #fff;
-    z-index: 100;
-    border-radius: 2px;
-    white-space: nowrap;
-    text-align: center;
-  }
-
-
-
-  .positionre {
-    position: relative;
-  }
-
-  .my:hover>.outbox {
-    display: block;
-
-  }
-
-  .my:hover {
-    background-color: #fff;
-    color: #FF4E03;
-  }
-
-  .my:hover a {
-    color: #FF4E03;
-  }
 </style>
 
 <body>
+  <div id="qrcodebox" class="qrcodebox">
+    <div id='qrclose'
+      style="text-align:right;color:#555555;font-size:16px;font-family:Verdana;font-weight:100;padding-right:6px;cursor:pointer;">
+      x</div>
+    <img src="../asset/qrcode.png" width="140" height="140">
+    <div style="padding:10px 0;font-size:14px;font-weight:bold;color:#555555;">扫一扫，直接在手机上打开</div>
+    <div style="padding-bottom:20px;color:#999999;">推荐微信、QQ扫一扫等扫码工具</div>
+  </div>
   <div class="wraps">
     <header class=" header">
       <div class="headertop">
         <div class="clear-both header-main">
-          <div class="person float-left">
+          <div class="person float-left " id="shoucang">
             <i class="bi bi-folder-plus"></i>
             <span>收藏本页</span>
           </div>
 
-          <div class="person float-left ml-4">
+          <div class="person float-left ml-4" id="qrcode">
             <i class="bi bi-qr-code"></i>
             <span>二维码</span>
           </div>
@@ -365,7 +331,7 @@
 
         <article class="bg-white p-4 mb-4 mt-4" style="border: 1px solid #eee;">
           <div class="border-b p-2">
-            <div>本企业出售 >></div>
+            <div>本企业出售</div>
           </div>
           <div class="line text-sm  py-2 border-b">
             <span class="orgin">【编号：68781429】 </span>
@@ -466,7 +432,7 @@
 </body>
 <script src="../cdn/jquery-3.6.4.min.js"></script>
 <script src="../cdn/layui-v2.6.8/layui/layui.js"></script>
-
+<script src="../index.js"></script>
 <script>
   function setModule (x) {
     console.log(x)
@@ -495,6 +461,7 @@
       $('#scrollto').hide()
     }
   }
+
 
 </script>
 
