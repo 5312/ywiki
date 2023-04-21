@@ -106,6 +106,7 @@ body {
   font-family: Microsoft YaHei;
   font-weight: bold;
   color: #333333;
+  line-height: 17px;
 }
 .xiala-1 {
   font-size: 14px;
@@ -144,7 +145,7 @@ ul {
   background-color: white;
   cursor: default;
   list-style-type: none;
-  width: 85px;
+  width: 100%;
   height: 32px;
   line-height: 20px;
   padding-left: 20px;
@@ -234,4 +235,31 @@ ul {
 
 .my:hover a {
   color: #ff4e03;
+}
+.headerNav {
+  height: 90px;
+}
+.headerNav > img {
+  width: 200px;
+  height: 69px;
+  position: relative;
+  left: 200px;
+  top: 10px;
+}
+.post-active {
+  background-color: #ff4e03;
+  color: #fff;
+}
+.post-nav {
+  border-bottom: #ff3a03 2px solid;
+}
+.postbtn {
+  background-color: #ff4e03;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+.bluer {
+  color: rgba(59, 130, 246, 0.5);
 }

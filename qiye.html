@@ -124,12 +124,27 @@
               <table class="formlogin" cellpadding="0" cellspacing="0">
                 <tr>
                   <td class="tdright">
-                    <font color=red>*</font>用户名：
+                    <font color=red>*</font>手机号：
                   </td>
                   <td>
                     <input name="userid" id="reg_username" type="text" class="input input-large" require="true"
                       datatype="userName|limit|ajax" url="h" min="4" max="20" msg="可输入字母、数字、下划线，不得少于4个字符">&nbsp;
                   </td>
+                </tr>
+                <tr>
+                  <td class="tdright">
+                    <font color=red>*</font>验证码：
+                  </td>
+                  <td>
+                    <input name="userid" type="text" class="vercel-middle input input-large" require="true"
+                      style="width:100px" datatype="userName|limit|ajax">
+                    <button style="width:90px;" id="yanzhengma" type="button"
+                      class=" inline vercel-middle verification cursor-pointer">点击获取
+                    </button>
+
+                  </td>
+                  <!-- <td>
+                  </td> -->
                 </tr>
                 <tr>
                   <td class="tdright">

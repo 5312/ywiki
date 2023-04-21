@@ -1,0 +1,159 @@
+.main > section {
+  flex: 2;
+}
+
+.orgin {
+  color: #ff3a03;
+}
+
+.price {
+  font-size: 31px;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.border-b {
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.acti {
+  width: 40px;
+  height: 40px;
+  background-color: #ffe7e5;
+}
+
+.phone {
+  color: #ff4e03;
+  font-size: 18px;
+  padding-top: 10px;
+}
+
+.inline {
+  vertical-align: middle;
+}
+
+.text-orgin {
+  color: #fe0000;
+}
+
+span,
+label,
+input,
+.inline {
+  vertical-align: middle;
+}
+
+.vertical-top {
+  vertical-align: top;
+}
+
+.label {
+  /* width: 200px; */
+  text-align: right;
+  display: inline-block;
+}
+
+.button {
+  background-color: #ff3a03;
+  color: #fff;
+}
+
+.diaolog {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+  background-color: #6360606c;
+  border: 1px solid #eee;
+}
+
+.box {
+  width: 500px;
+  /* height: 500px; */
+  background-color: #fff;
+  margin: auto;
+  position: relative;
+  top: 15em;
+}
+
+.layui-tab-item {
+  border: 1px solid #eee;
+}
+
+.aptitude-box .list {
+  background-color: #fcfcfc;
+  border: 1px solid #e5e5e5;
+  padding: 14px 10px;
+  border-radius: 2px;
+}
+
+.aptitude-box .list span {
+  display: inline-block;
+  line-height: 30px;
+  padding: 0 10px;
+  white-space: nowrap;
+  cursor: pointer;
+  margin: 0 0 1px 1px;
+  color: #f9841e;
+  position: relative;
+}
+
+.aptitude-box .list span:hover {
+  background: #d5e9f2;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.inline-tag {
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #eee;
+  /* border-radius: 15px; */
+  padding: 0 14px 2px;
+  color: #000;
+  margin: 0px 5px 2px 0;
+  line-height: 26px;
+  white-space: nowrap;
+}
+
+.spanacitve {
+  background-color: #f9841e;
+  color: #fff !important;
+}
+
+.spanacitve:hover {
+  background: #f9841e !important;
+}
+
+.vercel-top {
+  vertical-align: top;
+}
+
+.vercel-middle {
+  vertical-align: middle;
+}
+
+.textareas {
+  width: 600px;
+  height: 160px;
+  border: 1px solid #e0e0e0;
+  color: #aaa;
+  line-height: 26px;
+}
+
+#label_more_aptitude {
+  display: inline;
+  border: 1px dashed #423c3c;
+}

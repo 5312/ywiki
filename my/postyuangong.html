@@ -6,24 +6,24 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../asset/css/tailwind.min.css">
+  <link rel="stylesheet" href="../asset/css/normalize.css">
+  <link rel="stylesheet" href="../asset/css/index.css">
   <link rel="stylesheet" href="../asset/css/header.css">
   <link rel="stylesheet" href="../asset/css/change.css">
-  <link rel="stylesheet" href="../asset/css/index.css">
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="../cdn/bootstrap-icons-1.10.4/font/bootstrap-icons.css">
   <link rel="stylesheet" href="../cdn/layui-v2.6.8/layui/css/layui.css">
 
-  <!-- bootstrap -->
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"> -->
-  <link rel="stylesheet" href="../cdn/bootstrap-icons-1.10.4/font/bootstrap-icons.css">
   <link href="../cdn/bootstrap.min.css" rel="stylesheet">
+
   <script src="../cdn/bootstrap.bundle.min.js"></script>
-  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> -->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-    crossorigin="anonymous"></script> -->
-  <link rel="stylesheet" href="../asset/css/normalize.css">
-
-
+  <link rel="stylesheet" href="../cdn/theme-chalk-index.css">
+  <!-- import Vue before Element -->
+  <!-- <script src="https://unpkg.com/vue@2/dist/vue.js"></script> -->
+  <script src="../cdn/vue.js"></script>
+  <!-- 引入组件库 -->
+  <!-- <script src="https://unpkg.com/element-ui/lib/index.js"></script> -->
+  <script src="../cdn/elementui-lib.js"></script>
   <title>Document</title>
 </head>
 <style>
@@ -36,14 +36,6 @@
     color: #FF3A03;
   }
 
-  .text-orgin {
-    color: #FF3A03;
-  }
-
-  .icon {
-    top: -1px;
-  }
-
   .acti {
     width: 90px;
     height: 90px;
@@ -52,26 +44,87 @@
     margin: auto;
   }
 
-  .shad {
-    --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  .touxiang {
+    width: 30px;
+    height: 30px;
+    background-color: #FFE7E5;
+    overflow: hidden;
+    margin: auto;
   }
 
   .layui-laypage .layui-laypage-curr .layui-laypage-em {
     background-color: #FF3A03;
   }
 
-  .quxiaocollet {
-    background-color: #ff4e03;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 14px;
-    cursor: pointer;
+  /*  */
+  .main>section {
+    flex: 2;
   }
 
-  .quxiaocollet:hover {
+  .orgin {
+    color: #FF3A03;
+  }
+
+  .price {
+    font-size: 31px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+  }
+
+  .inline {
+    display: inline-block;
+  }
+
+  .border-b {
+    border-bottom: 1px solid #F1F1F1;
+  }
+
+  .acti {
+    width: 40px;
+    height: 40px;
+    background-color: #FFE7E5;
+  }
+
+  .phone {
+    color: #FF4E03;
+    font-size: 18px;
+    padding-top: 10px;
+  }
+
+  .logo {
+    /* width: 100px;
+    height: 100px; */
+  }
+
+  .inline {
+    vertical-align: middle;
+  }
+
+  .text-orgin {
+    color: #FE0000;
+  }
+
+  span,
+  label,
+  input,
+  .inline {
+    vertical-align: middle;
+  }
+
+  .vertical-top {
+    vertical-align: top;
+  }
+
+  .label {
+    /* width: 200px; */
+    text-align: right;
+    display: inline-block;
+    font-size: 14px;
+  }
+
+  .button {
     background-color: #FF3A03;
+    color: #fff;
   }
 </style>
 
@@ -151,7 +204,7 @@
         </nav>
       </div>
     </header>
-    <main class="main mx-auto   pb-6 flex flex-row" id="app">
+    <main class="main mx-auto py-6 flex flex-row" id="app">
       <aside class=" w-1/4">
         <section class="bg-white  h-70 mb-4 p-2">
           <div class="acti rounded-full h-24 w-24 flex items-center justify-center"><img
@@ -173,34 +226,34 @@
           <div class="accordion .accordion-flush" id="accordionExample">
             <div class="accordion-item">
               <h2 class="accordion-header" id="flush-headingOne">
-                <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                  aria-expanded="true" aria-controls="collapseOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                   我的发布
                 </button>
               </h2>
               <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne"
                 data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                  出售公司
+                  <a href="#">出售公司</a>
                 </div>
                 <div class="accordion-body">
-                  求购公司
+                  <a href="">求购公司</a>
                 </div>
-                <div class="accordion-body menu-active ">
-                  收藏
+                <div class="accordion-body">
+                  <a href="">收藏</a>
                 </div>
               </div>
             </div>
             <div class="accordion-item">
               <h2 class="accordion-header" id="flush-headingTwo">
-                <button class="mybtn accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                <button class="mybtn accordion-button " type="button" data-bs-toggle="collapse"
                   data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                   我的员工
                 </button>
               </h2>
               <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo"
                 data-bs-parent="#accordionExample">
-                <div class="accordion-body">
+                <div class="accordion-body menu-active ">
                   员工管理
                 </div>
               </div>
@@ -230,138 +283,97 @@
 
         </section>
       </aside>
-      <article class="bg-white w-3/4 ml-8 p-4 mt-1">
-        <!-- <div class="flex flex-row items-center border-b pb-4">
-          <div class="ml-2 py-2 text-xl font-semibold">我的收藏</div>
-        </div> -->
+      <article class="bg-white w-3/4 ml-8 py-4">
+
         <div class="  post-nav">
-          <div class="float-left px-4 py-2 font-semibold post-active">我的收藏</div>
+          <div class="float-left px-4 py-2 font-semibold post-active">添加员工</div>
+
+          <div class="float-left px-4 py-2 font-semibold ">员工列表</div>
           <div class="clear-both"></div>
         </div>
-        <div class="items-center justify-between flex flex-row py-2 border-b">
-          <div class="">
-            <div>
-              <span class="text-sm font-semibold">南京***文化传媒有限公司</span>
-              <span class="grey text-sm">价格：</span>
-              <span class="text-orgin">14589元</span>
-            </div>
-            <div class="flex flex-row py-2 justify-between">
-              <div class="grey text-xs"><span class="grey">成立时间：2013-11</span>
-              </div>
-              <div class="grey text-xs ml-4"><span class="grey">注册资本：100万人民币</span>
-              </div>
-              <div class="grey text-xs ml-4"><span class="grey">实缴资本：0万人民币</span>
-              </div>
-              <div class="grey text-xs ml-4"><span class="grey">纳税类型：小规模</span>
-              </div>
-            </div>
-          </div>
-          <div class="rounded-full py-1 px-2 bg-gray-100 quxiaocollet">
-            取消收藏
-          </div>
-        </div>
+        <section class="flex-2">
+          <article class="p-4 bg-white ">
+            <div class="border-b mb-2 pb-4">
+              <div class="input-center">
+                <div class="m-auto  text-xs   p-2">
+                  <div class="label w-44 grey"><span class="orgin">*</span> 手机号</div>
+                  <div class="inline ml-4">
+                    <input style="width:390px;" class="border p-1 text-left " placeholder="请填写手机号" type="text">
+                  </div>
+                </div>
+                <div class="m-auto  text-xs   p-2">
+                  <div class="label w-44 grey"><span class="orgin">*</span> 姓名</div>
+                  <div class="inline ml-4">
+                    <input style="width:390px;" class="border p-1 text-left " placeholder="请填写姓名" type="text">
+                  </div>
+                </div>
+                <div class="m-auto  text-xs  p-2 ml-2">
+                  <div class="label w-44 grey"><span class="orgin">*</span> 性别</div>
+                  <div class="inline ml-4">
+                    <input type="radio" name="xb" id="xb">
+                    <label for="xb">男</label>
+                    <input type="radio" name="xb" id="nv" class="ml-4">
+                    <label for="nv">女</label>
+                  </div>
+                </div>
+                <div class="m-auto  text-xs   p-2">
+                  <div class="label w-44 grey "><span class="orgin">*</span> 部门</div>
+                  <div class="inline ml-4 w-80  ml-2">
+                    <input style="width:390px;" class="border p-1 text-left  " placeholder="请输入部门" type="text">
 
+                    </textarea>
+                  </div>
+                </div>
+                <div class="m-auto  text-xs  p-2 ml-2">
+                  <div class="label w-44 grey"><span class="orgin">*</span> 状态</div>
+                  <div class="inline ml-4">
+                    <input type="radio" name="xb" id="q">
+                    <label for="q">启用</label>
+                    <input type="radio" name="xb" id="j" class="ml-4">
+                    <label for="j">禁用</label>
 
-        <div class="items-center justify-between flex flex-row py-2 border-b">
-          <div class="">
-            <div>
-              <span class="text-sm font-semibold">南京***文化传媒有限公司</span>
-              <span class="grey text-sm">价格：</span>
-              <span class="text-orgin">14589元</span>
-            </div>
-            <div class="flex flex-row py-2 justify-between">
-              <div class="grey text-xs"><span class="grey">成立时间：2013-11</span>
-              </div>
-              <div class="grey text-xs ml-4"><span class="grey">注册资本：100万人民币</span>
-              </div>
-              <div class="grey text-xs ml-4"><span class="grey">实缴资本：0万人民币</span>
-              </div>
-              <div class="grey text-xs ml-4"><span class="grey">纳税类型：小规模</span>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="rounded-full  py-1 px-2 bg-gray-100 quxiaocollet">
-            取消收藏
-          </div>
-        </div>
 
-        <div class="items-center justify-between flex flex-row py-2 border-b">
-          <div class="">
-            <div>
-              <span class="text-sm font-semibold">南京***文化传媒有限公司</span>
-              <span class="grey text-sm">价格：</span>
-              <span class="text-orgin">14589元</span>
+            <!--  -->
+            <div class="border-b  mb-2 pb-4" style="display:none">
+              <div class="text-base mb-2">
+                <i class="bi bi-telephone-fill"></i>
+                <span>联系方式</span>
+              </div>
+              <!--  -->
+              <div class="m-auto  text-sm   p-2">
+                <div class="m-auto  text-sm  p-2">
+                  <div class="label w-44"> <span class="orgin">*</span>联系电话</div>
+                  <input class="border w-80 ml-2 p-1" placeholder="请填写联系电话" type="text">
+                </div>
+                <div class="m-auto  text-sm  p-2">
+                  <div class="label w-44"> <span class="orgin">*</span>联系人</div>
+                  <input class="border w-80 ml-2 p-1" placeholder="请填写联系人姓名" type="text">
+                </div>
+                <div class="m-auto  text-sm  p-2">
+                  <div class="label w-44"> <span class="orgin">*</span>公司名称</div>
+                  <input class="border w-80 ml-2 p-1" placeholder="请填写完整公司名称" type="text">
+                </div>
+                <div class="text-center p-2">
+                  <input type="checkbox" name="" id="yue">
+                  <label for="yue">我已阅读并接受<span class="orgin">《易维客服务协议》</span></label>
+                </div>
+              </div>
             </div>
-            <div class="flex flex-row py-2 justify-between">
-              <div class="grey text-xs"><span class="grey">成立时间：2013-11</span>
-              </div>
-              <div class="grey text-xs ml-4"><span class="grey">注册资本：100万人民币</span>
-              </div>
-              <div class="grey text-xs ml-4"><span class="grey">实缴资本：0万人民币</span>
-              </div>
-              <div class="grey text-xs ml-4"><span class="grey">纳税类型：小规模</span>
-              </div>
-            </div>
-          </div>
-          <div class="rounded-full py-1 px-2 bg-gray-100 quxiaocollet">
-            取消收藏
-          </div>
-        </div>
+            <div class="button w-96 text-center m-auto py-2 px-4">马上发布信息</div>
 
-
-        <div class="items-center justify-between flex flex-row py-2 border-b">
-          <div class="">
-            <div>
-              <span class="text-sm font-semibold">南京***文化传媒有限公司</span>
-              <span class="grey text-sm">价格：</span>
-              <span class="text-orgin">14589元</span>
-            </div>
-            <div class="flex flex-row py-2 justify-between">
-              <div class="grey text-xs"><span class="grey">成立时间：2013-11</span>
-              </div>
-              <div class="grey text-xs ml-4"><span class="grey">注册资本：100万人民币</span>
-              </div>
-              <div class="grey text-xs ml-4"><span class="grey">实缴资本：0万人民币</span>
-              </div>
-              <div class="grey text-xs ml-4"><span class="grey">纳税类型：小规模</span>
-              </div>
-            </div>
-          </div>
-          <div class="rounded-full py-1 px-2 bg-gray-100 quxiaocollet">
-            取消收藏
-          </div>
-        </div>
-
-        <div class="items-center justify-between flex flex-row py-2 border-b">
-          <div class="">
-            <div>
-              <span class="text-sm font-semibold">南京***文化传媒有限公司</span>
-              <span class="grey text-sm">价格：</span>
-              <span class="text-orgin">14589元</span>
-            </div>
-            <div class="flex flex-row py-2 justify-between">
-              <div class="grey text-xs"><span class="grey">成立时间：2013-11</span>
-              </div>
-              <div class="grey text-xs ml-4"><span class="grey">注册资本：100万人民币</span>
-              </div>
-              <div class="grey text-xs ml-4"><span class="grey">实缴资本：0万人民币</span>
-              </div>
-              <div class="grey text-xs ml-4"><span class="grey">纳税类型：小规模</span>
-              </div>
-            </div>
-          </div>
-          <div class="rounded-full py-1 px-2 bg-gray-100 quxiaocollet">
-            取消收藏
-          </div>
-        </div>
-
-
-        <div id="test1" class="m-auto text-center"></div>
+            <!--  -->
+          </article>
+        </section>
+        <!-- <div class="block text-center">
+          <div id="test1" class="m-auto text-center"></div>
+        </div> -->
       </article>
-
     </main>
-
-    <footer class="footer w-screen bg-white h-4">
+    <footer class="footer w-screen bg-white ">
       <div class="w-2/5  mx-auto text-xs grey text-center p-4">
         <div class="grid grid-cols-6 divide-x divide-gray-500 ">
           <div>首页网站</div>
@@ -374,43 +386,24 @@
         <div class="p-2">易维客信息科技有限公司 | 津ICP备18000836号-1 | © Copyright©2023 ke.com版权所有</div>
       </div>
     </footer>
-    <a id="scrollto" class="gotop btn btn-default" href="#" role="button">
-      回到顶部
-    </a>
-  </div>
 
+  </div>
 </body>
 
 </html>
-<!-- 引入 layui.js -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/layui/2.8.0-rc.15/layui.js"></script> -->
+<script src="../cdn/jquery-3.6.4.min.js"></script>
 <script src="../cdn/layui-v2.6.8/layui/layui.js"></script>
 
-<script src="../cdn/jquery-3.6.4.min.js"></script>
-<script src="..//asset/js/index.js"></script>
+<!-- 引入 layui.js -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/layui/2.8.0-rc.15/layui.js"></script> -->
+
+<script src="../asset/js/index.js"></script>
 
 <script>
-  layui.use('laypage', function () {
-    var laypage = layui.laypage
-
-    //执行一个laypage实例
-    laypage.render({
-      elem: 'test1' //注意，这里的 test1 是 ID，不用加 # 号
-      , count: 50 //数据总数，从服务端得到
-    })
-  })
   function setModule (x) {
     console.log(x)
   }
-  window.onscroll = function () {
 
-    if (document.documentElement.scrollTop + $('.wraps').scrollTop() > 100) {
-      $('#scrollto').show()
-    }
-    else {
-      $('#scrollto').hide()
-    }
-  }
   $(".xiala-1").click(function () {
     //点击输入框打开选项窗，若已打开则关闭
     if ($(".xiala").css('display') == 'none') {
@@ -425,7 +418,44 @@
     $(".xiala-1").val($(this).text())
     $(".xiala").hide()
   })
-  layui.use(['dropdown', 'util'], function () {
+  new Vue({
+    el: '#app',
+    data: function () {
+      return {
+        dialogVisible: false,
+        tableData: [{
+          bumen: '产品部',
+          name: '李明',
+          status: "正常",
+          eg: "男",
+          phone: '13645555555',
+        }, {
+          bumen: '产品部',
+          name: '李明',
+          status: "禁用",
+          eg: "男",
+          phone: '13645555555',
+        }]
+      }
+    },
+    methods: {
+      handleClick () {
+      },
+      handleClose (done) {
+        this.$confirm('确认关闭？')
+          .then(_ => {
+            done()
+          })
+          .catch(_ => { })
+      },
+      handshow () {
+        console.log('1')
+        this.dialogVisible = true
+      }
+    }
+  })
+
+  layui.use(['dropdown', 'laypage', 'util'], function () {
     var dropdown = layui.dropdown
       , util = layui.util
       , $ = layui.jquery
@@ -436,7 +466,13 @@
       console.log(thisElem, options)
     })
 
+    var laypage = layui.laypage
 
+    //执行一个laypage实例
+    laypage.render({
+      elem: 'test1' //注意，这里的 test1 是 ID，不用加 # 号
+      , count: 50 //数据总数，从服务端得到
+    })
     util.event('lay-active', {
       normal: function () {
         $('#demo-box').children().addClass('layui-col-md3').removeClass('layui-col-md4')

@@ -52,8 +52,23 @@ tabtitle {
   height: 30px;
   margin: 10px 0;
   padding: 10px;
+  font-size: 12px;
 }
+.yanzhegnma > input {
+  width: 100%;
+  height: 30px;
+  margin: 10px 0;
+  font-size: 12px;
 
+  padding: 10px;
+}
+.rela > input {
+  font-size: 12px;
+}
+.yanzhegnma > .i {
+  height: 30px;
+  vertical-align: middle;
+}
 .forget {
   font-size: 14px;
   font-weight: 400;

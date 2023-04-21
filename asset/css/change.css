@@ -7,8 +7,12 @@
 }
 .vip {
   height: 100px;
-  background: linear-gradient(-45deg, #eacc98 0%, #ebd8ae 50%, #e1c693 100%);
+  /* background: linear-gradient(-45deg, #eacc98 0%, #ebd8ae 50%, #e1c693 100%); */
+  background-image: url(../images/vipbg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
   border-radius: 8px;
+  color: #88503c;
 }
 .nowpay {
   width: 68px;

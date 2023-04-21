@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../asset/css/tailwind.min.css">
+  <link rel="stylesheet" href="../asset/css/normalize.css">
+  <link rel="stylesheet" href="../asset/css/header.css">
+  <link rel="stylesheet" href="../asset/css/change.css">
+  <link rel="stylesheet" href="../asset/css/index.css">
+  <link rel="stylesheet" href="../cdn/bootstrap-icons-1.10.4/font/bootstrap-icons.css">
+  <link href="../cdn/bootstrap.min.css" rel="stylesheet">
+  <script src="../cdn/bootstrap.bundle.min.js"></script>
+  <title>Document</title>
+</head>
+<style>
+  .main {
+    width: 70%;
+  }
+
+  .acti {
+    width: 90px;
+    height: 90px;
+    background-color: #FFE7E5;
+    overflow: hidden;
+    margin: auto;
+  }
+</style>
+
+<body>
+  <div class="wraps">
+    <header class=" header">
+      <div class="headertop">
+        <div class="clear-both header-main">
+          <div class="person float-left">
+            <i class="bi bi-folder-plus"></i>
+            <span>收藏本页</span>
+          </div>
+
+          <div class="person float-left ml-4">
+            <i class="bi bi-qr-code"></i>
+            <span>二维码</span>
+          </div>
+          <div class="person float-right ml-4 border-left">
+            <i class=" ml-4 bi bi-terminal-plus"></i>
+            <span>客户管理</span>
+          </div>
+          <div class="person float-right  ">
+            <i class="bi bi-person"></i>
+            <span>个人中心</span>
+          </div>
+        </div>
+      </div>
+      <div class="contain">
+        <div class="flex headerbox flex-row justify-start">
+          <div class="logo">
+            <img src="../asset/images/yiweike@1x.png" alt="">
+          </div>
+          <div class="search ml-32">
+            <div class="search_input shadow rounded-sm border-1 border-gray-300 border-solid clear-left">
+              <input type="text" id="destoon_select" class="search_m select xiala-1" value="出售" readonly=""
+                onfocus="this.blur();" onclick="$('#search_module').fadeIn('fast');">
+              <img class="xia" src="../asset/images/xia.png">
+              <div class="xiala shadow">
+                <ul>
+                  <li onclick="setModule('5','出售')" style="background-color: white; cursor: default;">出售</li>
+                  <li onclick="setModule('6','求购')" style="background-color: white;">求购</li>
+                </ul>
+              </div>
+              <input type="text" class=" inline outline-none inputs ml-2" placeholder="请输入关键词">
+              <div class="icon inline float-right"><i class="bi bi-search"></i></div>
+            </div>
+            <div class="type flex">
+              <div>金融</div>
+              <div>科技</div>
+              <div>电子商务</div>
+              <div>贸易</div>
+              <div>建筑</div>
+            </div>
+          </div>
+
+        </div>
+        <nav class="tabcard">
+          <div>出售公司</div>
+          <div>求购公司</div>
+          <div>我的私域</div>
+          <!-- <div>客户管理</div> -->
+        </nav>
+      </div>
+    </header>
+    <main class="main mx-auto p-4 flex flex-row">
+      <aside class=" w-1/4">
+        <section class="bg-white  h-70 mb-4 p-2">
+          <div class="acti rounded-full h-24 w-24 flex items-center justify-center"><img
+              src="../asset/images/circle.jpg" alt=""></div>
+          <div class="font-sans text-center p-4 text-sm">手机号：13553524678</div>
+          <div class="font-sans text-center text-sm pb-4"><i class="text-sm bi bi-house"></i>: 西安明远信息技术有限公司</div>
+          <div class="vip w-11/12 m-auto">
+            <div class="p-2 flex flex-row justify-between">
+              <div>
+                <div class="text-lg">VIP</div>
+                <div class="text-sm"> 专属特权</div>
+              </div>
+              <div class="nowpay text-xs text-center">立即续费</div>
+            </div>
+            <div class="text-xs p-2">到期时间：2023-05-10</div>
+          </div>
+        </section>
+        <section class="bg-white h-80 slider-menu">
+          <div class="accordion .accordion-flush" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  我的发布
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  出售公司
+                </div>
+                <div class="accordion-body">
+                  求购公司
+                </div>
+                <div class="accordion-body ">
+                  收藏
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingTwo">
+                <button class="mybtn accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  我的员工
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  员工管理
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingThree">
+                <button class="accordion-button " type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  个人中心
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingTwo"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  个人资料
+                </div>
+                <div class="accordion-body menu-active ">
+                  修改密码
+                </div>
+                <div class="accordion-body">
+                  缴费记录
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </section>
+      </aside>
+      <article class="bg-white w-3/4 ml-8 p-4 input-center">
+        <!-- <div class="title">修改密码</div> -->
+        <div class="  post-nav">
+          <div class="float-left px-4 py-2 font-semibold post-active">修改密码</div>
+          <div class="clear-both"></div>
+        </div>
+        <!-- <div class="line w-full mt-4"></div> -->
+        <div class="wrap w-4/5   mt-32">
+          <div class="input-line m-4 text-sm">
+            <label for="">输入旧密码</label>
+            <input type="text" class="border-2 ">
+          </div>
+          <div class="input-line m-4 text-sm">
+            <label for="">设置新密码</label>
+            <input type="text" class=" border-2">
+          </div>
+          <div class="input-line m-4 text-sm">
+            <label for="">确认新密码</label>
+            <input type="text" class="border-2 ">
+          </div>
+          <div class="savebutton">保存修改</div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="footer w-screen bg-white  ">
+      <div class="w-2/5  mx-auto text-xs grey text-center p-4">
+        <div class="grid grid-cols-6 divide-x divide-gray-500 ">
+          <div>首页网站</div>
+          <div>公司转让</div>
+          <div>公司收购</div>
+          <div>关于我们</div>
+          <div>联系我们</div>
+          <div>法律声明</div>
+        </div>
+        <div class="p-2">易维客信息科技有限公司 | 津ICP备18000836号-1 | © Copyright©2023 ke.com版权所有</div>
+      </div>
+    </footer>
+  </div>
+</body>
+<script src="../cdn/jquery-3.6.4.min.js"></script>
+
+</html>
+<!-- 引入 layui.js -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/layui/2.8.0-rc.15/layui.js"></script> -->
+<script src="../cdn/layui.js"></script>
+
+<script>
+  function setModule (x) {
+    console.log(x)
+  }
+
+  $(".xiala-1").click(function () {
+    //点击输入框打开选项窗，若已打开则关闭
+    if ($(".xiala").css('display') == 'none') {
+      $(".xiala").show()
+      $('.xiala li:contains(' + $(this).val() + ')').css('background-color', '#ffffff')
+    } else {
+      $(".xiala").hide()
+    }
+  })
+  $(".xiala li").click(function () {
+    //点击选择时为输入框赋值。并关闭选项窗
+    $(".xiala-1").val($(this).text())
+    $(".xiala").hide()
+  })
+  layui.use(['dropdown', 'util'], function () {
+    var dropdown = layui.dropdown
+      , util = layui.util
+      , $ = layui.jquery
+
+    //菜单点击事件
+    dropdown.on('click(demo1)', function (options) {
+      var thisElem = $(this)
+      console.log(thisElem, options)
+    })
+
+
+    util.event('lay-active', {
+      normal: function () {
+        $('#demo-box').children().addClass('layui-col-md3').removeClass('layui-col-md4')
+        $('#demo-box').find('.layui-menu').removeClass('layui-menu-lg')
+      }
+      , lg: function () {
+        $('#demo-box').children().addClass('layui-col-md4').removeClass('layui-col-md3')
+        $('#demo-box').find('.layui-menu').addClass('layui-menu-lg')
+      }
+    })
+  });
+</script>

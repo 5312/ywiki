@@ -43,7 +43,7 @@ body {
 
 .right {
   width: 406px;
-  height: 446px;
+  height: 506px;
   background: #ffffff;
   box-shadow: 0px 8px 18px 0px rgba(0, 0, 0, 0.2);
   border-radius: 6px;
@@ -112,4 +112,52 @@ a {
 }
 .qrcodebox > img {
   margin: auto;
+}
+
+.slider-menu {
+  height: 600px;
+  overflow: auto;
+}
+.mybtn {
+  border-bottom-width: 1px !important;
+}
+.accordion-button:not(.collapsed) {
+  color: #fff !important;
+  background-color: #ff3a03 !important;
+}
+.mt-header {
+  height: 99px;
+  padding-top: 38px;
+  background: #ff4401;
+}
+.header-img {
+  position: relative;
+  width: 150px;
+  height: 59;
+  left: 200px;
+  top: 6px;
+}
+.a:hover {
+  color: #409eff !important;
+}
+.menu-active {
+  background-color: #eee;
+}
+.input-center input[type="text"] {
+  /* width: 23px; */
+  height: 37px;
+}
+.input-center input:focus {
+  border: 1px solid #ff3a03 !important;
+}
+.input-center textarea:focus {
+  border: 1px solid #ff3a03 !important;
+}
+.input-center select,
+.input-center option {
+  height: 37px;
+}
+
+input[type="radio"] {
+  accent-color: red;
 }

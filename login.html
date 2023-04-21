@@ -13,6 +13,11 @@
 
   <title>易维客</title>
 </head>
+<style>
+  .ruzhu {
+    background-color: #000;
+  }
+</style>
 
 <body class="body container">
   <img class="imglogo" src="./asset/images/yiweike@1x.png" alt="">
@@ -27,11 +32,14 @@
     <div class="tabtitle">
       <div class="tab active cursor-pointer">快速登录<div class="br"></div>
       </div>
-      <div class="tab cursor-pointer"><a href="./enterprisesettled.html">企业入驻</a></div>
+      <!-- <a href="./enterprisesettled.html"> </a>-->
+      <div class="tab cursor-pointer"><a href="./register.html">短信登录</a></div>
+      <!-- <div class="tab cursor-pointer">企业入驻</div> -->
     </div>
     <div class="brs"></div>
     <!--  -->
-    <div class="inputBox">
+    <div class="inputBox text-base">
+
       <input type="text" class=" rounded-md 
         appearance-none 
         focus:outline-none 
@@ -46,12 +54,33 @@
         focus:border-blue-300 
         border-2 
         border-gray-200" placeholder="输入密码">
+      <div class="yanzhegnma">
+        <input type="text" style="width:150px;" class="i rounded-md 
+      appearance-none 
+      focus:outline-none 
+      focus:ring 
+      focus:border-blue-300 
+      border-2 
+      border-gray-200" placeholder="验证码">
+        <img src="./asset/images/yan.png" class="inline i" style="width:100px; " alt="">
+      </div>
     </div>
-    <div class="forget cursor-pointer">
-      忘记密码
+    <div class="flex flex-row text-right">
+      <div class="forget cursor-pointer">
+        <input type="radio" id="yuangong" name="ta">
+        <label for="yuangong">我是员工</label>
+      </div>
+      <div class="forget cursor-pointer ml-4">
+        <input type="radio" id="laoban" name="ta">
+        <label for="laoban">我是老板</label>
+      </div>
     </div>
     <div class="button w-full cursor-pointer margin-top">
       登录
+    </div>
+    <div class="button w-full cursor-pointer ruzhu">
+      <a href="./enterprisesettled.html">企业入驻 </a>
+
     </div>
     <div class="lineBox">
       <div class="line"></div>

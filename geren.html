@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="./asset/css/style.css" />
   <link rel="stylesheet" href="./asset/css/qiyelogin.css" />
   <link rel="stylesheet" href="../cdn/bootstrap-icons-1.10.4/font/bootstrap-icons.css">
-
+  <link rel="stylesheet" href="./asset/css/tailwind.min.css">
 </head>
 <style>
   .step1>.cur {
@@ -83,6 +83,10 @@
   .close>i {
     font-size: 20px;
   }
+
+  .vercel-middle {
+    vertical-align: middle;
+  }
 </style>
 
 <body class="orange">
@@ -117,12 +121,27 @@
               <table class="formlogin" cellpadding="0" cellspacing="0">
                 <tr>
                   <td class="tdright">
-                    <font color=red>*</font>用户名：
+                    <font color=red>*</font>手机：
                   </td>
                   <td>
                     <input name="userid" id="reg_username" type="text" class="input input-large" require="true"
                       datatype="userName|limit|ajax" url="h" min="4" max="20" msg="可输入字母、数字、下划线，不得少于4个字符">&nbsp;
                   </td>
+                </tr>
+                <tr>
+                  <td class="tdright">
+                    <font color=red>*</font>验证码：
+                  </td>
+                  <td>
+                    <input name="userid" type="text" class="vercel-middle input input-large" require="true"
+                      style="width:100px" datatype="userName|limit|ajax">
+                    <button style="width:90px;" id="yanzhengma" type="button"
+                      class=" inline vercel-middle verification cursor-pointer">点击获取
+                    </button>
+
+                  </td>
+                  <!-- <td>
+                  </td> -->
                 </tr>
                 <tr>
                   <td class="tdright">
@@ -138,8 +157,8 @@
                     <font color=red>*</font>登录密码：
                   </td>
                   <td>
-                    <input id="reg_password" name="userpwd" type="password" class="input input-large" require="true"
-                      datatype="limitB" min="6" max="16" msg="密码不得少于6个字符或超过16个字符！" maxlength="16">
+                    <input id="reg_password" autocomplete name="userpwd" type="password" class="input input-large"
+                      require="true" datatype="limitB" min="6" max="16" msg="密码不得少于6个字符或超过16个字符！" maxlength="16">
                   </td>
                 </tr>
                 <tr>
@@ -167,8 +186,8 @@
                   <td class="tdright">
                     <font color=red>*</font>确认密码：
                   </td>
-                  <td><input name="reuserpwd" type="password" to="userpwd" class="input input-large" msg="两次输入的密码不一致"
-                      id="pwdconfirm" require="true" datatype="repeat">
+                  <td><input name="reuserpwd" autocomplete type="password" to="userpwd" class="input input-large"
+                      msg="两次输入的密码不一致" id="pwdconfirm" require="true" datatype="repeat">
                   </td>
                 </tr>
                 <tr>
@@ -244,8 +263,27 @@
 <script src="./asset/js/validator.common.js"></script>
 <script src="./asset/js/validator2.js"></script>
 <script src="./asset/js/sendsms2.js"></script>
-<script>
 
+<script>
+  // 验证码
+  $("#yanzhengma").click(function () {
+    //发送验证码请求
+
+    //
+    var time = 60
+    var timeStop = setInterval(function () {
+      time--
+      if (time > 0) {
+        $("#yanzhengma").text("重新发送" + time + "s")
+        $("#yanzhengma").attr("disabled", "disabled")
+      } else {
+        time = 60
+        $("#yanzhengma").text("获取验证码")
+        clearInterval(timeStop)
+        $("#yanzhengma").removeAttr("disabled")
+      }
+    }, 1000)
+  })
   function closeprew () {
     $('#pbox').hide()
   }
